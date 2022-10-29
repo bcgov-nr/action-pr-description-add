@@ -9540,7 +9540,7 @@ function action() {
         const description = yield (yield octokit.request(`GET ${apiPath}`)).data.body;
         // Check the description for our markdown message
         if (description.includes(markdown)) {
-            (0, core_1.info)('New markdown is already present in description');
+            (0, core_1.info)('Markdown message is already present');
             return;
         }
         // Append markdown and update/patch description

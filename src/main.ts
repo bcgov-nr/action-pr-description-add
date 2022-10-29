@@ -19,7 +19,7 @@ async function action(): Promise<void> {
 
   // Check the description for our markdown message
   if (description.includes(markdown)) {
-    info('New markdown is already present in description')
+    info('Markdown message is already present')
     return
   }
 
