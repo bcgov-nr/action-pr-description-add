@@ -9525,27 +9525,33 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 const core_1 = __nccwpck_require__(2186);
 const github_1 = __nccwpck_require__(5438);
 // Action input
-const append = (0, core_1.getInput)('append');
-const owner = (0, core_1.getInput)('owner');
-const pr_no = (0, core_1.getInput)('pr_no');
-const repo = (0, core_1.getInput)('repo');
-const token = (0, core_1.getInput)('token');
-// Validate input
-if (!append || !owner || !pr_no || !repo || !token) {
-    throw new Error('Error: incomplete input!');
+const markdown = (0, core_1.getInput)('add_markdown');
+const token = (0, core_1.getInput)('github_token');
+if (!markdown || !token) {
+    (0, core_1.error)('Error: please verify input!');
 }
-// Authenticate
-const octokit = (0, github_1.getOctokit)(token);
 // Main function
-function run() {
+function action() {
     return __awaiter(this, void 0, void 0, function* () {
-        const res = yield octokit.request(`GET /repos/${owner}/${repo}/pulls/${pr_no}`);
-        (0, core_1.info)(`append: ${append}`);
-        (0, core_1.info)(`description: ${JSON.stringify(res.data.body)}`);
+        // Authenticate Octokit client
+        const octokit = (0, github_1.getOctokit)(token);
+        // API path built from context, current PR description
+        const apiPath = `/repos/${github_1.context.repo.owner}/${github_1.context.repo.repo}/pulls/${github_1.context.payload.number}`;
+        const description = yield (yield octokit.request(`GET ${apiPath}`)).data.body;
+        // Check the description for our markdown message
+        if (description.includes(markdown)) {
+            (0, core_1.info)('New markdown is already present in description');
+            return;
+        }
+        // Append markdown and update/patch description
+        (0, core_1.info)('Description is being updated');
+        yield octokit.request(`PATCH ${apiPath}`, {
+            body: description.concat(`\n${markdown}`)
+        });
     });
 }
 // Run main function
-run();
+action();
 
 
 /***/ }),

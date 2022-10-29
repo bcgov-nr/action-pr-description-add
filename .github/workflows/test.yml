@@ -1,5 +1,5 @@
 name: "build-test"
-on: # rebuild any PRs and main branch changes
+on:
   pull_request:
   push:
     branches:
@@ -15,14 +15,16 @@ jobs:
   #         npm ci
   #     - run: |
   #         npm run all
-  test: # make sure the action works on a clean machine without building
+
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: ./
         with:
-          append: "Thanks for submitting a pull request!"
-          owner: ${{ github.repository_owner }}
-          pr_no: ${{ github.event.number }}
-          repo: ${{ github.event.repository.name }}
-          token: ${{ secrets.GITHUB_TOKEN }}
+          add_markdown: |
+            ---
+            # Things!
+            ## Excitement!
+            [Another link!](https://google.ca)
+          github_token: ${{ secrets.GITHUB_TOKEN }}

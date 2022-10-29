@@ -1,29 +1,34 @@
-import {getInput, info} from '@actions/core'
-import {getOctokit} from '@actions/github'
+import {error, getInput, info} from '@actions/core'
+import {context, getOctokit} from '@actions/github'
 
 // Action input
-const append = getInput('append')
-const owner = getInput('owner')
-const pr_no = getInput('pr_no')
-const repo = getInput('repo')
-const token = getInput('token')
-
-// Validate input
-if (!append || !owner || !pr_no || !repo || !token) {
-  throw new Error('Error: incomplete input!')
+const markdown = getInput('add_markdown')
+const token = getInput('github_token')
+if (!markdown || !token) {
+  error('Error: please verify input!')
 }
 
-// Authenticate
-const octokit = getOctokit(token)
-
 // Main function
-async function run(): Promise<void> {
-  const res = await octokit.request(
-    `GET /repos/${owner}/${repo}/pulls/${pr_no}`
-  )
-  info(`append: ${append}`)
-  info(`description: ${JSON.stringify(res.data.body)}`)
+async function action(): Promise<void> {
+  // Authenticate Octokit client
+  const octokit = getOctokit(token)
+
+  // API path built from context, current PR description
+  const apiPath = `/repos/${context.repo.owner}/${context.repo.repo}/pulls/${context.payload.number}`
+  const description = await (await octokit.request(`GET ${apiPath}`)).data.body
+
+  // Check the description for our markdown message
+  if (description.includes(markdown)) {
+    info('New markdown is already present in description')
+    return
+  }
+
+  // Append markdown and update/patch description
+  info('Description is being updated')
+  await octokit.request(`PATCH ${apiPath}`, {
+    body: description.concat(`\n${markdown}`)
+  })
 }
 
 // Run main function
-run()
+action()
