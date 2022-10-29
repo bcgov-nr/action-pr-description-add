@@ -6,8 +6,17 @@ branding:
   color: "blue"
 
 inputs:
-  body:
+  append:
     description: "Message to use in PR description"
+    required: true
+  owner:
+    description: "owner"
+    required: true
+  pr_no:
+    description: "pr number"
+    required: true
+  repo:
+    description: "repo"
     required: true
   token:
     description: "Github token"
