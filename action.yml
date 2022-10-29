@@ -6,10 +6,10 @@ branding:
   color: "blue"
 
 inputs:
-  message_body:
+  body:
     description: "Message to use in PR description"
     required: true
-  github_token:
+  token:
     description: "Github token"
     required: true
 
