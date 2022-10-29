@@ -30,8 +30,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: DerekRoberts/action-pr-description-add
+      - uses: DerekRoberts/action-pr-description-add@v0.0.1
         with:
           add_markdown: |
             ---
