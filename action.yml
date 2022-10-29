@@ -1,5 +1,5 @@
-name: "Add Markdown to Pull Request"
-description: "Adds markdown messages to pull request descriptions"
+name: "Add to PR Descriptions"
+description: "Add to pull request descriptions using markdown"
 author: "Derek Roberts"
 branding:
   icon: "message-square"
