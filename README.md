@@ -30,14 +30,14 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: DerekRoberts/action-pr-description-add
+      - uses: DerekRoberts/action-pr-description-add@v0.0.1
         with:
           add_markdown: |
             ---
             # Things!
             ## Excitement!
-            [Another link!](https://gov.bc.ca)
+            [Links!](https://gov.bc.ca)
+            `Markdown!`
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
 ```

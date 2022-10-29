@@ -15,7 +15,7 @@ async function action(): Promise<void> {
 
   // API path built from context, current PR description
   const apiPath = `/repos/${context.repo.owner}/${context.repo.repo}/pulls/${context.payload.number}`
-  const description = await (await octokit.request(`GET ${apiPath}`)).data.body
+  const description = (await octokit.request(`GET ${apiPath}`)).data.body || ''
 
   // Check the description for our markdown message
   if (description.includes(markdown)) {

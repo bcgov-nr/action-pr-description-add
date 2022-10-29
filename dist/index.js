@@ -9537,7 +9537,7 @@ function action() {
         const octokit = (0, github_1.getOctokit)(token);
         // API path built from context, current PR description
         const apiPath = `/repos/${github_1.context.repo.owner}/${github_1.context.repo.repo}/pulls/${github_1.context.payload.number}`;
-        const description = yield (yield octokit.request(`GET ${apiPath}`)).data.body;
+        const description = (yield octokit.request(`GET ${apiPath}`)).data.body || '';
         // Check the description for our markdown message
         if (description.includes(markdown)) {
             (0, core_1.info)('Markdown message is already present');
