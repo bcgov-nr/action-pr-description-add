@@ -36,7 +36,8 @@ jobs:
             ---
             # Things!
             ## Excitement!
-            [Another link!](https://gov.bc.ca)
+            [Links!](https://gov.bc.ca)
+            `Markdown!`
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
 ```
