@@ -14,13 +14,18 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
     steps:
       - uses: actions/checkout@v3
       - uses: ./
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           add_markdown: |
+            <p>
+
             ---
+
             # Things!
             ## Excitement!
             [Links!](https://google.ca)
