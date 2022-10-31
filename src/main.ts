@@ -26,7 +26,7 @@ async function action(): Promise<void> {
   // Append markdown and update/patch description
   info('Description is being updated')
   await octokit.request(`PATCH ${apiPath}`, {
-    body: description.concat(`\n${markdown}`)
+    body: description.concat(`\n\n${markdown}`)
   })
 }
 

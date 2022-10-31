@@ -22,8 +22,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           add_markdown: |
-            <p>
-
             ---
 
             # Things!

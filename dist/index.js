@@ -9546,7 +9546,7 @@ function action() {
         // Append markdown and update/patch description
         (0, core_1.info)('Description is being updated');
         yield octokit.request(`PATCH ${apiPath}`, {
-            body: description.concat(`\n${markdown}`)
+            body: description.concat(`\n\n${markdown}`)
         });
     });
 }
