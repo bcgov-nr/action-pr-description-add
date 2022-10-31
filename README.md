@@ -17,6 +17,16 @@ This action adds to Pull Request descriptions using markdown.  It checks if the 
 
 `github_token`: Usually ${{ secrets.GITHUB_TOKEN }}, but a personal access token can also be used
 
+## Permissions
+
+Pull requests from forks have reduced job running rights.  Provide your GITHUB_TOKEN with explicit permissions to change that.  Read more [here](https://docs.github.com/en/actions/security-guides/automatic-token-authentication#permissions-for-the-github_token).
+
+```
+    permissions:
+      pull-requests: write
+```
+
+
 ## Example
 
 Create or modify a GitHub workflow, like below.  E.g. `./github/workflows/pr-append.yml`
@@ -29,17 +39,19 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
     steps:
       - uses: DerekRoberts/action-pr-description-add@v0.0.1
         with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           add_markdown: |
             ---
+
             # Things!
             ## Excitement!
-            [Links!](https://gov.bc.ca)
+            [Links!](https://google.ca)
             `Markdown!`
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-
 ```
 
 ## Acknowledgements
