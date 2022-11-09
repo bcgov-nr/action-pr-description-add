@@ -1,5 +1,5 @@
 <!-- Badges -->
-[![Tests](https://github.com/DerekRoberts/action-pr-description-add/workflows/build-test/badge.svg)](https://github.com/DerekRoberts/action-pr-description-add)
+[![Build-Test](https://github.com/DerekRoberts/action-pr-description-add/actions/workflows/test.yml/badge.svg)](https://github.com/DerekRoberts/action-pr-description-add/actions/workflows/test.yml)
 [![Check dist/](https://github.com/DerekRoberts/action-pr-description-add/actions/workflows/check-dist.yml/badge.svg)](https://github.com/DerekRoberts/action-pr-description-add/actions/workflows/check-dist.yml)
 [![CodeQL](https://github.com/DerekRoberts/action-pr-description-add/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/DerekRoberts/action-pr-description-add/actions/workflows/codeql-analysis.yml)
 [![Contributors](https://img.shields.io/github/contributors/DerekRoberts/action-pr-description-add)](/../../graphs/contributors)
