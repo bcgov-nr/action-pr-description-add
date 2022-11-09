@@ -6,12 +6,12 @@
 name: Check dist/
 
 on:
+  pull_request:
   push:
     branches:
       - main
     paths-ignore:
       - "**.md"
-  pull_request:
   workflow_dispatch:
 
 jobs:

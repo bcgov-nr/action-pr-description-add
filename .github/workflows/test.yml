@@ -1,6 +1,9 @@
-name: "build-test"
+name: Build-Test
 on:
   pull_request:
+  push:
+    branches:
+      - main
 
 jobs:
   build:
@@ -14,6 +17,7 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
     permissions:
       pull-requests: write
     steps:
