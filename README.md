@@ -1,5 +1,7 @@
 <!-- Badges -->
-[![Tests](https://github.com/DerekRoberts/action-pr-description-add/workflows/build-test/badge.svg)](https://github.com/DerekRoberts/action-pr-description-add)
+[![Build-Test](https://github.com/DerekRoberts/action-pr-description-add/actions/workflows/test.yml/badge.svg)](https://github.com/DerekRoberts/action-pr-description-add/actions/workflows/test.yml)
+[![Check dist/](https://github.com/DerekRoberts/action-pr-description-add/actions/workflows/check-dist.yml/badge.svg)](https://github.com/DerekRoberts/action-pr-description-add/actions/workflows/check-dist.yml)
+[![CodeQL](https://github.com/DerekRoberts/action-pr-description-add/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/DerekRoberts/action-pr-description-add/actions/workflows/codeql-analysis.yml)
 [![Contributors](https://img.shields.io/github/contributors/DerekRoberts/action-pr-description-add)](/../../graphs/contributors)
 [![Forks](https://img.shields.io/github/forks/DerekRoberts/action-pr-description-add)](/../../network/members)
 [![Stargazers](https://img.shields.io/github/stars/DerekRoberts/action-pr-description-add)](/../../stargazers)
@@ -34,7 +36,7 @@ Create or modify a GitHub workflow, like below.  E.g. `./github/workflows/pr-app
 ```yaml
 name: "Add to Pull Request Description"
 on:
-  pull_request: [opened]
+  pull_request:
 
 jobs:
   test:
