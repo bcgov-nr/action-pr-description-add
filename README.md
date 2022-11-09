@@ -51,7 +51,7 @@ jobs:
             # Things!
             ## Excitement!
             [Links!](https://google.ca)
-            `Markdown!`
+            `Code!`
 ```
 
 ## Acknowledgements
