@@ -12,7 +12,18 @@ inputs:
   github_token:
     description: "Usually <dollar sign>{{ secrets.GITHUB_TOKEN }}"
     required: true
+  opened_object:
+    description: GitHub object to only run on opened or reopened
 
 runs:
-  using: "node16"
-  main: "dist/index.js"
+  using: composite
+  steps:
+    - shell: bash
+      run: |
+        echo "github.event.action: ${{ github.event.action }}"
+        echo "opened_object: ${{ inputs.opened_object }}"
+
+    # if: github.event.action == 'opened' || github.event.action == 'reopened'
+
+  # using: "node16"
+  # main: "dist/index.js"
