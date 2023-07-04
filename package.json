@@ -26,13 +26,13 @@
   "dependencies": {
     "@actions/core": "^1.10.0",
     "@actions/github": "^5.1.1",
-    "@typescript-eslint/eslint-plugin": "^5.60.1"
+    "@typescript-eslint/eslint-plugin": "^5.61.0"
   },
   "devDependencies": {
-    "@types/node": "^20.3.2",
-    "@typescript-eslint/parser": "^5.60.1",
+    "@types/node": "^20.3.3",
+    "@typescript-eslint/parser": "^5.61.0",
     "@vercel/ncc": "^0.36.1",
-    "eslint": "^8.43.0",
+    "eslint": "^8.44.0",
     "eslint-plugin-github": "^4.8.0",
     "prettier": "2.8.8",
     "typescript": "^5.1.6"
