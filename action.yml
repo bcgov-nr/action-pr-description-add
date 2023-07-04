@@ -12,18 +12,20 @@ inputs:
   github_token:
     description: "Usually <dollar sign>{{ secrets.GITHUB_TOKEN }}"
     required: true
-  opened_object:
-    description: GitHub object to only run on opened or reopened
+  opened_only:
+    description: Only add when PR opened or reopened
+    default: "false"
 
 runs:
   using: composite
   steps:
-    - shell: bash
+    - if: inputs.opened_only && github.event.action != 'opened' && github.event.action != 'reopened'
+      shell: bash
       run: |
         echo "github.event.action: ${{ github.event.action }}"
-        echo "opened_object: ${{ inputs.opened_object }}"
 
-    # if: github.event.action == 'opened' || github.event.action == 'reopened'
-
-  # using: "node16"
-  # main: "dist/index.js"
+    - name: Action
+      uses: bcgov-nr/action-pr-description-add/dist/index.js@v0.0.2
+# runs:
+#   using: "node16"
+#   main: "dist/index.js"
