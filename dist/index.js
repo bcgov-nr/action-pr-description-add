@@ -9552,7 +9552,7 @@ function action() {
             owner: github_1.context.repo.owner,
             repo: github_1.context.repo.repo,
             pull_number: github_1.context.payload.number,
-            body: body.concat(`\n\nTEST`)
+            body: 'TEST'
         });
     });
 }
