@@ -1,5 +1,6 @@
 import {error, getInput, info} from '@actions/core'
-import {context, getOctokit} from '@actions/github'
+// import {context, getOctokit} from '@actions/github'
+import {getOctokit} from '@actions/github'
 
 // Action input
 const markdown = getInput('add_markdown')
@@ -21,7 +22,7 @@ async function action(): Promise<void> {
       format: 'diff'
     }
   })
-  info(pullRequest)
+  info(JSON.stringify(pullRequest))
 
   // // API path built from context, current PR description
   // const apiPath = `/repos/${context.repo.owner}/${context.repo.repo}/pulls/${context.payload.number}`
