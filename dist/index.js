@@ -9549,7 +9549,7 @@ function action() {
         }
         // If we're here update the body
         (0, core_1.info)('Description is being updated');
-        octokit.rest.pulls.update({
+        yield octokit.rest.pulls.update({
             owner: github_1.context.repo.owner,
             repo: github_1.context.repo.repo,
             pull_number: github_1.context.payload.number,
