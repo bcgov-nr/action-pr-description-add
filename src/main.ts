@@ -17,10 +17,7 @@ async function action(): Promise<void> {
   const {data: pullRequest} = await octokit.rest.pulls.get({
     owner: 'bcgov-nr',
     repo: 'action-pr-description-add',
-    pull_number: 189,
-    mediaType: {
-      format: 'diff'
-    }
+    pull_number: 189
   })
   info(JSON.stringify(pullRequest))
 

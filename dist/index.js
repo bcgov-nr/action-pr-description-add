@@ -9539,10 +9539,7 @@ function action() {
         const { data: pullRequest } = yield octokit.rest.pulls.get({
             owner: 'bcgov-nr',
             repo: 'action-pr-description-add',
-            pull_number: 189,
-            mediaType: {
-                format: 'diff'
-            }
+            pull_number: 189
         });
         (0, core_1.info)(JSON.stringify(pullRequest));
         // // API path built from context, current PR description
