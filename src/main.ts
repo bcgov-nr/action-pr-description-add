@@ -13,28 +13,27 @@ async function action(): Promise<void> {
   // Authenticate Octokit client
   const octokit = getOctokit(token)
 
-  const {data: body} = await octokit.rest.pulls.get({
+  // Get pull request using the GitHub context
+  const {data: pullRequest} = await octokit.rest.pulls.get({
     owner: context.repo.owner,
     repo: context.repo.repo,
     pull_number: context.payload.number
   })
-  info('PR body: '.concat(JSON.stringify(body)))
 
-  // // API path built from context, current PR description
-  // const apiPath = `/repos/${context.repo.owner}/${context.repo.repo}/pulls/${context.payload.number}`
-  // const description = (await octokit.request(`GET ${apiPath}`)).data.body
+  // Exit/return if our markdown message is already present
+  const body = pullRequest.body || ''
+  if (body.includes(markdown)) {
+    info('Markdown message is already present')
+    return
+  }
 
-  // // Check the description for our markdown message
-  // if (description.includes(markdown)) {
-  //   info('Markdown message is already present')
-  //   return
-  // }
-
-  // // Append markdown and update/patch description
-  // info('Description is being updated')
-  // await octokit.request(`PATCH ${apiPath}`, {
-  //   body: description.concat(`\n\n${markdown}`)
-  // })
+  // If we're here update the body
+  octokit.rest.pulls.update({
+    owner: context.repo.owner,
+    repo: context.repo.repo,
+    pull_number: context.payload.number,
+    body: body.concat(`\n\n${markdown}`)
+  })
 }
 
 // Run main function
