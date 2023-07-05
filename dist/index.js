@@ -9543,10 +9543,10 @@ function action() {
         });
         // Exit/return if our markdown message is already present
         const body = pullRequest.body || '';
-        // if (body.includes(markdown)) {
-        //   info('Markdown message is already present')
-        //   return
-        // }
+        if (body.includes(markdown)) {
+            (0, core_1.info)('Markdown message is already present');
+            return;
+        }
         // If we're here update the body
         (0, core_1.info)('Description is being updated');
         octokit.rest.pulls.update({

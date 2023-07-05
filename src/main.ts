@@ -22,10 +22,10 @@ async function action(): Promise<void> {
 
   // Exit/return if our markdown message is already present
   const body = pullRequest.body || ''
-  // if (body.includes(markdown)) {
-  //   info('Markdown message is already present')
-  //   return
-  // }
+  if (body.includes(markdown)) {
+    info('Markdown message is already present')
+    return
+  }
 
   // If we're here update the body
   info('Description is being updated')
