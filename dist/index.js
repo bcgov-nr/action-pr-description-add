@@ -9535,14 +9535,14 @@ function action() {
     return __awaiter(this, void 0, void 0, function* () {
         // Authenticate Octokit client
         const octokit = (0, github_1.getOctokit)(token);
-        // // Get pull request using the GitHub context
-        // const {data: pullRequest} = await octokit.rest.pulls.get({
-        //   owner: context.repo.owner,
-        //   repo: context.repo.repo,
-        //   pull_number: context.payload.number
-        // })
-        // // Exit/return if our markdown message is already present
-        // const body = pullRequest.body || ''
+        // Get pull request using the GitHub context
+        const { data: pullRequest } = yield octokit.rest.pulls.get({
+            owner: github_1.context.repo.owner,
+            repo: github_1.context.repo.repo,
+            pull_number: github_1.context.payload.number
+        });
+        // Exit/return if our markdown message is already present
+        const body = pullRequest.body || '';
         // if (body.includes(markdown)) {
         //   info('Markdown message is already present')
         //   return
@@ -9553,9 +9553,7 @@ function action() {
             owner: github_1.context.repo.owner,
             repo: github_1.context.repo.repo,
             pull_number: github_1.context.payload.number,
-            body: 'body',
-            title: 'title',
-            state: 'closed'
+            body: body.concat(`\n\n${markdown}`)
         });
     });
 }

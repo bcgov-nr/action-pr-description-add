@@ -13,15 +13,15 @@ async function action(): Promise<void> {
   // Authenticate Octokit client
   const octokit = getOctokit(token)
 
-  // // Get pull request using the GitHub context
-  // const {data: pullRequest} = await octokit.rest.pulls.get({
-  //   owner: context.repo.owner,
-  //   repo: context.repo.repo,
-  //   pull_number: context.payload.number
-  // })
+  // Get pull request using the GitHub context
+  const {data: pullRequest} = await octokit.rest.pulls.get({
+    owner: context.repo.owner,
+    repo: context.repo.repo,
+    pull_number: context.payload.number
+  })
 
-  // // Exit/return if our markdown message is already present
-  // const body = pullRequest.body || ''
+  // Exit/return if our markdown message is already present
+  const body = pullRequest.body || ''
   // if (body.includes(markdown)) {
   //   info('Markdown message is already present')
   //   return
@@ -33,9 +33,7 @@ async function action(): Promise<void> {
     owner: context.repo.owner,
     repo: context.repo.repo,
     pull_number: context.payload.number,
-    body: 'body',
-    title: 'title',
-    state: 'closed'
+    body: body.concat(`\n\n${markdown}`)
   })
 }
 
