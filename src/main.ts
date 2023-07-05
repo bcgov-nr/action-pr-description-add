@@ -28,11 +28,14 @@ async function action(): Promise<void> {
   }
 
   // If we're here update the body
+  info('Description is being updated')
   octokit.rest.pulls.update({
     owner: context.repo.owner,
     repo: context.repo.repo,
     pull_number: context.payload.number,
-    body: 'TEST'
+    body: 'body',
+    title: 'title',
+    state: 'closed'
   })
 }
 

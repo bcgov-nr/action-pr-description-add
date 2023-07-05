@@ -9548,11 +9548,14 @@ function action() {
             // return
         }
         // If we're here update the body
+        (0, core_1.info)('Description is being updated');
         octokit.rest.pulls.update({
             owner: github_1.context.repo.owner,
             repo: github_1.context.repo.repo,
             pull_number: github_1.context.payload.number,
-            body: 'TEST'
+            body: 'body',
+            title: 'title',
+            state: 'closed'
         });
     });
 }
