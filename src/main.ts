@@ -32,7 +32,7 @@ async function action(): Promise<void> {
     owner: context.repo.owner,
     repo: context.repo.repo,
     pull_number: context.payload.number,
-    body: body.concat(`\n\n${markdown}`)
+    body: body.concat(`\n\nTEST`)
   })
 }
 
