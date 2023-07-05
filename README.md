@@ -1,12 +1,12 @@
 <!-- Badges -->
-[![Build-Test](https://github.com/DerekRoberts/action-pr-description-add/actions/workflows/test.yml/badge.svg)](https://github.com/DerekRoberts/action-pr-description-add/actions/workflows/test.yml)
-[![Check dist/](https://github.com/DerekRoberts/action-pr-description-add/actions/workflows/check-dist.yml/badge.svg)](https://github.com/DerekRoberts/action-pr-description-add/actions/workflows/check-dist.yml)
-[![CodeQL](https://github.com/DerekRoberts/action-pr-description-add/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/DerekRoberts/action-pr-description-add/actions/workflows/codeql-analysis.yml)
-[![Contributors](https://img.shields.io/github/contributors/DerekRoberts/action-pr-description-add)](/../../graphs/contributors)
-[![Forks](https://img.shields.io/github/forks/DerekRoberts/action-pr-description-add)](/../../network/members)
-[![Stargazers](https://img.shields.io/github/stars/DerekRoberts/action-pr-description-add)](/../../stargazers)
-[![Issues](https://img.shields.io/github/issues/DerekRoberts/action-pr-description-add)](/../../issues)
-[![MIT License](https://img.shields.io/github/license/DerekRoberts/action-pr-description-add.svg)](/LICENSE)
+[![Build-Test](https://github.com/bcgov-nr/action-pr-description-add/actions/workflows/test.yml/badge.svg)](https://github.com/bcgov-nr/action-pr-description-add/actions/workflows/test.yml)
+[![Check dist/](https://github.com/bcgov-nr/action-pr-description-add/actions/workflows/check-dist.yml/badge.svg)](https://github.com/bcgov-nr/action-pr-description-add/actions/workflows/check-dist.yml)
+[![CodeQL](https://github.com/bcgov-nr/action-pr-description-add/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/bcgov-nr/action-pr-description-add/actions/workflows/codeql-analysis.yml)
+[![Contributors](https://img.shields.io/github/contributors/bcgov-nr/action-pr-description-add)](/../../graphs/contributors)
+[![Forks](https://img.shields.io/github/forks/bcgov-nr/action-pr-description-add)](/../../network/members)
+[![Stargazers](https://img.shields.io/github/stars/bcgov-nr/action-pr-description-add)](/../../stargazers)
+[![Issues](https://img.shields.io/github/issues/bcgov-nr/action-pr-description-add)](/../../issues)
+[![MIT License](https://img.shields.io/github/license/bcgov-nr/action-pr-description-add.svg)](/LICENSE)
 [![Lifecycle](https://img.shields.io/badge/Lifecycle-Experimental-339999)](https://github.com/bcgov/repomountie/blob/master/doc/lifecycle-badges.md)
 
 # Add to Pull Request Descriptions
@@ -44,7 +44,7 @@ jobs:
     permissions:
       pull-requests: write
     steps:
-      - uses: DerekRoberts/action-pr-description-add@v0.0.2
+      - uses: bcgov-nr/action-pr-description-add@v0.0.2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           add_markdown: |
