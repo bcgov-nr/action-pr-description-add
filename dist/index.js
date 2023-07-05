@@ -9535,25 +9535,26 @@ function action() {
     return __awaiter(this, void 0, void 0, function* () {
         // Authenticate Octokit client
         const octokit = (0, github_1.getOctokit)(token);
-        const { data: body } = yield octokit.rest.pulls.get({
+        // Get pull request using the GitHub context
+        const { data: pullRequest } = yield octokit.rest.pulls.get({
             owner: github_1.context.repo.owner,
             repo: github_1.context.repo.repo,
             pull_number: github_1.context.payload.number
         });
-        (0, core_1.info)('PR body: '.concat(JSON.stringify(body)));
-        // // API path built from context, current PR description
-        // const apiPath = `/repos/${context.repo.owner}/${context.repo.repo}/pulls/${context.payload.number}`
-        // const description = (await octokit.request(`GET ${apiPath}`)).data.body
-        // // Check the description for our markdown message
-        // if (description.includes(markdown)) {
-        //   info('Markdown message is already present')
-        //   return
-        // }
-        // // Append markdown and update/patch description
-        // info('Description is being updated')
-        // await octokit.request(`PATCH ${apiPath}`, {
-        //   body: description.concat(`\n\n${markdown}`)
-        // })
+        // Exit/return if our markdown message is already present
+        const body = pullRequest.body || '';
+        if (body.includes(markdown)) {
+            (0, core_1.info)('Markdown message is already present');
+            return;
+        }
+        // If we're here update the body
+        (0, core_1.info)('Description is being updated');
+        octokit.rest.pulls.update({
+            owner: github_1.context.repo.owner,
+            repo: github_1.context.repo.repo,
+            pull_number: github_1.context.payload.number,
+            body: body.concat(`\n\n${markdown}`)
+        });
     });
 }
 // Run main function
