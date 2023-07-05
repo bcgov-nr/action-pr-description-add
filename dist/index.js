@@ -9535,12 +9535,12 @@ function action() {
     return __awaiter(this, void 0, void 0, function* () {
         // Authenticate Octokit client
         const octokit = (0, github_1.getOctokit)(token);
-        const { data: pullRequest } = yield octokit.rest.pulls.get({
+        const { data: body } = yield octokit.rest.pulls.get({
             owner: github_1.context.repo.owner,
             repo: github_1.context.repo.repo,
             pull_number: github_1.context.payload.number
         });
-        (0, core_1.info)(JSON.stringify(pullRequest.body));
+        (0, core_1.info)(JSON.stringify(body));
         // // API path built from context, current PR description
         // const apiPath = `/repos/${context.repo.owner}/${context.repo.repo}/pulls/${context.payload.number}`
         // const description = (await octokit.request(`GET ${apiPath}`)).data.body

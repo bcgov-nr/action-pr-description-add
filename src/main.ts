@@ -13,12 +13,12 @@ async function action(): Promise<void> {
   // Authenticate Octokit client
   const octokit = getOctokit(token)
 
-  const {data: pullRequest} = await octokit.rest.pulls.get({
+  const {data: body} = await octokit.rest.pulls.get({
     owner: context.repo.owner,
     repo: context.repo.repo,
     pull_number: context.payload.number
   })
-  info(JSON.stringify(pullRequest.body))
+  info(JSON.stringify(body))
 
   // // API path built from context, current PR description
   // const apiPath = `/repos/${context.repo.owner}/${context.repo.repo}/pulls/${context.payload.number}`
