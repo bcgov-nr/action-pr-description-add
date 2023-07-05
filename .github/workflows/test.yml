@@ -6,14 +6,14 @@ on:
       - main
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - run: |
-          npm ci
-      - run: |
-          npm run all
+  # build:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - run: |
+  #         npm ci
+  #     - run: |
+  #         npm run all
 
   test:
     runs-on: ubuntu-latest
@@ -25,6 +25,7 @@ jobs:
       - uses: ./
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          opened_only: true
           add_markdown: |
             ---
 
