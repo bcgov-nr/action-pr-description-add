@@ -9523,7 +9523,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 const core_1 = __nccwpck_require__(2186);
-// import {context, getOctokit} from '@actions/github'
 const github_1 = __nccwpck_require__(5438);
 // Action input
 const markdown = (0, core_1.getInput)('add_markdown');
@@ -9537,11 +9536,11 @@ function action() {
         // Authenticate Octokit client
         const octokit = (0, github_1.getOctokit)(token);
         const { data: pullRequest } = yield octokit.rest.pulls.get({
-            owner: 'bcgov-nr',
-            repo: 'action-pr-description-add',
-            pull_number: 189
+            owner: github_1.context.repo.owner,
+            repo: github_1.context.repo.repo,
+            pull_number: github_1.context.payload.number
         });
-        (0, core_1.info)(JSON.stringify(pullRequest));
+        (0, core_1.info)(JSON.stringify(pullRequest.body));
         // // API path built from context, current PR description
         // const apiPath = `/repos/${context.repo.owner}/${context.repo.repo}/pulls/${context.payload.number}`
         // const description = (await octokit.request(`GET ${apiPath}`)).data.body

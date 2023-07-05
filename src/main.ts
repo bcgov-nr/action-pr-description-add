@@ -1,6 +1,5 @@
 import {error, getInput, info} from '@actions/core'
-// import {context, getOctokit} from '@actions/github'
-import {getOctokit} from '@actions/github'
+import {context, getOctokit} from '@actions/github'
 
 // Action input
 const markdown = getInput('add_markdown')
@@ -15,11 +14,11 @@ async function action(): Promise<void> {
   const octokit = getOctokit(token)
 
   const {data: pullRequest} = await octokit.rest.pulls.get({
-    owner: 'bcgov-nr',
-    repo: 'action-pr-description-add',
-    pull_number: 189
+    owner: context.repo.owner,
+    repo: context.repo.repo,
+    pull_number: context.payload.number
   })
-  info(JSON.stringify(pullRequest))
+  info(JSON.stringify(pullRequest.body))
 
   // // API path built from context, current PR description
   // const apiPath = `/repos/${context.repo.owner}/${context.repo.repo}/pulls/${context.payload.number}`
