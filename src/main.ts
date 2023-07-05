@@ -18,7 +18,7 @@ async function action(): Promise<void> {
     repo: context.repo.repo,
     pull_number: context.payload.number
   })
-  info(JSON.stringify(body))
+  info('PR body: '.concat(JSON.stringify(body)))
 
   // // API path built from context, current PR description
   // const apiPath = `/repos/${context.repo.owner}/${context.repo.repo}/pulls/${context.payload.number}`

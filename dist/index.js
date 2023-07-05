@@ -9540,7 +9540,7 @@ function action() {
             repo: github_1.context.repo.repo,
             pull_number: github_1.context.payload.number
         });
-        (0, core_1.info)(JSON.stringify(body));
+        (0, core_1.info)('PR body: '.concat(JSON.stringify(body)));
         // // API path built from context, current PR description
         // const apiPath = `/repos/${context.repo.owner}/${context.repo.repo}/pulls/${context.payload.number}`
         // const description = (await octokit.request(`GET ${apiPath}`)).data.body
