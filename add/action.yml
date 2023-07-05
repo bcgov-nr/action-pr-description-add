@@ -1,0 +1,18 @@
+name: "Add to PR Descriptions"
+description: "Add to pull request descriptions using markdown"
+author: "Derek Roberts"
+branding:
+  icon: "message-square"
+  color: "blue"
+
+inputs:
+  add_markdown:
+    description: "Markdown message to use in PR description"
+    required: true
+  github_token:
+    description: "Usually <dollar sign>{{ secrets.GITHUB_TOKEN }}"
+    required: true
+
+runs:
+  using: "node16"
+  main: "../dist/index.js"
