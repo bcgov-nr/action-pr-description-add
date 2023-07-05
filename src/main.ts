@@ -24,7 +24,7 @@ async function action(): Promise<void> {
   const body = pullRequest.body || ''
   if (body.includes(markdown)) {
     info('Markdown message is already present')
-    return
+    // return
   }
 
   // If we're here update the body
