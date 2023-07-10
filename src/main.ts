@@ -17,6 +17,7 @@ async function action(): Promise<void> {
   const statuses = ['opened', 'reopened']
   if (opened_only === 'true' && !statuses.includes(trigger)) {
     info('PR not opened or reopened with opened_only=true.  Exiting.')
+    info(`Trigger: ${trigger}`)
     return
   }
 
