@@ -15,9 +15,8 @@ async function action(): Promise<void> {
   // If opened_only is true, then verify status (opened, reopened)
   const trigger = JSON.stringify(context.payload.action) || ''
   const statuses = ['opened', 'reopened']
-  if (opened_only === 'true' && !statuses.includes(trigger)) {
+  if (opened_only === 'true' && statuses.includes(trigger)) {
     info('PR not opened or reopened with opened_only=true.  Exiting.')
-    info(`Trigger: ${trigger}`)
     return
   }
 
@@ -39,7 +38,7 @@ async function action(): Promise<void> {
   }
 
   // If we're here update the body
-  info('Description is being updated...')
+  info('Description is being updated.')
   await octokit.rest.pulls.update({
     owner: context.repo.owner,
     repo: context.repo.repo,

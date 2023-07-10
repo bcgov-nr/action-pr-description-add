@@ -9537,9 +9537,8 @@ function action() {
         // If opened_only is true, then verify status (opened, reopened)
         const trigger = JSON.stringify(github_1.context.payload.action) || '';
         const statuses = ['opened', 'reopened'];
-        if (opened_only === 'true' && !statuses.includes(trigger)) {
+        if (opened_only === 'true' && statuses.includes(trigger)) {
             (0, core_1.info)('PR not opened or reopened with opened_only=true.  Exiting.');
-            (0, core_1.info)(`Trigger: ${trigger}`);
             return;
         }
         // Authenticate Octokit client
