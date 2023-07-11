@@ -4,19 +4,19 @@ import {context, getOctokit} from '@actions/github'
 // Action input
 const markdown = getInput('add_markdown')
 const token = getInput('github_token')
-const opened_only = getInput('opened_only')
+const limit_to_pr_opened = getInput('limit_to_pr_opened')
 
-if (!markdown || !token || !opened_only) {
+if (!markdown || !token || !limit_to_pr_opened) {
   error('Error: please verify input!')
 }
 
 // Main function
 async function action(): Promise<void> {
-  // If opened_only is true, then verify status (opened, reopened)
+  // If limit_to_pr_opened is true, then verify status (opened, reopened)
   const trigger = JSON.stringify(context.payload.action) || ''
   const statuses = ['opened', 'reopened']
-  if (opened_only === 'true' && statuses.includes(trigger)) {
-    info('PR not opened or reopened with opened_only=true.  Exiting.')
+  if (limit_to_pr_opened === 'true' && statuses.includes(trigger)) {
+    info('PR not opened or reopened with limit_to_pr_opened=true.  Exiting.')
     return
   }
 

@@ -37,7 +37,7 @@ jobs:
       - uses: ./
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          opened_only: true
+          limit_to_pr_opened: true
           add_markdown: |
             ---
 
