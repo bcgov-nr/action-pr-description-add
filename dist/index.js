@@ -9524,6 +9524,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 const core_1 = __nccwpck_require__(2186);
 const github_1 = __nccwpck_require__(5438);
+// default values
+const comment_marker = '\n<!-- pr-description-bot -->\n';
 // Action input
 const markdown = (0, core_1.getInput)('add_markdown');
 const token = (0, core_1.getInput)('github_token');
@@ -9549,10 +9551,10 @@ function action() {
             repo: github_1.context.repo.repo,
             pull_number: github_1.context.payload.number
         });
-        // Exit/return if our markdown message is already present
+        // if our markdown message tag is already present, remove it
         const body = pullRequest.body || '';
-        if (body.includes(markdown)) {
-            (0, core_1.info)('Markdown message is already present.  Exiting.');
+        if (body.includes(comment_marker)) {
+            (0, core_1.info)('Markdown message is already present.');
             return;
         }
         // If we're here update the body
@@ -9561,7 +9563,7 @@ function action() {
             owner: github_1.context.repo.owner,
             repo: github_1.context.repo.repo,
             pull_number: github_1.context.payload.number,
-            body: body.concat(`\n\n${markdown}`)
+            body: body.concat(`${comment_marker}${markdown}`)
         });
     });
 }
