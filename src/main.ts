@@ -37,7 +37,7 @@ async function action(): Promise<void> {
   let body = pullRequest.body || ''
   if (body.includes(comment_marker)) {
     info('Markdown message is already present.')
-    body = body.split(comment_marker)[0]
+    return
   }
 
   // If we're here update the body
