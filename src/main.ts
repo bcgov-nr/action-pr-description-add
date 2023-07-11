@@ -34,7 +34,7 @@ async function action(): Promise<void> {
   })
 
   // if our markdown message tag is already present, remove it
-  let body = pullRequest.body || ''
+  const body = pullRequest.body || ''
   if (body.includes(comment_marker)) {
     info('Markdown message is already present.')
     return
