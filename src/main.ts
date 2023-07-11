@@ -1,6 +1,9 @@
 import {error, getInput, info} from '@actions/core'
 import {context, getOctokit} from '@actions/github'
 
+// default values
+const comment_marker = '\n<!-- pr-description-bot -->\n'
+
 // Action input
 const markdown = getInput('add_markdown')
 const token = getInput('github_token')
@@ -32,9 +35,9 @@ async function action(): Promise<void> {
 
   // if our markdown message tag is already present, remove it
   let body = pullRequest.body || ''
-  if (body.includes('<!-- pr-description-bot -->')) {
+  if (body.includes(comment_marker)) {
     info('Markdown message is already present.')
-    body = body.split('<!-- pr-description-bot -->')[0]
+    body = body.split(comment_marker)[0]
   }
 
   // If we're here update the body
@@ -43,7 +46,7 @@ async function action(): Promise<void> {
     owner: context.repo.owner,
     repo: context.repo.repo,
     pull_number: context.payload.number,
-    body: body.concat(`\n<!-- pr-description-bot -->\n${markdown}`)
+    body: body.concat(`${comment_marker}${markdown}`)
   })
 }
 
