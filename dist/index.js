@@ -9527,12 +9527,20 @@ const github_1 = __nccwpck_require__(5438);
 // Action input
 const markdown = (0, core_1.getInput)('add_markdown');
 const token = (0, core_1.getInput)('github_token');
-if (!markdown || !token) {
+const limit_to_pr_opened = (0, core_1.getInput)('limit_to_pr_opened');
+if (!markdown || !token || !limit_to_pr_opened) {
     (0, core_1.error)('Error: please verify input!');
 }
 // Main function
 function action() {
     return __awaiter(this, void 0, void 0, function* () {
+        // If limit_to_pr_opened is true, then verify status (opened, reopened)
+        const trigger = JSON.stringify(github_1.context.payload.action) || '';
+        const statuses = ['opened', 'reopened'];
+        if (limit_to_pr_opened === 'true' && statuses.includes(trigger)) {
+            (0, core_1.info)('PR not opened or reopened with limit_to_pr_opened=true.  Exiting.');
+            return;
+        }
         // Authenticate Octokit client
         const octokit = (0, github_1.getOctokit)(token);
         // Get pull request using the GitHub context
@@ -9544,11 +9552,11 @@ function action() {
         // Exit/return if our markdown message is already present
         const body = pullRequest.body || '';
         if (body.includes(markdown)) {
-            (0, core_1.info)('Markdown message is already present');
+            (0, core_1.info)('Markdown message is already present.  Exiting.');
             return;
         }
         // If we're here update the body
-        (0, core_1.info)('Description is being updated');
+        (0, core_1.info)('Description is being updated.');
         yield octokit.rest.pulls.update({
             owner: github_1.context.repo.owner,
             repo: github_1.context.repo.repo,
