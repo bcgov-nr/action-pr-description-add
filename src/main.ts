@@ -30,11 +30,11 @@ async function action(): Promise<void> {
     pull_number: context.payload.number
   })
 
-  // Exit/return if our markdown message is already present
-  const body = pullRequest.body || ''
-  if (body.includes(markdown)) {
-    info('Markdown message is already present.  Exiting.')
-    return
+  // if our markdown message tag is already present, remove it
+  let body = pullRequest.body || ''
+  if (body.includes('<!-- pr-description-bot -->')) {
+    info('Markdown message is already present.')
+    body = body.split('<!-- pr-description-bot -->')[0]
   }
 
   // If we're here update the body
@@ -43,7 +43,7 @@ async function action(): Promise<void> {
     owner: context.repo.owner,
     repo: context.repo.repo,
     pull_number: context.payload.number,
-    body: body.concat(`\n\n${markdown}`)
+    body: body.concat(`\n<!-- pr-description-bot -->\n${markdown}`)
   })
 }
 
