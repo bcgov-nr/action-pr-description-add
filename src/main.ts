@@ -37,7 +37,7 @@ async function action(): Promise<void> {
     return
   }
 
-  // There have been issues with duplication, so remove those
+  // There have been issues with duplicate messages, so remove those
   body = body.split(markdown)[0]
 
   // If we're here update the body

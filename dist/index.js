@@ -9555,7 +9555,7 @@ function action() {
             (0, core_1.info)('Markdown message is already present.  Exiting.');
             return;
         }
-        // There have been issues with duplication, so remove those
+        // There have been issues with duplicate messages, so remove those
         body = body.split(markdown)[0];
         // If we're here update the body
         (0, core_1.info)('Description is being updated.');
