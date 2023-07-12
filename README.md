@@ -19,6 +19,8 @@ This action adds to Pull Request descriptions using markdown.  It checks if the 
 
 `github_token`: Usually ${{ secrets.GITHUB_TOKEN }}, but a personal access token can also be used
 
+`limit_to_pr_opened`: Only take action when PR status is opened or reopened (default=false)
+
 ## Permissions
 
 Pull requests from forks have reduced job running rights.  Provide your GITHUB_TOKEN with explicit permissions to change that.  Read more [here](https://docs.github.com/en/actions/security-guides/automatic-token-authentication#permissions-for-the-github_token).
