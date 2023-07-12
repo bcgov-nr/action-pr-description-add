@@ -31,11 +31,14 @@ async function action(): Promise<void> {
   })
 
   // Exit/return if our markdown message is already present
-  const body = pullRequest.body || ''
+  let body = pullRequest.body || ''
   if (body.includes(markdown)) {
     info('Markdown message is already present.  Exiting.')
     return
   }
+
+  // There have been issues with duplicate messages, so remove those
+  body = body.split(markdown)[0]
 
   // If we're here update the body
   info('Description is being updated.')
