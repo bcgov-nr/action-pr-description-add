@@ -37,9 +37,11 @@ async function action(): Promise<void> {
     return
   }
 
+  // There have been issues with duplication, so remove those
+  body = body.split(markdown)[0]
+
   // If we're here update the body
   info('Description is being updated.')
-  body = body.split(markdown)[0]
   await octokit.rest.pulls.update({
     owner: context.repo.owner,
     repo: context.repo.repo,
