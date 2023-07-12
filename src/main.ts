@@ -31,7 +31,7 @@ async function action(): Promise<void> {
   })
 
   // Exit/return if our markdown message is already present
-  const body = pullRequest.body || ''
+  let body = pullRequest.body || ''
   if (body.includes(markdown)) {
     info('Markdown message is already present.  Exiting.')
     return
@@ -39,6 +39,7 @@ async function action(): Promise<void> {
 
   // If we're here update the body
   info('Description is being updated.')
+  body = body.split(markdown)[0]
   await octokit.rest.pulls.update({
     owner: context.repo.owner,
     repo: context.repo.repo,
