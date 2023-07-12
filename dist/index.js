@@ -9550,13 +9550,14 @@ function action() {
             pull_number: github_1.context.payload.number
         });
         // Exit/return if our markdown message is already present
-        const body = pullRequest.body || '';
+        let body = pullRequest.body || '';
         if (body.includes(markdown)) {
             (0, core_1.info)('Markdown message is already present.  Exiting.');
             return;
         }
         // If we're here update the body
         (0, core_1.info)('Description is being updated.');
+        body = body.split(markdown)[0];
         yield octokit.rest.pulls.update({
             owner: github_1.context.repo.owner,
             repo: github_1.context.repo.repo,
