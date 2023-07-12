@@ -19,7 +19,7 @@ This action adds to Pull Request descriptions using markdown.  It checks if the 
 
 `github_token`: Usually ${{ secrets.GITHUB_TOKEN }}, but a personal access token can also be used
 
-`limit_to_pr_opened`: Only run when PR status opened or reopened (default=false)
+`limit_to_pr_opened`: Only take action when PR status is opened or reopened (default=false)
 
 ## Permissions
 
