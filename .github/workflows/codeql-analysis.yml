@@ -18,6 +18,7 @@ on:
       - main
   schedule:
     - cron: "31 7 * * 3"
+  workflow_dispatch:
 
 jobs:
   analyze:

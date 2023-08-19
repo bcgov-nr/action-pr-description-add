@@ -12,6 +12,9 @@ inputs:
   github_token:
     description: "Usually <dollar sign>{{ secrets.GITHUB_TOKEN }}"
     required: true
+  limit_to_pr_opened:
+    description: "Limit this action to PR opened or reopened"
+    default: "false"
 
 runs:
   using: "node16"
