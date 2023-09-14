@@ -31,23 +31,36 @@ async function action(): Promise<void> {
   })
 
   // Exit/return if our markdown message is already present
-  let body = pullRequest.body || ''
-  if (body.includes(markdown)) {
+  const body = pullRequest.body || ''
+  if (
+    body.includes(markdown) ||
+    body.endsWith(markdown) ||
+    !~body.indexOf(markdown)
+  ) {
     info('Markdown message is already present.  Exiting.')
     return
   }
 
-  // There have been issues with duplicate messages, so remove those
-  body = body.split(markdown)[0]
-
   // If we're here update the body
-  info('Description is being updated.')
-  await octokit.rest.pulls.update({
-    owner: context.repo.owner,
-    repo: context.repo.repo,
-    pull_number: context.payload.number,
-    body: body.concat(`\n\n${markdown}`)
-  })
+  if (
+    !body.includes(markdown) ||
+    !body.endsWith(markdown) ||
+    ~body.indexOf(markdown)
+  ) {
+    info('Description is being updated.')
+    await octokit.rest.pulls.update({
+      owner: context.repo.owner,
+      repo: context.repo.repo,
+      pull_number: context.payload.number,
+      // Split out any duplicate messages, has been an issue
+      body: body.split(markdown)[0].concat(`\n\n${markdown}`)
+    })
+    return
+  }
+
+  // If here, something is wrong
+  info('All checks failed.  Please verify the action has performed correctly.')
+  throw error
 }
 
 // Run main function
