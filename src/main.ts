@@ -35,7 +35,9 @@ async function action(): Promise<void> {
   if (
     body.includes(markdown) ||
     body.endsWith(markdown) ||
-    !~body.indexOf(markdown)
+    body.match(new RegExp(markdown)) ||
+    !~body.indexOf(markdown) ||
+    !~body.search(markdown)
   ) {
     info('Markdown message is already present.  Exiting.')
     return
@@ -43,9 +45,11 @@ async function action(): Promise<void> {
 
   // If we're here update the body
   if (
-    !body.includes(markdown) ||
-    !body.endsWith(markdown) ||
-    ~body.indexOf(markdown)
+    !body.includes(markdown) &&
+    !body.endsWith(markdown) &&
+    !body.match(new RegExp(markdown)) &&
+    ~body.indexOf(markdown) &&
+    ~body.search(markdown)
   ) {
     info('Description is being updated.')
     await octokit.rest.pulls.update({
