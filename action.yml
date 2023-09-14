@@ -11,7 +11,7 @@ inputs:
     required: true
   github_token:
     description: "Usually <dollar sign>{{ secrets.GITHUB_TOKEN }}"
-    required: true
+    default: ${{ github.token }}
   limit_to_pr_opened:
     description: "Limit this action to PR opened or reopened"
     default: "false"
