@@ -43,8 +43,8 @@ async function action(): Promise<void> {
     return
   }
 
-  // If we're here update the body
   if (
+    // If we're here update the body
     !body.includes(markdown) &&
     !body.endsWith(markdown) &&
     !body.match(new RegExp(markdown)) &&
@@ -62,9 +62,9 @@ async function action(): Promise<void> {
     return
   }
 
-  // If here, something is wrong
-  info('All checks failed.  Please verify the action has performed correctly.')
-  throw error
+  // If here, something went wrong
+  info('Unexpected result.  Please verify the action has performed correctly.')
+  error('Unexpected result')
 }
 
 // Run main function
