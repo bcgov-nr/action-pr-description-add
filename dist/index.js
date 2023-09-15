@@ -9657,23 +9657,20 @@ function action() {
             repo: github_1.context.repo.repo,
             pull_number: github_1.context.payload.number
         });
+        // Note: Any of these checks can work
+        //   body.includes(markdown)
+        //   body.endsWith(markdown)
+        //   body.match(new RegExp(markdown))
+        //   !~body.indexOf(markdown)
+        //   !~body.search(markdown)
         // Exit/return if our markdown message is already present
         const body = pullRequest.body || '';
-        if (body.includes(markdown) ||
-            body.endsWith(markdown) ||
-            body.match(new RegExp(markdown)) ||
-            !~body.indexOf(markdown) ||
-            !~body.search(markdown)) {
+        if (body.endsWith(markdown)) {
             (0, core_1.info)('Markdown message is already present.  Exiting.');
             return;
         }
-        if (
         // If we're here update the body
-        !body.includes(markdown) &&
-            !body.endsWith(markdown) &&
-            !body.match(new RegExp(markdown)) &&
-            ~body.indexOf(markdown) &&
-            ~body.search(markdown)) {
+        if (!body.endsWith(markdown)) {
             (0, core_1.info)('Description is being updated.');
             yield octokit.rest.pulls.update({
                 owner: github_1.context.repo.owner,
@@ -9685,8 +9682,7 @@ function action() {
             return;
         }
         // If here, something went wrong
-        (0, core_1.info)('Unexpected result.  Please verify the action has performed correctly.');
-        (0, core_1.error)('Unexpected result');
+        (0, core_1.error)('Unexpected result.  Please verify the action has performed correctly.');
     });
 }
 // Run main function

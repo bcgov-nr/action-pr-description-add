@@ -30,27 +30,22 @@ async function action(): Promise<void> {
     pull_number: context.payload.number
   })
 
+  // Note: Any of these checks can work
+  //   body.includes(markdown)
+  //   body.endsWith(markdown)
+  //   body.match(new RegExp(markdown))
+  //   !~body.indexOf(markdown)
+  //   !~body.search(markdown)
+
   // Exit/return if our markdown message is already present
   const body = pullRequest.body || ''
-  if (
-    body.includes(markdown) ||
-    body.endsWith(markdown) ||
-    body.match(new RegExp(markdown)) ||
-    !~body.indexOf(markdown) ||
-    !~body.search(markdown)
-  ) {
+  if (body.endsWith(markdown)) {
     info('Markdown message is already present.  Exiting.')
     return
   }
 
-  if (
-    // If we're here update the body
-    !body.includes(markdown) &&
-    !body.endsWith(markdown) &&
-    !body.match(new RegExp(markdown)) &&
-    ~body.indexOf(markdown) &&
-    ~body.search(markdown)
-  ) {
+  // If we're here update the body
+  if (!body.endsWith(markdown)) {
     info('Description is being updated.')
     await octokit.rest.pulls.update({
       owner: context.repo.owner,
@@ -63,8 +58,7 @@ async function action(): Promise<void> {
   }
 
   // If here, something went wrong
-  info('Unexpected result.  Please verify the action has performed correctly.')
-  error('Unexpected result')
+  error('Unexpected result.  Please verify the action has performed correctly.')
 }
 
 // Run main function
