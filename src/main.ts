@@ -57,7 +57,7 @@ async function action(): Promise<void> {
     return
   }
 
-  // If here, something went wrong
+  // If here, something went wrong ...which seems to happen a lot
   error('Unexpected result.  Please verify the action has performed correctly.')
 }
 
