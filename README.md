@@ -36,7 +36,7 @@ Repositories can have different permissions for their tokens.  It can't hurt to 
 ```
 
 #### Forks
-Forks receive purposefully limited rights, preventing this action from running successfully.  It is recommended to skip this job with a condition.
+Forks receive purposefully limited rights, preventing this action from running successfully.  It is recommended to avoid that with a condition.
 ```
     if: "!github.event.pull_request.head.repo.fork"
 ```
@@ -91,6 +91,10 @@ jobs:
             ## Excitement!
             [Links!](https://google.ca)
             `Code!`
+            _Italics_
+            *Bold*
+            * Bullets!
+            * and [more reading!](https://github.github.com/gfm/)
 ```
 
 <!-- ## Acknowledgements
