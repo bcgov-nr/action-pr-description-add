@@ -97,13 +97,17 @@ jobs:
             * and [more reading!](https://github.github.com/gfm/)
 ```
 
-## Issues, Requests and Discussions
+## Issues and Discussions
 
-Please submit issues (bugs, features) and take part in discussions at the links below.
+Please submit issues (bugs, feature requests) and take part in discussions at the links below.
 
 BC Government QuickStart for OpenShift - [Issues](https://github.com/bcgov/quickstart-openshift/issues)
 
 BC Government QuickStart for OpenShift - [Discussions](https://github.com/bcgov/quickstart-openshift/discussions)
+
+## Contributing
+
+Contributions are always welcome!  Please send us pull requests or get in touch at the links above.
 
 <!-- ## Acknowledgements
 
