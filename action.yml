@@ -10,7 +10,7 @@ inputs:
     description: "Markdown message to use in PR description"
     required: true
   github_token:
-    description: "\${{ secrets.GITHUB_TOKEN }} or a Personal Access Token (PAT)"
+    description: "GitHub token or a Personal Access Token (PAT)"
     default: ${{ github.token }}
   limit_to_pr_opened:
     description: "Only run when a PR is opened or reopened, not pushed"
