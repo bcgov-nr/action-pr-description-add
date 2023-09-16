@@ -97,6 +97,14 @@ jobs:
             * and [more reading!](https://github.github.com/gfm/)
 ```
 
+## Issues, Requests and Discussions
+
+Please submit issues (bugs, features) and take part in discussions at the links below.
+
+BC Government QuickStart for OpenShift - [Issues](https://github.com/bcgov/quickstart-openshift/issues)
+
+BC Government QuickStart for OpenShift - [Discussions](https://github.com/bcgov/quickstart-openshift/discussions)
+
 <!-- ## Acknowledgements
 
 This Action is provided courtesty of Forestry Digital Services and Natural Resources Architecture, part of the Government of British Columbia. -->
