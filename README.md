@@ -15,23 +15,33 @@ This action adds to Pull Request descriptions using markdown.  It checks if the 
 
 ## Input
 
-`add_markdown`: The message to add to pull requests
+#### Required
 
-`github_token`: Usually ${{ secrets.GITHUB_TOKEN }}, but a personal access token can also be used
+`add_markdown`: The message to add to pull requests, in markdown.
 
-`limit_to_pr_opened`: Only take action when PR status is opened or reopened (default=false)
+#### Optional
+
+`github_token`: ${{ secrets.GITHUB_TOKEN }} or a Personal Access Token (PAT).  Default is to inherit a token from the calling workflow.
+
+`limit_to_pr_opened`: Only take action when PR status is opened or reopened.  Default = false.
 
 ## Permissions
 
-Pull requests from forks have reduced job running rights.  Provide your GITHUB_TOKEN with explicit permissions to change that.  Read more [here](https://docs.github.com/en/actions/security-guides/automatic-token-authentication#permissions-for-the-github_token).
+#### Explicit rights
+Repositories can have different permissions for their tokens.  It can't hurt to explicitly provide rights.  Read more [here](https://docs.github.com/en/actions/security-guides/automatic-token-authentication#permissions-for-the-github_token).
 
 ```
     permissions:
       pull-requests: write
 ```
 
+#### Forks
+Forks receive purposefully limited rights, preventing this action from running successfully.  It is recommended to skip this job with a condition.
+```
+    if: "!github.event.pull_request.head.repo.fork"
+```
 
-## Example
+## Example #1, minimal
 
 Create or modify a GitHub workflow, like below.  E.g. `./github/workflows/pr-append.yml`
 
@@ -43,12 +53,37 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    steps:
+      - uses: bcgov-nr/action-pr-description-add@main
+        with:
+          add_markdown: |
+            ---
+
+            # Things!
+            ## Excitement!
+            [Links!](https://google.ca)
+            `Code!`
+```
+
+## Example #2, advanced
+
+
+```yaml
+name: "Add to Pull Request Description"
+on:
+  pull_request:
+
+jobs:
+  test:
+    name: PR Greeting
     permissions:
       pull-requests: write
+    runs-on: ubuntu-latest
     steps:
-      - uses: bcgov-nr/action-pr-description-add@v0.0.2
+      - uses: bcgov-nr/action-pr-description-add@main
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: "${{ secrets.GITHUB_TOKEN }}"
+          limit_to_pr_opened: "true"
           add_markdown: |
             ---
 
@@ -60,4 +95,4 @@ jobs:
 
 <!-- ## Acknowledgements
 
-This Action is provided courtesty of the Forestry Suite of Applications, part of the Government of British Columbia. -->
+This Action is provided courtesty of Forestry Digital Services and Natural Resources Architecture, part of the Government of British Columbia. -->
