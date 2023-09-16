@@ -9657,22 +9657,32 @@ function action() {
             repo: github_1.context.repo.repo,
             pull_number: github_1.context.payload.number
         });
+        // Note: Any of these checks can work
+        //   body.includes(markdown)
+        //   body.endsWith(markdown)
+        //   body.match(new RegExp(markdown))
+        //   !~body.indexOf(markdown)
+        //   !~body.search(markdown)
         // Exit/return if our markdown message is already present
-        let body = pullRequest.body || '';
-        if (body.includes(markdown)) {
+        const body = pullRequest.body || '';
+        if (body.endsWith(markdown)) {
             (0, core_1.info)('Markdown message is already present.  Exiting.');
             return;
         }
-        // There have been issues with duplicate messages, so remove those
-        body = body.split(markdown)[0];
         // If we're here update the body
-        (0, core_1.info)('Description is being updated.');
-        yield octokit.rest.pulls.update({
-            owner: github_1.context.repo.owner,
-            repo: github_1.context.repo.repo,
-            pull_number: github_1.context.payload.number,
-            body: body.concat(`\n\n${markdown}`)
-        });
+        if (!body.endsWith(markdown)) {
+            (0, core_1.info)('Description is being updated.');
+            yield octokit.rest.pulls.update({
+                owner: github_1.context.repo.owner,
+                repo: github_1.context.repo.repo,
+                pull_number: github_1.context.payload.number,
+                // Split out any duplicate messages, has been an issue
+                body: body.split(markdown)[0].concat(`\n\n${markdown}`)
+            });
+            return;
+        }
+        // If here, something went wrong ...which seems to happen a lot
+        (0, core_1.error)('Unexpected result.  Please verify the action has performed correctly.');
     });
 }
 // Run main function
