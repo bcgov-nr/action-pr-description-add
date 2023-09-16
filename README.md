@@ -109,6 +109,6 @@ BC Government QuickStart for OpenShift - [Discussions](https://github.com/bcgov/
 
 Contributions are always welcome!  Please send us pull requests or get in touch at the links above.
 
-<!-- ## Acknowledgements
+## Acknowledgements
 
-This Action is provided courtesty of Forestry Digital Services and Natural Resources Architecture, part of the Government of British Columbia. -->
+This Action is provided courtesty of NRIDS Architecture and Forestry Digital Services, parts of the Government of British Columbia.
