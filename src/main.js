@@ -11,7 +11,7 @@ if (!markdown || !token || !limit_to_pr_opened) {
 }
 
 // Main function
-function action(){
+function action() {
   // If limit_to_pr_opened is true, then verify status (opened, reopened)
   const trigger = JSON.stringify(context.payload.action) || ''
   const statuses = ['opened', 'reopened']
@@ -24,12 +24,12 @@ function action(){
   const octokit = getOctokit(token)
 
   // Get pull request using the GitHub context
-  const pullRequest = async() => {
-    return {data: pullRequest} = await octokit.rest.pulls.get({
+  const pullRequest = async () => {
+    return ({data: pullRequest} = await octokit.rest.pulls.get({
       owner: context.repo.owner,
       repo: context.repo.repo,
       pull_number: context.payload.number
-    })
+    }))
   }
 
   // Note: Any of these checks can work
@@ -49,7 +49,7 @@ function action(){
   // If we're here update the body
   if (!body.endsWith(markdown)) {
     info('Description is being updated.')
-    async() => {
+    ;async () => {
       await octokit.rest.pulls.update({
         owner: context.repo.owner,
         repo: context.repo.repo,
