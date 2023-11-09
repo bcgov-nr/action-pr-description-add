@@ -1,9 +1,8 @@
 {
   "name": "action-pr-description-add",
   "version": "0.0.3",
-  "private": true,
-  "description": "TypeScript template action",
-  "main": "src/main.ts",
+  "private": false,
+  "main": "src/main.js",
   "scripts": {
     "format": "prettier --write '**/*.ts'",
     "format-check": "prettier --check '**/*.ts'",
@@ -12,8 +11,7 @@
     "all": "npm run build && npm run format && npm run lint && npm run package"
   },
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/actions/typescript-action.git"
+    "type": "git"
   },
   "keywords": [
     "actions",
@@ -24,12 +22,12 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@actions/core": "^1.10.0",
-    "@actions/github": "^6.0.0",
-    "esprima": "^4.0.1"
+    "@actions/github": "^6.0.0"
   },
   "devDependencies": {
     "eslint": "^8.47.0",
     "eslint-plugin-github": "^4.9.2",
+    "esprima": "^4.0.1",
     "eslint-plugin-prettier": "^5.0.0",
     "prettier": "^3.0.2"
   }
