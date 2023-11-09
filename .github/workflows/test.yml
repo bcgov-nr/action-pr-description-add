@@ -1,4 +1,4 @@
-name: Test
+name: Build-Test
 on:
   pull_request:
   push:
@@ -6,6 +6,12 @@ on:
   workflow_dispatch:
 
 jobs:
+  build-format-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: npm run all
+
   test:
     runs-on: ubuntu-latest
     if: github.event_name == 'pull_request'

@@ -2,13 +2,13 @@
   "name": "action-pr-description-add",
   "version": "0.0.3",
   "private": false,
-  "main": "dist/main.js",
+  "main": "src/main.js",
   "scripts": {
     "format": "prettier --write '**/*.js'",
     "format-check": "prettier --check '**/*.js'",
     "lint": "eslint src/**/*.js",
     "package": "ncc build --source-map --license LICENSE",
-    "all": "npm run format && npm run lint && npm run package"
+    "all": "npm ci && npm run format && npm run lint && npm run package"
   },
   "repository": {
     "type": "git"
