@@ -24,7 +24,7 @@ function action() {
   const octokit = getOctokit(token)
 
   // Get pull request using the GitHub context
-  const pullRequest = async () => {
+  let pullRequest = async () => {
     return ({data: pullRequest} = await octokit.rest.pulls.get({
       owner: context.repo.owner,
       repo: context.repo.repo,
