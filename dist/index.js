@@ -1,10 +1,18 @@
+<<<<<<< HEAD
 require('./sourcemap-register.js');/******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
+=======
+import './sourcemap-register.cjs';import { createRequire as __WEBPACK_EXTERNAL_createRequire } from "module";
+/******/ var __webpack_modules__ = ({
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 /***/ 7351:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -103,7 +111,10 @@ function escapeProperty(s) {
 /***/ 2186:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -446,7 +457,10 @@ Object.defineProperty(exports, "toPlatformPath", ({ enumerable: true, get: funct
 /***/ 717:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 // For internal use, subject to change.
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
@@ -511,7 +525,10 @@ exports.prepareKeyValueMessage = prepareKeyValueMessage;
 /***/ 8041:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -595,7 +612,10 @@ exports.OidcClient = OidcClient;
 /***/ 2981:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -660,7 +680,10 @@ exports.toPlatformPath = toPlatformPath;
 /***/ 1327:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -950,7 +973,10 @@ exports.summary = _summary;
 /***/ 5278:
 /***/ ((__unused_webpack_module, exports) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 // We use any as a valid input type
 /* eslint-disable @typescript-eslint/no-explicit-any */
@@ -997,7 +1023,10 @@ exports.toCommandProperties = toCommandProperties;
 /***/ 4087:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.Context = void 0;
@@ -1059,7 +1088,10 @@ exports.Context = Context;
 /***/ 5438:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -1107,7 +1139,10 @@ exports.getOctokit = getOctokit;
 /***/ 7914:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -1184,7 +1219,10 @@ exports.getApiBaseUrl = getApiBaseUrl;
 /***/ 3030:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -1250,7 +1288,10 @@ exports.getOctokitOptions = getOctokitOptions;
 /***/ 5526:
 /***/ (function(__unused_webpack_module, exports) {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -1338,7 +1379,10 @@ exports.PersonalAccessTokenCredentialHandler = PersonalAccessTokenCredentialHand
 /***/ 6255:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
@@ -2001,7 +2045,10 @@ const lowercaseKeys = (obj) => Object.keys(obj).reduce((c, k) => ((c[k.toLowerCa
 /***/ 9835:
 /***/ ((__unused_webpack_module, exports) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.checkBypass = exports.getProxyUrl = void 0;
@@ -2087,10 +2134,1426 @@ function isLoopbackAddress(host) {
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 334:
 /***/ ((module) => {
 
 "use strict";
+=======
+/***/ 2856:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+const WritableStream = (__nccwpck_require__(4492).Writable)
+const inherits = (__nccwpck_require__(7261).inherits)
+
+const StreamSearch = __nccwpck_require__(8534)
+
+const PartStream = __nccwpck_require__(8710)
+const HeaderParser = __nccwpck_require__(333)
+
+const DASH = 45
+const B_ONEDASH = Buffer.from('-')
+const B_CRLF = Buffer.from('\r\n')
+const EMPTY_FN = function () {}
+
+function Dicer (cfg) {
+  if (!(this instanceof Dicer)) { return new Dicer(cfg) }
+  WritableStream.call(this, cfg)
+
+  if (!cfg || (!cfg.headerFirst && typeof cfg.boundary !== 'string')) { throw new TypeError('Boundary required') }
+
+  if (typeof cfg.boundary === 'string') { this.setBoundary(cfg.boundary) } else { this._bparser = undefined }
+
+  this._headerFirst = cfg.headerFirst
+
+  this._dashes = 0
+  this._parts = 0
+  this._finished = false
+  this._realFinish = false
+  this._isPreamble = true
+  this._justMatched = false
+  this._firstWrite = true
+  this._inHeader = true
+  this._part = undefined
+  this._cb = undefined
+  this._ignoreData = false
+  this._partOpts = { highWaterMark: cfg.partHwm }
+  this._pause = false
+
+  const self = this
+  this._hparser = new HeaderParser(cfg)
+  this._hparser.on('header', function (header) {
+    self._inHeader = false
+    self._part.emit('header', header)
+  })
+}
+inherits(Dicer, WritableStream)
+
+Dicer.prototype.emit = function (ev) {
+  if (ev === 'finish' && !this._realFinish) {
+    if (!this._finished) {
+      const self = this
+      process.nextTick(function () {
+        self.emit('error', new Error('Unexpected end of multipart data'))
+        if (self._part && !self._ignoreData) {
+          const type = (self._isPreamble ? 'Preamble' : 'Part')
+          self._part.emit('error', new Error(type + ' terminated early due to unexpected end of multipart data'))
+          self._part.push(null)
+          process.nextTick(function () {
+            self._realFinish = true
+            self.emit('finish')
+            self._realFinish = false
+          })
+          return
+        }
+        self._realFinish = true
+        self.emit('finish')
+        self._realFinish = false
+      })
+    }
+  } else { WritableStream.prototype.emit.apply(this, arguments) }
+}
+
+Dicer.prototype._write = function (data, encoding, cb) {
+  // ignore unexpected data (e.g. extra trailer data after finished)
+  if (!this._hparser && !this._bparser) { return cb() }
+
+  if (this._headerFirst && this._isPreamble) {
+    if (!this._part) {
+      this._part = new PartStream(this._partOpts)
+      if (this._events.preamble) { this.emit('preamble', this._part) } else { this._ignore() }
+    }
+    const r = this._hparser.push(data)
+    if (!this._inHeader && r !== undefined && r < data.length) { data = data.slice(r) } else { return cb() }
+  }
+
+  // allows for "easier" testing
+  if (this._firstWrite) {
+    this._bparser.push(B_CRLF)
+    this._firstWrite = false
+  }
+
+  this._bparser.push(data)
+
+  if (this._pause) { this._cb = cb } else { cb() }
+}
+
+Dicer.prototype.reset = function () {
+  this._part = undefined
+  this._bparser = undefined
+  this._hparser = undefined
+}
+
+Dicer.prototype.setBoundary = function (boundary) {
+  const self = this
+  this._bparser = new StreamSearch('\r\n--' + boundary)
+  this._bparser.on('info', function (isMatch, data, start, end) {
+    self._oninfo(isMatch, data, start, end)
+  })
+}
+
+Dicer.prototype._ignore = function () {
+  if (this._part && !this._ignoreData) {
+    this._ignoreData = true
+    this._part.on('error', EMPTY_FN)
+    // we must perform some kind of read on the stream even though we are
+    // ignoring the data, otherwise node's Readable stream will not emit 'end'
+    // after pushing null to the stream
+    this._part.resume()
+  }
+}
+
+Dicer.prototype._oninfo = function (isMatch, data, start, end) {
+  let buf; const self = this; let i = 0; let r; let shouldWriteMore = true
+
+  if (!this._part && this._justMatched && data) {
+    while (this._dashes < 2 && (start + i) < end) {
+      if (data[start + i] === DASH) {
+        ++i
+        ++this._dashes
+      } else {
+        if (this._dashes) { buf = B_ONEDASH }
+        this._dashes = 0
+        break
+      }
+    }
+    if (this._dashes === 2) {
+      if ((start + i) < end && this._events.trailer) { this.emit('trailer', data.slice(start + i, end)) }
+      this.reset()
+      this._finished = true
+      // no more parts will be added
+      if (self._parts === 0) {
+        self._realFinish = true
+        self.emit('finish')
+        self._realFinish = false
+      }
+    }
+    if (this._dashes) { return }
+  }
+  if (this._justMatched) { this._justMatched = false }
+  if (!this._part) {
+    this._part = new PartStream(this._partOpts)
+    this._part._read = function (n) {
+      self._unpause()
+    }
+    if (this._isPreamble && this._events.preamble) { this.emit('preamble', this._part) } else if (this._isPreamble !== true && this._events.part) { this.emit('part', this._part) } else { this._ignore() }
+    if (!this._isPreamble) { this._inHeader = true }
+  }
+  if (data && start < end && !this._ignoreData) {
+    if (this._isPreamble || !this._inHeader) {
+      if (buf) { shouldWriteMore = this._part.push(buf) }
+      shouldWriteMore = this._part.push(data.slice(start, end))
+      if (!shouldWriteMore) { this._pause = true }
+    } else if (!this._isPreamble && this._inHeader) {
+      if (buf) { this._hparser.push(buf) }
+      r = this._hparser.push(data.slice(start, end))
+      if (!this._inHeader && r !== undefined && r < end) { this._oninfo(false, data, start + r, end) }
+    }
+  }
+  if (isMatch) {
+    this._hparser.reset()
+    if (this._isPreamble) { this._isPreamble = false } else {
+      if (start !== end) {
+        ++this._parts
+        this._part.on('end', function () {
+          if (--self._parts === 0) {
+            if (self._finished) {
+              self._realFinish = true
+              self.emit('finish')
+              self._realFinish = false
+            } else {
+              self._unpause()
+            }
+          }
+        })
+      }
+    }
+    this._part.push(null)
+    this._part = undefined
+    this._ignoreData = false
+    this._justMatched = true
+    this._dashes = 0
+  }
+}
+
+Dicer.prototype._unpause = function () {
+  if (!this._pause) { return }
+
+  this._pause = false
+  if (this._cb) {
+    const cb = this._cb
+    this._cb = undefined
+    cb()
+  }
+}
+
+module.exports = Dicer
+
+
+/***/ }),
+
+/***/ 333:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+const EventEmitter = (__nccwpck_require__(5673).EventEmitter)
+const inherits = (__nccwpck_require__(7261).inherits)
+const getLimit = __nccwpck_require__(9692)
+
+const StreamSearch = __nccwpck_require__(8534)
+
+const B_DCRLF = Buffer.from('\r\n\r\n')
+const RE_CRLF = /\r\n/g
+const RE_HDR = /^([^:]+):[ \t]?([\x00-\xFF]+)?$/ // eslint-disable-line no-control-regex
+
+function HeaderParser (cfg) {
+  EventEmitter.call(this)
+
+  cfg = cfg || {}
+  const self = this
+  this.nread = 0
+  this.maxed = false
+  this.npairs = 0
+  this.maxHeaderPairs = getLimit(cfg, 'maxHeaderPairs', 2000)
+  this.maxHeaderSize = getLimit(cfg, 'maxHeaderSize', 80 * 1024)
+  this.buffer = ''
+  this.header = {}
+  this.finished = false
+  this.ss = new StreamSearch(B_DCRLF)
+  this.ss.on('info', function (isMatch, data, start, end) {
+    if (data && !self.maxed) {
+      if (self.nread + end - start >= self.maxHeaderSize) {
+        end = self.maxHeaderSize - self.nread + start
+        self.nread = self.maxHeaderSize
+        self.maxed = true
+      } else { self.nread += (end - start) }
+
+      self.buffer += data.toString('binary', start, end)
+    }
+    if (isMatch) { self._finish() }
+  })
+}
+inherits(HeaderParser, EventEmitter)
+
+HeaderParser.prototype.push = function (data) {
+  const r = this.ss.push(data)
+  if (this.finished) { return r }
+}
+
+HeaderParser.prototype.reset = function () {
+  this.finished = false
+  this.buffer = ''
+  this.header = {}
+  this.ss.reset()
+}
+
+HeaderParser.prototype._finish = function () {
+  if (this.buffer) { this._parseHeader() }
+  this.ss.matches = this.ss.maxMatches
+  const header = this.header
+  this.header = {}
+  this.buffer = ''
+  this.finished = true
+  this.nread = this.npairs = 0
+  this.maxed = false
+  this.emit('header', header)
+}
+
+HeaderParser.prototype._parseHeader = function () {
+  if (this.npairs === this.maxHeaderPairs) { return }
+
+  const lines = this.buffer.split(RE_CRLF)
+  const len = lines.length
+  let m, h
+
+  for (var i = 0; i < len; ++i) { // eslint-disable-line no-var
+    if (lines[i].length === 0) { continue }
+    if (lines[i][0] === '\t' || lines[i][0] === ' ') {
+      // folded header content
+      // RFC2822 says to just remove the CRLF and not the whitespace following
+      // it, so we follow the RFC and include the leading whitespace ...
+      if (h) {
+        this.header[h][this.header[h].length - 1] += lines[i]
+        continue
+      }
+    }
+
+    const posColon = lines[i].indexOf(':')
+    if (
+      posColon === -1 ||
+      posColon === 0
+    ) {
+      return
+    }
+    m = RE_HDR.exec(lines[i])
+    h = m[1].toLowerCase()
+    this.header[h] = this.header[h] || []
+    this.header[h].push((m[2] || ''))
+    if (++this.npairs === this.maxHeaderPairs) { break }
+  }
+}
+
+module.exports = HeaderParser
+
+
+/***/ }),
+
+/***/ 8710:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+const inherits = (__nccwpck_require__(7261).inherits)
+const ReadableStream = (__nccwpck_require__(4492).Readable)
+
+function PartStream (opts) {
+  ReadableStream.call(this, opts)
+}
+inherits(PartStream, ReadableStream)
+
+PartStream.prototype._read = function (n) {}
+
+module.exports = PartStream
+
+
+/***/ }),
+
+/***/ 8534:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+/**
+ * Copyright Brian White. All rights reserved.
+ *
+ * @see https://github.com/mscdex/streamsearch
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to
+ * deal in the Software without restriction, including without limitation the
+ * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+ * sell copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+ * IN THE SOFTWARE.
+ *
+ * Based heavily on the Streaming Boyer-Moore-Horspool C++ implementation
+ * by Hongli Lai at: https://github.com/FooBarWidget/boyer-moore-horspool
+ */
+const EventEmitter = (__nccwpck_require__(5673).EventEmitter)
+const inherits = (__nccwpck_require__(7261).inherits)
+
+function SBMH (needle) {
+  if (typeof needle === 'string') {
+    needle = Buffer.from(needle)
+  }
+
+  if (!Buffer.isBuffer(needle)) {
+    throw new TypeError('The needle has to be a String or a Buffer.')
+  }
+
+  const needleLength = needle.length
+
+  if (needleLength === 0) {
+    throw new Error('The needle cannot be an empty String/Buffer.')
+  }
+
+  if (needleLength > 256) {
+    throw new Error('The needle cannot have a length bigger than 256.')
+  }
+
+  this.maxMatches = Infinity
+  this.matches = 0
+
+  this._occ = new Array(256)
+    .fill(needleLength) // Initialize occurrence table.
+  this._lookbehind_size = 0
+  this._needle = needle
+  this._bufpos = 0
+
+  this._lookbehind = Buffer.alloc(needleLength)
+
+  // Populate occurrence table with analysis of the needle,
+  // ignoring last letter.
+  for (var i = 0; i < needleLength - 1; ++i) { // eslint-disable-line no-var
+    this._occ[needle[i]] = needleLength - 1 - i
+  }
+}
+inherits(SBMH, EventEmitter)
+
+SBMH.prototype.reset = function () {
+  this._lookbehind_size = 0
+  this.matches = 0
+  this._bufpos = 0
+}
+
+SBMH.prototype.push = function (chunk, pos) {
+  if (!Buffer.isBuffer(chunk)) {
+    chunk = Buffer.from(chunk, 'binary')
+  }
+  const chlen = chunk.length
+  this._bufpos = pos || 0
+  let r
+  while (r !== chlen && this.matches < this.maxMatches) { r = this._sbmh_feed(chunk) }
+  return r
+}
+
+SBMH.prototype._sbmh_feed = function (data) {
+  const len = data.length
+  const needle = this._needle
+  const needleLength = needle.length
+  const lastNeedleChar = needle[needleLength - 1]
+
+  // Positive: points to a position in `data`
+  //           pos == 3 points to data[3]
+  // Negative: points to a position in the lookbehind buffer
+  //           pos == -2 points to lookbehind[lookbehind_size - 2]
+  let pos = -this._lookbehind_size
+  let ch
+
+  if (pos < 0) {
+    // Lookbehind buffer is not empty. Perform Boyer-Moore-Horspool
+    // search with character lookup code that considers both the
+    // lookbehind buffer and the current round's haystack data.
+    //
+    // Loop until
+    //   there is a match.
+    // or until
+    //   we've moved past the position that requires the
+    //   lookbehind buffer. In this case we switch to the
+    //   optimized loop.
+    // or until
+    //   the character to look at lies outside the haystack.
+    while (pos < 0 && pos <= len - needleLength) {
+      ch = this._sbmh_lookup_char(data, pos + needleLength - 1)
+
+      if (
+        ch === lastNeedleChar &&
+        this._sbmh_memcmp(data, pos, needleLength - 1)
+      ) {
+        this._lookbehind_size = 0
+        ++this.matches
+        this.emit('info', true)
+
+        return (this._bufpos = pos + needleLength)
+      }
+      pos += this._occ[ch]
+    }
+
+    // No match.
+
+    if (pos < 0) {
+      // There's too few data for Boyer-Moore-Horspool to run,
+      // so let's use a different algorithm to skip as much as
+      // we can.
+      // Forward pos until
+      //   the trailing part of lookbehind + data
+      //   looks like the beginning of the needle
+      // or until
+      //   pos == 0
+      while (pos < 0 && !this._sbmh_memcmp(data, pos, len - pos)) { ++pos }
+    }
+
+    if (pos >= 0) {
+      // Discard lookbehind buffer.
+      this.emit('info', false, this._lookbehind, 0, this._lookbehind_size)
+      this._lookbehind_size = 0
+    } else {
+      // Cut off part of the lookbehind buffer that has
+      // been processed and append the entire haystack
+      // into it.
+      const bytesToCutOff = this._lookbehind_size + pos
+      if (bytesToCutOff > 0) {
+        // The cut off data is guaranteed not to contain the needle.
+        this.emit('info', false, this._lookbehind, 0, bytesToCutOff)
+      }
+
+      this._lookbehind.copy(this._lookbehind, 0, bytesToCutOff,
+        this._lookbehind_size - bytesToCutOff)
+      this._lookbehind_size -= bytesToCutOff
+
+      data.copy(this._lookbehind, this._lookbehind_size)
+      this._lookbehind_size += len
+
+      this._bufpos = len
+      return len
+    }
+  }
+
+  pos += (pos >= 0) * this._bufpos
+
+  // Lookbehind buffer is now empty. We only need to check if the
+  // needle is in the haystack.
+  if (data.indexOf(needle, pos) !== -1) {
+    pos = data.indexOf(needle, pos)
+    ++this.matches
+    if (pos > 0) { this.emit('info', true, data, this._bufpos, pos) } else { this.emit('info', true) }
+
+    return (this._bufpos = pos + needleLength)
+  } else {
+    pos = len - needleLength
+  }
+
+  // There was no match. If there's trailing haystack data that we cannot
+  // match yet using the Boyer-Moore-Horspool algorithm (because the trailing
+  // data is less than the needle size) then match using a modified
+  // algorithm that starts matching from the beginning instead of the end.
+  // Whatever trailing data is left after running this algorithm is added to
+  // the lookbehind buffer.
+  while (
+    pos < len &&
+    (
+      data[pos] !== needle[0] ||
+      (
+        (Buffer.compare(
+          data.subarray(pos, pos + len - pos),
+          needle.subarray(0, len - pos)
+        ) !== 0)
+      )
+    )
+  ) {
+    ++pos
+  }
+  if (pos < len) {
+    data.copy(this._lookbehind, 0, pos, pos + (len - pos))
+    this._lookbehind_size = len - pos
+  }
+
+  // Everything until pos is guaranteed not to contain needle data.
+  if (pos > 0) { this.emit('info', false, data, this._bufpos, pos < len ? pos : len) }
+
+  this._bufpos = len
+  return len
+}
+
+SBMH.prototype._sbmh_lookup_char = function (data, pos) {
+  return (pos < 0)
+    ? this._lookbehind[this._lookbehind_size + pos]
+    : data[pos]
+}
+
+SBMH.prototype._sbmh_memcmp = function (data, pos, len) {
+  for (var i = 0; i < len; ++i) { // eslint-disable-line no-var
+    if (this._sbmh_lookup_char(data, pos + i) !== this._needle[i]) { return false }
+  }
+  return true
+}
+
+module.exports = SBMH
+
+
+/***/ }),
+
+/***/ 3438:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+const WritableStream = (__nccwpck_require__(4492).Writable)
+const { inherits } = __nccwpck_require__(7261)
+const Dicer = __nccwpck_require__(2856)
+
+const MultipartParser = __nccwpck_require__(415)
+const UrlencodedParser = __nccwpck_require__(6780)
+const parseParams = __nccwpck_require__(4426)
+
+function Busboy (opts) {
+  if (!(this instanceof Busboy)) { return new Busboy(opts) }
+
+  if (typeof opts !== 'object') {
+    throw new TypeError('Busboy expected an options-Object.')
+  }
+  if (typeof opts.headers !== 'object') {
+    throw new TypeError('Busboy expected an options-Object with headers-attribute.')
+  }
+  if (typeof opts.headers['content-type'] !== 'string') {
+    throw new TypeError('Missing Content-Type-header.')
+  }
+
+  const {
+    headers,
+    ...streamOptions
+  } = opts
+
+  this.opts = {
+    autoDestroy: false,
+    ...streamOptions
+  }
+  WritableStream.call(this, this.opts)
+
+  this._done = false
+  this._parser = this.getParserByHeaders(headers)
+  this._finished = false
+}
+inherits(Busboy, WritableStream)
+
+Busboy.prototype.emit = function (ev) {
+  if (ev === 'finish') {
+    if (!this._done) {
+      this._parser?.end()
+      return
+    } else if (this._finished) {
+      return
+    }
+    this._finished = true
+  }
+  WritableStream.prototype.emit.apply(this, arguments)
+}
+
+Busboy.prototype.getParserByHeaders = function (headers) {
+  const parsed = parseParams(headers['content-type'])
+
+  const cfg = {
+    defCharset: this.opts.defCharset,
+    fileHwm: this.opts.fileHwm,
+    headers,
+    highWaterMark: this.opts.highWaterMark,
+    isPartAFile: this.opts.isPartAFile,
+    limits: this.opts.limits,
+    parsedConType: parsed,
+    preservePath: this.opts.preservePath
+  }
+
+  if (MultipartParser.detect.test(parsed[0])) {
+    return new MultipartParser(this, cfg)
+  }
+  if (UrlencodedParser.detect.test(parsed[0])) {
+    return new UrlencodedParser(this, cfg)
+  }
+  throw new Error('Unsupported Content-Type.')
+}
+
+Busboy.prototype._write = function (chunk, encoding, cb) {
+  this._parser.write(chunk, cb)
+}
+
+module.exports = Busboy
+module.exports["default"] = Busboy
+module.exports.Busboy = Busboy
+
+module.exports.Dicer = Dicer
+
+
+/***/ }),
+
+/***/ 415:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+// TODO:
+//  * support 1 nested multipart level
+//    (see second multipart example here:
+//     http://www.w3.org/TR/html401/interact/forms.html#didx-multipartform-data)
+//  * support limits.fieldNameSize
+//     -- this will require modifications to utils.parseParams
+
+const { Readable } = __nccwpck_require__(4492)
+const { inherits } = __nccwpck_require__(7261)
+
+const Dicer = __nccwpck_require__(2856)
+
+const parseParams = __nccwpck_require__(4426)
+const decodeText = __nccwpck_require__(9136)
+const basename = __nccwpck_require__(496)
+const getLimit = __nccwpck_require__(9692)
+
+const RE_BOUNDARY = /^boundary$/i
+const RE_FIELD = /^form-data$/i
+const RE_CHARSET = /^charset$/i
+const RE_FILENAME = /^filename$/i
+const RE_NAME = /^name$/i
+
+Multipart.detect = /^multipart\/form-data/i
+function Multipart (boy, cfg) {
+  let i
+  let len
+  const self = this
+  let boundary
+  const limits = cfg.limits
+  const isPartAFile = cfg.isPartAFile || ((fieldName, contentType, fileName) => (contentType === 'application/octet-stream' || fileName !== undefined))
+  const parsedConType = cfg.parsedConType || []
+  const defCharset = cfg.defCharset || 'utf8'
+  const preservePath = cfg.preservePath
+  const fileOpts = { highWaterMark: cfg.fileHwm }
+
+  for (i = 0, len = parsedConType.length; i < len; ++i) {
+    if (Array.isArray(parsedConType[i]) &&
+      RE_BOUNDARY.test(parsedConType[i][0])) {
+      boundary = parsedConType[i][1]
+      break
+    }
+  }
+
+  function checkFinished () {
+    if (nends === 0 && finished && !boy._done) {
+      finished = false
+      self.end()
+    }
+  }
+
+  if (typeof boundary !== 'string') { throw new Error('Multipart: Boundary not found') }
+
+  const fieldSizeLimit = getLimit(limits, 'fieldSize', 1 * 1024 * 1024)
+  const fileSizeLimit = getLimit(limits, 'fileSize', Infinity)
+  const filesLimit = getLimit(limits, 'files', Infinity)
+  const fieldsLimit = getLimit(limits, 'fields', Infinity)
+  const partsLimit = getLimit(limits, 'parts', Infinity)
+  const headerPairsLimit = getLimit(limits, 'headerPairs', 2000)
+  const headerSizeLimit = getLimit(limits, 'headerSize', 80 * 1024)
+
+  let nfiles = 0
+  let nfields = 0
+  let nends = 0
+  let curFile
+  let curField
+  let finished = false
+
+  this._needDrain = false
+  this._pause = false
+  this._cb = undefined
+  this._nparts = 0
+  this._boy = boy
+
+  const parserCfg = {
+    boundary,
+    maxHeaderPairs: headerPairsLimit,
+    maxHeaderSize: headerSizeLimit,
+    partHwm: fileOpts.highWaterMark,
+    highWaterMark: cfg.highWaterMark
+  }
+
+  this.parser = new Dicer(parserCfg)
+  this.parser.on('drain', function () {
+    self._needDrain = false
+    if (self._cb && !self._pause) {
+      const cb = self._cb
+      self._cb = undefined
+      cb()
+    }
+  }).on('part', function onPart (part) {
+    if (++self._nparts > partsLimit) {
+      self.parser.removeListener('part', onPart)
+      self.parser.on('part', skipPart)
+      boy.hitPartsLimit = true
+      boy.emit('partsLimit')
+      return skipPart(part)
+    }
+
+    // hack because streams2 _always_ doesn't emit 'end' until nextTick, so let
+    // us emit 'end' early since we know the part has ended if we are already
+    // seeing the next part
+    if (curField) {
+      const field = curField
+      field.emit('end')
+      field.removeAllListeners('end')
+    }
+
+    part.on('header', function (header) {
+      let contype
+      let fieldname
+      let parsed
+      let charset
+      let encoding
+      let filename
+      let nsize = 0
+
+      if (header['content-type']) {
+        parsed = parseParams(header['content-type'][0])
+        if (parsed[0]) {
+          contype = parsed[0].toLowerCase()
+          for (i = 0, len = parsed.length; i < len; ++i) {
+            if (RE_CHARSET.test(parsed[i][0])) {
+              charset = parsed[i][1].toLowerCase()
+              break
+            }
+          }
+        }
+      }
+
+      if (contype === undefined) { contype = 'text/plain' }
+      if (charset === undefined) { charset = defCharset }
+
+      if (header['content-disposition']) {
+        parsed = parseParams(header['content-disposition'][0])
+        if (!RE_FIELD.test(parsed[0])) { return skipPart(part) }
+        for (i = 0, len = parsed.length; i < len; ++i) {
+          if (RE_NAME.test(parsed[i][0])) {
+            fieldname = parsed[i][1]
+          } else if (RE_FILENAME.test(parsed[i][0])) {
+            filename = parsed[i][1]
+            if (!preservePath) { filename = basename(filename) }
+          }
+        }
+      } else { return skipPart(part) }
+
+      if (header['content-transfer-encoding']) { encoding = header['content-transfer-encoding'][0].toLowerCase() } else { encoding = '7bit' }
+
+      let onData,
+        onEnd
+
+      if (isPartAFile(fieldname, contype, filename)) {
+        // file/binary field
+        if (nfiles === filesLimit) {
+          if (!boy.hitFilesLimit) {
+            boy.hitFilesLimit = true
+            boy.emit('filesLimit')
+          }
+          return skipPart(part)
+        }
+
+        ++nfiles
+
+        if (!boy._events.file) {
+          self.parser._ignore()
+          return
+        }
+
+        ++nends
+        const file = new FileStream(fileOpts)
+        curFile = file
+        file.on('end', function () {
+          --nends
+          self._pause = false
+          checkFinished()
+          if (self._cb && !self._needDrain) {
+            const cb = self._cb
+            self._cb = undefined
+            cb()
+          }
+        })
+        file._read = function (n) {
+          if (!self._pause) { return }
+          self._pause = false
+          if (self._cb && !self._needDrain) {
+            const cb = self._cb
+            self._cb = undefined
+            cb()
+          }
+        }
+        boy.emit('file', fieldname, file, filename, encoding, contype)
+
+        onData = function (data) {
+          if ((nsize += data.length) > fileSizeLimit) {
+            const extralen = fileSizeLimit - nsize + data.length
+            if (extralen > 0) { file.push(data.slice(0, extralen)) }
+            file.truncated = true
+            file.bytesRead = fileSizeLimit
+            part.removeAllListeners('data')
+            file.emit('limit')
+            return
+          } else if (!file.push(data)) { self._pause = true }
+
+          file.bytesRead = nsize
+        }
+
+        onEnd = function () {
+          curFile = undefined
+          file.push(null)
+        }
+      } else {
+        // non-file field
+        if (nfields === fieldsLimit) {
+          if (!boy.hitFieldsLimit) {
+            boy.hitFieldsLimit = true
+            boy.emit('fieldsLimit')
+          }
+          return skipPart(part)
+        }
+
+        ++nfields
+        ++nends
+        let buffer = ''
+        let truncated = false
+        curField = part
+
+        onData = function (data) {
+          if ((nsize += data.length) > fieldSizeLimit) {
+            const extralen = (fieldSizeLimit - (nsize - data.length))
+            buffer += data.toString('binary', 0, extralen)
+            truncated = true
+            part.removeAllListeners('data')
+          } else { buffer += data.toString('binary') }
+        }
+
+        onEnd = function () {
+          curField = undefined
+          if (buffer.length) { buffer = decodeText(buffer, 'binary', charset) }
+          boy.emit('field', fieldname, buffer, false, truncated, encoding, contype)
+          --nends
+          checkFinished()
+        }
+      }
+
+      /* As of node@2efe4ab761666 (v0.10.29+/v0.11.14+), busboy had become
+         broken. Streams2/streams3 is a huge black box of confusion, but
+         somehow overriding the sync state seems to fix things again (and still
+         seems to work for previous node versions).
+      */
+      part._readableState.sync = false
+
+      part.on('data', onData)
+      part.on('end', onEnd)
+    }).on('error', function (err) {
+      if (curFile) { curFile.emit('error', err) }
+    })
+  }).on('error', function (err) {
+    boy.emit('error', err)
+  }).on('finish', function () {
+    finished = true
+    checkFinished()
+  })
+}
+
+Multipart.prototype.write = function (chunk, cb) {
+  const r = this.parser.write(chunk)
+  if (r && !this._pause) {
+    cb()
+  } else {
+    this._needDrain = !r
+    this._cb = cb
+  }
+}
+
+Multipart.prototype.end = function () {
+  const self = this
+
+  if (self.parser.writable) {
+    self.parser.end()
+  } else if (!self._boy._done) {
+    process.nextTick(function () {
+      self._boy._done = true
+      self._boy.emit('finish')
+    })
+  }
+}
+
+function skipPart (part) {
+  part.resume()
+}
+
+function FileStream (opts) {
+  Readable.call(this, opts)
+
+  this.bytesRead = 0
+
+  this.truncated = false
+}
+
+inherits(FileStream, Readable)
+
+FileStream.prototype._read = function (n) {}
+
+module.exports = Multipart
+
+
+/***/ }),
+
+/***/ 6780:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+const Decoder = __nccwpck_require__(9730)
+const decodeText = __nccwpck_require__(9136)
+const getLimit = __nccwpck_require__(9692)
+
+const RE_CHARSET = /^charset$/i
+
+UrlEncoded.detect = /^application\/x-www-form-urlencoded/i
+function UrlEncoded (boy, cfg) {
+  const limits = cfg.limits
+  const parsedConType = cfg.parsedConType
+  this.boy = boy
+
+  this.fieldSizeLimit = getLimit(limits, 'fieldSize', 1 * 1024 * 1024)
+  this.fieldNameSizeLimit = getLimit(limits, 'fieldNameSize', 100)
+  this.fieldsLimit = getLimit(limits, 'fields', Infinity)
+
+  let charset
+  for (var i = 0, len = parsedConType.length; i < len; ++i) { // eslint-disable-line no-var
+    if (Array.isArray(parsedConType[i]) &&
+        RE_CHARSET.test(parsedConType[i][0])) {
+      charset = parsedConType[i][1].toLowerCase()
+      break
+    }
+  }
+
+  if (charset === undefined) { charset = cfg.defCharset || 'utf8' }
+
+  this.decoder = new Decoder()
+  this.charset = charset
+  this._fields = 0
+  this._state = 'key'
+  this._checkingBytes = true
+  this._bytesKey = 0
+  this._bytesVal = 0
+  this._key = ''
+  this._val = ''
+  this._keyTrunc = false
+  this._valTrunc = false
+  this._hitLimit = false
+}
+
+UrlEncoded.prototype.write = function (data, cb) {
+  if (this._fields === this.fieldsLimit) {
+    if (!this.boy.hitFieldsLimit) {
+      this.boy.hitFieldsLimit = true
+      this.boy.emit('fieldsLimit')
+    }
+    return cb()
+  }
+
+  let idxeq; let idxamp; let i; let p = 0; const len = data.length
+
+  while (p < len) {
+    if (this._state === 'key') {
+      idxeq = idxamp = undefined
+      for (i = p; i < len; ++i) {
+        if (!this._checkingBytes) { ++p }
+        if (data[i] === 0x3D/* = */) {
+          idxeq = i
+          break
+        } else if (data[i] === 0x26/* & */) {
+          idxamp = i
+          break
+        }
+        if (this._checkingBytes && this._bytesKey === this.fieldNameSizeLimit) {
+          this._hitLimit = true
+          break
+        } else if (this._checkingBytes) { ++this._bytesKey }
+      }
+
+      if (idxeq !== undefined) {
+        // key with assignment
+        if (idxeq > p) { this._key += this.decoder.write(data.toString('binary', p, idxeq)) }
+        this._state = 'val'
+
+        this._hitLimit = false
+        this._checkingBytes = true
+        this._val = ''
+        this._bytesVal = 0
+        this._valTrunc = false
+        this.decoder.reset()
+
+        p = idxeq + 1
+      } else if (idxamp !== undefined) {
+        // key with no assignment
+        ++this._fields
+        let key; const keyTrunc = this._keyTrunc
+        if (idxamp > p) { key = (this._key += this.decoder.write(data.toString('binary', p, idxamp))) } else { key = this._key }
+
+        this._hitLimit = false
+        this._checkingBytes = true
+        this._key = ''
+        this._bytesKey = 0
+        this._keyTrunc = false
+        this.decoder.reset()
+
+        if (key.length) {
+          this.boy.emit('field', decodeText(key, 'binary', this.charset),
+            '',
+            keyTrunc,
+            false)
+        }
+
+        p = idxamp + 1
+        if (this._fields === this.fieldsLimit) { return cb() }
+      } else if (this._hitLimit) {
+        // we may not have hit the actual limit if there are encoded bytes...
+        if (i > p) { this._key += this.decoder.write(data.toString('binary', p, i)) }
+        p = i
+        if ((this._bytesKey = this._key.length) === this.fieldNameSizeLimit) {
+          // yep, we actually did hit the limit
+          this._checkingBytes = false
+          this._keyTrunc = true
+        }
+      } else {
+        if (p < len) { this._key += this.decoder.write(data.toString('binary', p)) }
+        p = len
+      }
+    } else {
+      idxamp = undefined
+      for (i = p; i < len; ++i) {
+        if (!this._checkingBytes) { ++p }
+        if (data[i] === 0x26/* & */) {
+          idxamp = i
+          break
+        }
+        if (this._checkingBytes && this._bytesVal === this.fieldSizeLimit) {
+          this._hitLimit = true
+          break
+        } else if (this._checkingBytes) { ++this._bytesVal }
+      }
+
+      if (idxamp !== undefined) {
+        ++this._fields
+        if (idxamp > p) { this._val += this.decoder.write(data.toString('binary', p, idxamp)) }
+        this.boy.emit('field', decodeText(this._key, 'binary', this.charset),
+          decodeText(this._val, 'binary', this.charset),
+          this._keyTrunc,
+          this._valTrunc)
+        this._state = 'key'
+
+        this._hitLimit = false
+        this._checkingBytes = true
+        this._key = ''
+        this._bytesKey = 0
+        this._keyTrunc = false
+        this.decoder.reset()
+
+        p = idxamp + 1
+        if (this._fields === this.fieldsLimit) { return cb() }
+      } else if (this._hitLimit) {
+        // we may not have hit the actual limit if there are encoded bytes...
+        if (i > p) { this._val += this.decoder.write(data.toString('binary', p, i)) }
+        p = i
+        if ((this._val === '' && this.fieldSizeLimit === 0) ||
+            (this._bytesVal = this._val.length) === this.fieldSizeLimit) {
+          // yep, we actually did hit the limit
+          this._checkingBytes = false
+          this._valTrunc = true
+        }
+      } else {
+        if (p < len) { this._val += this.decoder.write(data.toString('binary', p)) }
+        p = len
+      }
+    }
+  }
+  cb()
+}
+
+UrlEncoded.prototype.end = function () {
+  if (this.boy._done) { return }
+
+  if (this._state === 'key' && this._key.length > 0) {
+    this.boy.emit('field', decodeText(this._key, 'binary', this.charset),
+      '',
+      this._keyTrunc,
+      false)
+  } else if (this._state === 'val') {
+    this.boy.emit('field', decodeText(this._key, 'binary', this.charset),
+      decodeText(this._val, 'binary', this.charset),
+      this._keyTrunc,
+      this._valTrunc)
+  }
+  this.boy._done = true
+  this.boy.emit('finish')
+}
+
+module.exports = UrlEncoded
+
+
+/***/ }),
+
+/***/ 9730:
+/***/ ((module) => {
+
+
+
+const RE_PLUS = /\+/g
+
+const HEX = [
+  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+  1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0,
+  0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+  0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+]
+
+function Decoder () {
+  this.buffer = undefined
+}
+Decoder.prototype.write = function (str) {
+  // Replace '+' with ' ' before decoding
+  str = str.replace(RE_PLUS, ' ')
+  let res = ''
+  let i = 0; let p = 0; const len = str.length
+  for (; i < len; ++i) {
+    if (this.buffer !== undefined) {
+      if (!HEX[str.charCodeAt(i)]) {
+        res += '%' + this.buffer
+        this.buffer = undefined
+        --i // retry character
+      } else {
+        this.buffer += str[i]
+        ++p
+        if (this.buffer.length === 2) {
+          res += String.fromCharCode(parseInt(this.buffer, 16))
+          this.buffer = undefined
+        }
+      }
+    } else if (str[i] === '%') {
+      if (i > p) {
+        res += str.substring(p, i)
+        p = i
+      }
+      this.buffer = ''
+      ++p
+    }
+  }
+  if (p < len && this.buffer === undefined) { res += str.substring(p) }
+  return res
+}
+Decoder.prototype.reset = function () {
+  this.buffer = undefined
+}
+
+module.exports = Decoder
+
+
+/***/ }),
+
+/***/ 496:
+/***/ ((module) => {
+
+
+
+module.exports = function basename (path) {
+  if (typeof path !== 'string') { return '' }
+  for (var i = path.length - 1; i >= 0; --i) { // eslint-disable-line no-var
+    switch (path.charCodeAt(i)) {
+      case 0x2F: // '/'
+      case 0x5C: // '\'
+        path = path.slice(i + 1)
+        return (path === '..' || path === '.' ? '' : path)
+    }
+  }
+  return (path === '..' || path === '.' ? '' : path)
+}
+
+
+/***/ }),
+
+/***/ 9136:
+/***/ ((module) => {
+
+
+
+// Node has always utf-8
+const utf8Decoder = new TextDecoder('utf-8')
+const textDecoders = new Map([
+  ['utf-8', utf8Decoder],
+  ['utf8', utf8Decoder]
+])
+
+function decodeText (text, textEncoding, destEncoding) {
+  if (text) {
+    if (textDecoders.has(destEncoding)) {
+      try {
+        return textDecoders.get(destEncoding).decode(Buffer.from(text, textEncoding))
+      } catch (e) { }
+    } else {
+      try {
+        textDecoders.set(destEncoding, new TextDecoder(destEncoding))
+        return textDecoders.get(destEncoding).decode(Buffer.from(text, textEncoding))
+      } catch (e) { }
+    }
+  }
+  return text
+}
+
+module.exports = decodeText
+
+
+/***/ }),
+
+/***/ 9692:
+/***/ ((module) => {
+
+
+
+module.exports = function getLimit (limits, name, defaultLimit) {
+  if (
+    !limits ||
+    limits[name] === undefined ||
+    limits[name] === null
+  ) { return defaultLimit }
+
+  if (
+    typeof limits[name] !== 'number' ||
+    isNaN(limits[name])
+  ) { throw new TypeError('Limit ' + name + ' is not a valid number') }
+
+  return limits[name]
+}
+
+
+/***/ }),
+
+/***/ 4426:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+const decodeText = __nccwpck_require__(9136)
+
+const RE_ENCODED = /%([a-fA-F0-9]{2})/g
+
+function encodedReplacer (match, byte) {
+  return String.fromCharCode(parseInt(byte, 16))
+}
+
+function parseParams (str) {
+  const res = []
+  let state = 'key'
+  let charset = ''
+  let inquote = false
+  let escaping = false
+  let p = 0
+  let tmp = ''
+
+  for (var i = 0, len = str.length; i < len; ++i) { // eslint-disable-line no-var
+    const char = str[i]
+    if (char === '\\' && inquote) {
+      if (escaping) { escaping = false } else {
+        escaping = true
+        continue
+      }
+    } else if (char === '"') {
+      if (!escaping) {
+        if (inquote) {
+          inquote = false
+          state = 'key'
+        } else { inquote = true }
+        continue
+      } else { escaping = false }
+    } else {
+      if (escaping && inquote) { tmp += '\\' }
+      escaping = false
+      if ((state === 'charset' || state === 'lang') && char === "'") {
+        if (state === 'charset') {
+          state = 'lang'
+          charset = tmp.substring(1)
+        } else { state = 'value' }
+        tmp = ''
+        continue
+      } else if (state === 'key' &&
+        (char === '*' || char === '=') &&
+        res.length) {
+        if (char === '*') { state = 'charset' } else { state = 'value' }
+        res[p] = [tmp, undefined]
+        tmp = ''
+        continue
+      } else if (!inquote && char === ';') {
+        state = 'key'
+        if (charset) {
+          if (tmp.length) {
+            tmp = decodeText(tmp.replace(RE_ENCODED, encodedReplacer),
+              'binary',
+              charset)
+          }
+          charset = ''
+        } else if (tmp.length) {
+          tmp = decodeText(tmp, 'binary', 'utf8')
+        }
+        if (res[p] === undefined) { res[p] = tmp } else { res[p][1] = tmp }
+        tmp = ''
+        ++p
+        continue
+      } else if (!inquote && (char === ' ' || char === '\t')) { continue }
+    }
+    tmp += char
+  }
+  if (charset && tmp.length) {
+    tmp = decodeText(tmp.replace(RE_ENCODED, encodedReplacer),
+      'binary',
+      charset)
+  } else if (tmp) {
+    tmp = decodeText(tmp, 'binary', 'utf8')
+  }
+
+  if (res[p] === undefined) {
+    if (tmp) { res[p] = tmp }
+  } else { res[p][1] = tmp }
+
+  return res
+}
+
+module.exports = parseParams
+
+
+/***/ }),
+
+/***/ 334:
+/***/ ((module) => {
+
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -2175,7 +3638,10 @@ var createTokenAuth = function createTokenAuth2(token) {
 /***/ 6762:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -2208,6 +3674,7 @@ var import_graphql = __nccwpck_require__(8467);
 var import_auth_token = __nccwpck_require__(334);
 
 // pkg/dist-src/version.js
+<<<<<<< HEAD
 var VERSION = "5.0.2";
 
 // pkg/dist-src/index.js
@@ -2216,6 +3683,11 @@ var noop = () => {
 var consoleWarn = console.warn.bind(console);
 var consoleError = console.error.bind(console);
 var userAgentTrail = `octokit-core.js/${VERSION} ${(0, import_universal_user_agent.getUserAgent)()}`;
+=======
+var VERSION = "5.0.1";
+
+// pkg/dist-src/index.js
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 var Octokit = class {
   static {
     this.VERSION = VERSION;
@@ -2276,7 +3748,14 @@ var Octokit = class {
         format: ""
       }
     };
+<<<<<<< HEAD
     requestDefaults.headers["user-agent"] = options.userAgent ? `${options.userAgent} ${userAgentTrail}` : userAgentTrail;
+=======
+    requestDefaults.headers["user-agent"] = [
+      options.userAgent,
+      `octokit-core.js/${VERSION} ${(0, import_universal_user_agent.getUserAgent)()}`
+    ].filter(Boolean).join(" ");
+>>>>>>> 08cd3e7 (Restore and build with ncc)
     if (options.baseUrl) {
       requestDefaults.baseUrl = options.baseUrl;
     }
@@ -2290,10 +3769,19 @@ var Octokit = class {
     this.graphql = (0, import_graphql.withCustomRequest)(this.request).defaults(requestDefaults);
     this.log = Object.assign(
       {
+<<<<<<< HEAD
         debug: noop,
         info: noop,
         warn: consoleWarn,
         error: consoleError
+=======
+        debug: () => {
+        },
+        info: () => {
+        },
+        warn: console.warn.bind(console),
+        error: console.error.bind(console)
+>>>>>>> 08cd3e7 (Restore and build with ncc)
       },
       options.log
     );
@@ -2330,9 +3818,15 @@ var Octokit = class {
       this.auth = auth;
     }
     const classConstructor = this.constructor;
+<<<<<<< HEAD
     for (let i = 0; i < classConstructor.plugins.length; ++i) {
       Object.assign(this, classConstructor.plugins[i](this, options));
     }
+=======
+    classConstructor.plugins.forEach((plugin) => {
+      Object.assign(this, plugin(this, options));
+    });
+>>>>>>> 08cd3e7 (Restore and build with ncc)
   }
 };
 // Annotate the CommonJS export names for ESM import in node:
@@ -2344,7 +3838,10 @@ var Octokit = class {
 /***/ 9440:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -2375,7 +3872,11 @@ module.exports = __toCommonJS(dist_src_exports);
 var import_universal_user_agent = __nccwpck_require__(5030);
 
 // pkg/dist-src/version.js
+<<<<<<< HEAD
 var VERSION = "9.0.4";
+=======
+var VERSION = "9.0.2";
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 // pkg/dist-src/defaults.js
 var userAgent = `octokit-endpoint.js/${VERSION} ${(0, import_universal_user_agent.getUserAgent)()}`;
@@ -2402,6 +3903,7 @@ function lowercaseKeys(object) {
   }, {});
 }
 
+<<<<<<< HEAD
 // pkg/dist-src/util/is-plain-object.js
 function isPlainObject(value) {
   if (typeof value !== "object" || value === null)
@@ -2420,6 +3922,14 @@ function mergeDeep(defaults, options) {
   const result = Object.assign({}, defaults);
   Object.keys(options).forEach((key) => {
     if (isPlainObject(options[key])) {
+=======
+// pkg/dist-src/util/merge-deep.js
+var import_is_plain_object = __nccwpck_require__(3287);
+function mergeDeep(defaults, options) {
+  const result = Object.assign({}, defaults);
+  Object.keys(options).forEach((key) => {
+    if ((0, import_is_plain_object.isPlainObject)(options[key])) {
+>>>>>>> 08cd3e7 (Restore and build with ncc)
       if (!(key in defaults))
         Object.assign(result, { [key]: options[key] });
       else
@@ -2494,6 +4004,7 @@ function extractUrlVariableNames(url) {
 
 // pkg/dist-src/util/omit.js
 function omit(object, keysToOmit) {
+<<<<<<< HEAD
   const result = { __proto__: null };
   for (const key of Object.keys(object)) {
     if (keysToOmit.indexOf(key) === -1) {
@@ -2501,6 +4012,12 @@ function omit(object, keysToOmit) {
     }
   }
   return result;
+=======
+  return Object.keys(object).filter((option) => !keysToOmit.includes(option)).reduce((obj, key) => {
+    obj[key] = object[key];
+    return obj;
+  }, {});
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 }
 
 // pkg/dist-src/util/url-template.js
@@ -2728,7 +4245,10 @@ var endpoint = withDefaults(null, DEFAULTS);
 /***/ 8467:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -2886,7 +4406,10 @@ function withCustomRequest(customRequest) {
 /***/ 4193:
 /***/ ((module) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -2917,7 +4440,11 @@ __export(dist_src_exports, {
 module.exports = __toCommonJS(dist_src_exports);
 
 // pkg/dist-src/version.js
+<<<<<<< HEAD
 var VERSION = "9.1.4";
+=======
+var VERSION = "9.1.2";
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 // pkg/dist-src/normalize-paginated-list-response.js
 function normalizePaginatedListResponse(response) {
@@ -3285,7 +4812,10 @@ paginateRest.VERSION = VERSION;
 /***/ 3044:
 /***/ ((module) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -3314,7 +4844,11 @@ __export(dist_src_exports, {
 module.exports = __toCommonJS(dist_src_exports);
 
 // pkg/dist-src/version.js
+<<<<<<< HEAD
 var VERSION = "10.2.0";
+=======
+var VERSION = "10.1.2";
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 // pkg/dist-src/generated/endpoints.js
 var Endpoints = {
@@ -5396,7 +6930,10 @@ legacyRestEndpointMethods.VERSION = VERSION;
 /***/ 537:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 var __create = Object.create;
 var __defProp = Object.defineProperty;
@@ -5494,7 +7031,10 @@ var RequestError = class extends Error {
 /***/ 6234:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -5524,6 +7064,7 @@ var import_endpoint = __nccwpck_require__(9440);
 var import_universal_user_agent = __nccwpck_require__(5030);
 
 // pkg/dist-src/version.js
+<<<<<<< HEAD
 var VERSION = "8.1.6";
 
 // pkg/dist-src/is-plain-object.js
@@ -5540,6 +7081,12 @@ function isPlainObject(value) {
 }
 
 // pkg/dist-src/fetch-wrapper.js
+=======
+var VERSION = "8.1.4";
+
+// pkg/dist-src/fetch-wrapper.js
+var import_is_plain_object = __nccwpck_require__(3287);
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 var import_request_error = __nccwpck_require__(537);
 
 // pkg/dist-src/get-buffer-response.js
@@ -5552,7 +7099,11 @@ function fetchWrapper(requestOptions) {
   var _a, _b, _c;
   const log = requestOptions.request && requestOptions.request.log ? requestOptions.request.log : console;
   const parseSuccessResponseBody = ((_a = requestOptions.request) == null ? void 0 : _a.parseSuccessResponseBody) !== false;
+<<<<<<< HEAD
   if (isPlainObject(requestOptions.body) || Array.isArray(requestOptions.body)) {
+=======
+  if ((0, import_is_plain_object.isPlainObject)(requestOptions.body) || Array.isArray(requestOptions.body)) {
+>>>>>>> 08cd3e7 (Restore and build with ncc)
     requestOptions.body = JSON.stringify(requestOptions.body);
   }
   let headers = {};
@@ -5658,7 +7209,11 @@ function fetchWrapper(requestOptions) {
 async function getResponseData(response) {
   const contentType = response.headers.get("content-type");
   if (/application\/json/.test(contentType)) {
+<<<<<<< HEAD
     return response.json().catch(() => response.text()).catch(() => "");
+=======
+    return response.json();
+>>>>>>> 08cd3e7 (Restore and build with ncc)
   }
   if (!contentType || /^text\/|charset=utf-8$/.test(contentType)) {
     return response.text();
@@ -5898,7 +7453,10 @@ function removeHook(state, name, method) {
 /***/ 8932:
 /***/ ((__unused_webpack_module, exports) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
@@ -5923,6 +7481,54 @@ exports.Deprecation = Deprecation;
 
 /***/ }),
 
+<<<<<<< HEAD
+=======
+/***/ 3287:
+/***/ ((__unused_webpack_module, exports) => {
+
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+
+/*!
+ * is-plain-object <https://github.com/jonschlinkert/is-plain-object>
+ *
+ * Copyright (c) 2014-2017, Jon Schlinkert.
+ * Released under the MIT License.
+ */
+
+function isObject(o) {
+  return Object.prototype.toString.call(o) === '[object Object]';
+}
+
+function isPlainObject(o) {
+  var ctor,prot;
+
+  if (isObject(o) === false) return false;
+
+  // If has modified constructor
+  ctor = o.constructor;
+  if (ctor === undefined) return true;
+
+  // If has modified prototype
+  prot = ctor.prototype;
+  if (isObject(prot) === false) return false;
+
+  // If constructor does not have an Object-specific method
+  if (prot.hasOwnProperty('isPrototypeOf') === false) {
+    return false;
+  }
+
+  // Most likely a plain Object
+  return true;
+}
+
+exports.isPlainObject = isPlainObject;
+
+
+/***/ }),
+
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 /***/ 1223:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
@@ -5983,7 +7589,10 @@ module.exports = __nccwpck_require__(4219);
 /***/ 4219:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 var net = __nccwpck_require__(1808);
@@ -6255,7 +7864,10 @@ exports.debug = debug; // for test
 /***/ 1773:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 const Client = __nccwpck_require__(3598)
@@ -6273,7 +7885,10 @@ const MockAgent = __nccwpck_require__(6771)
 const MockPool = __nccwpck_require__(6193)
 const mockErrors = __nccwpck_require__(888)
 const ProxyAgent = __nccwpck_require__(7858)
+<<<<<<< HEAD
 const RetryHandler = __nccwpck_require__(2286)
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 const { getGlobalDispatcher, setGlobalDispatcher } = __nccwpck_require__(1892)
 const DecoratorHandler = __nccwpck_require__(6930)
 const RedirectHandler = __nccwpck_require__(2860)
@@ -6295,7 +7910,10 @@ module.exports.Pool = Pool
 module.exports.BalancedPool = BalancedPool
 module.exports.Agent = Agent
 module.exports.ProxyAgent = ProxyAgent
+<<<<<<< HEAD
 module.exports.RetryHandler = RetryHandler
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 module.exports.DecoratorHandler = DecoratorHandler
 module.exports.RedirectHandler = RedirectHandler
@@ -6430,7 +8048,10 @@ module.exports.mockErrors = mockErrors
 /***/ 7890:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 const { InvalidArgumentError } = __nccwpck_require__(8045)
@@ -6647,7 +8268,10 @@ module.exports = {
 /***/ 9744:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 const { AsyncResource } = __nccwpck_require__(852)
@@ -6759,7 +8383,10 @@ module.exports = connect
 /***/ 8752:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 const {
@@ -7016,7 +8643,10 @@ module.exports = pipeline
 /***/ 5448:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 const Readable = __nccwpck_require__(3858)
@@ -7203,7 +8833,10 @@ module.exports = request
 /***/ 5395:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 const { finished, PassThrough } = __nccwpck_require__(2781)
@@ -7431,7 +9064,10 @@ module.exports = stream
 /***/ 6923:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 const { InvalidArgumentError, RequestAbortedError, SocketError } = __nccwpck_require__(8045)
@@ -7544,7 +9180,10 @@ module.exports = upgrade
 /***/ 4059:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 module.exports.request = __nccwpck_require__(5448)
@@ -7559,7 +9198,10 @@ module.exports.connect = __nccwpck_require__(9744)
 /***/ 3858:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 // Ported from https://github.com/nodejs/undici/pull/907
 
 
@@ -7578,8 +9220,11 @@ const kBody = Symbol('kBody')
 const kAbort = Symbol('abort')
 const kContentType = Symbol('kContentType')
 
+<<<<<<< HEAD
 const noop = () => {}
 
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 module.exports = class BodyReadable extends Readable {
   constructor ({
     resume,
@@ -7713,6 +9358,7 @@ module.exports = class BodyReadable extends Readable {
     return this[kBody]
   }
 
+<<<<<<< HEAD
   dump (opts) {
     let limit = opts && Number.isFinite(opts.limit) ? opts.limit : 262144
     const signal = opts && opts.signal
@@ -7757,6 +9403,39 @@ module.exports = class BodyReadable extends Readable {
         })
         .resume()
     })
+=======
+  async dump (opts) {
+    let limit = opts && Number.isFinite(opts.limit) ? opts.limit : 262144
+    const signal = opts && opts.signal
+    const abortFn = () => {
+      this.destroy()
+    }
+    let signalListenerCleanup
+    if (signal) {
+      if (typeof signal !== 'object' || !('aborted' in signal)) {
+        throw new InvalidArgumentError('signal must be an AbortSignal')
+      }
+      util.throwIfAborted(signal)
+      signalListenerCleanup = util.addAbortListener(signal, abortFn)
+    }
+    try {
+      for await (const chunk of this) {
+        util.throwIfAborted(signal)
+        limit -= Buffer.byteLength(chunk)
+        if (limit < 0) {
+          return
+        }
+      }
+    } catch {
+      util.throwIfAborted(signal)
+    } finally {
+      if (typeof signalListenerCleanup === 'function') {
+        signalListenerCleanup()
+      } else if (signalListenerCleanup) {
+        signalListenerCleanup[Symbol.dispose]()
+      }
+    }
+>>>>>>> 08cd3e7 (Restore and build with ncc)
   }
 }
 
@@ -7942,7 +9621,10 @@ module.exports = { getResolveErrorBodyCallback }
 /***/ 7931:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 const {
@@ -8140,7 +9822,10 @@ module.exports = BalancedPool
 /***/ 6101:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 const { kConstruct } = __nccwpck_require__(9174)
@@ -8986,7 +10671,10 @@ module.exports = {
 /***/ 7907:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 const { kConstruct } = __nccwpck_require__(9174)
@@ -9138,7 +10826,10 @@ module.exports = {
 /***/ 9174:
 /***/ ((module) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 module.exports = {
@@ -9151,7 +10842,10 @@ module.exports = {
 /***/ 2396:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 const assert = __nccwpck_require__(9491)
@@ -9208,7 +10902,10 @@ module.exports = {
 /***/ 3598:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 // @ts-check
 
 
@@ -10128,9 +11825,17 @@ class Parser {
       socket[kReset] = true
     }
 
+<<<<<<< HEAD
     const pause = request.onHeaders(statusCode, headers, this.resume, statusText) === false
 
     if (request.aborted) {
+=======
+    let pause
+    try {
+      pause = request.onHeaders(statusCode, headers, this.resume, statusText) === false
+    } catch (err) {
+      util.destroy(socket, err)
+>>>>>>> 08cd3e7 (Restore and build with ncc)
       return -1
     }
 
@@ -10177,8 +11882,18 @@ class Parser {
 
     this.bytesRead += buf.length
 
+<<<<<<< HEAD
     if (request.onData(buf) === false) {
       return constants.ERROR.PAUSED
+=======
+    try {
+      if (request.onData(buf) === false) {
+        return constants.ERROR.PAUSED
+      }
+    } catch (err) {
+      util.destroy(socket, err)
+      return -1
+>>>>>>> 08cd3e7 (Restore and build with ncc)
     }
   }
 
@@ -10219,7 +11934,15 @@ class Parser {
       return -1
     }
 
+<<<<<<< HEAD
     request.onComplete(headers)
+=======
+    try {
+      request.onComplete(headers)
+    } catch (err) {
+      errorRequest(client, request, err)
+    }
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
     client[kQueue][client[kRunningIdx]++] = null
 
@@ -10383,7 +12106,11 @@ async function connect (client) {
     const idx = hostname.indexOf(']')
 
     assert(idx !== -1)
+<<<<<<< HEAD
     const ip = hostname.substring(1, idx)
+=======
+    const ip = hostname.substr(1, idx - 1)
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
     assert(net.isIP(ip))
     hostname = ip
@@ -10662,7 +12389,27 @@ function _resume (client, sync) {
       return
     }
 
+<<<<<<< HEAD
     if (client[kRunning] > 0 && util.bodyLength(request.body) !== 0 &&
+=======
+    if (util.isStream(request.body) && util.bodyLength(request.body) === 0) {
+      request.body
+        .on('data', /* istanbul ignore next */ function () {
+          /* istanbul ignore next */
+          assert(false)
+        })
+        .on('error', function (err) {
+          errorRequest(client, request, err)
+        })
+        .on('end', function () {
+          util.destroy(this)
+        })
+
+      request.body = null
+    }
+
+    if (client[kRunning] > 0 &&
+>>>>>>> 08cd3e7 (Restore and build with ncc)
       (util.isStream(request.body) || util.isAsyncIterable(request.body))) {
       // Request with stream or iterator body can error while other requests
       // are inflight and indirectly error those as well.
@@ -10683,11 +12430,14 @@ function _resume (client, sync) {
   }
 }
 
+<<<<<<< HEAD
 // https://www.rfc-editor.org/rfc/rfc7230#section-3.3.2
 function shouldSendContentLength (method) {
   return method !== 'GET' && method !== 'HEAD' && method !== 'OPTIONS' && method !== 'TRACE' && method !== 'CONNECT'
 }
 
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 function write (client, request) {
   if (client[kHTTPConnVersion] === 'h2') {
     writeH2(client, client[kHTTP2Session], request)
@@ -10716,9 +12466,13 @@ function write (client, request) {
     body.read(0)
   }
 
+<<<<<<< HEAD
   const bodyLength = util.bodyLength(body)
 
   let contentLength = bodyLength
+=======
+  let contentLength = util.bodyLength(body)
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
   if (contentLength === null) {
     contentLength = request.contentLength
@@ -10733,9 +12487,13 @@ function write (client, request) {
     contentLength = null
   }
 
+<<<<<<< HEAD
   // https://github.com/nodejs/undici/issues/2046
   // A user agent may send a Content-Length header with 0 value, this should be allowed.
   if (shouldSendContentLength(method) && contentLength > 0 && request.contentLength !== null && request.contentLength !== contentLength) {
+=======
+  if (request.contentLength !== null && request.contentLength !== contentLength) {
+>>>>>>> 08cd3e7 (Restore and build with ncc)
     if (client[kStrictContentLength]) {
       errorRequest(client, request, new RequestContentLengthMismatchError())
       return false
@@ -10816,7 +12574,11 @@ function write (client, request) {
   }
 
   /* istanbul ignore else: assertion */
+<<<<<<< HEAD
   if (!body || bodyLength === 0) {
+=======
+  if (!body) {
+>>>>>>> 08cd3e7 (Restore and build with ncc)
     if (contentLength === 0) {
       socket.write(`${header}content-length: 0\r\n\r\n`, 'latin1')
     } else {
@@ -10882,7 +12644,10 @@ function writeH2 (client, session, request) {
     return false
   }
 
+<<<<<<< HEAD
   /** @type {import('node:http2').ClientHttp2Stream} */
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
   let stream
   const h2State = client[kHTTP2SessionState]
 
@@ -10957,9 +12722,13 @@ function writeH2 (client, session, request) {
     contentLength = null
   }
 
+<<<<<<< HEAD
   // https://github.com/nodejs/undici/issues/2046
   // A user agent may send a Content-Length header with 0 value, this should be allowed.
   if (shouldSendContentLength(method) && contentLength > 0 && request.contentLength != null && request.contentLength !== contentLength) {
+=======
+  if (request.contentLength != null && request.contentLength !== contentLength) {
+>>>>>>> 08cd3e7 (Restore and build with ncc)
     if (client[kStrictContentLength]) {
       errorRequest(client, request, new RequestContentLengthMismatchError())
       return false
@@ -10978,10 +12747,20 @@ function writeH2 (client, session, request) {
   const shouldEndStream = method === 'GET' || method === 'HEAD'
   if (expectContinue) {
     headers[HTTP2_HEADER_EXPECT] = '100-continue'
+<<<<<<< HEAD
+=======
+    /**
+     * @type {import('node:http2').ClientHttp2Stream}
+     */
+>>>>>>> 08cd3e7 (Restore and build with ncc)
     stream = session.request(headers, { endStream: shouldEndStream, signal })
 
     stream.once('continue', writeBodyH2)
   } else {
+<<<<<<< HEAD
+=======
+    /** @type {import('node:http2').ClientHttp2Stream} */
+>>>>>>> 08cd3e7 (Restore and build with ncc)
     stream = session.request(headers, {
       endStream: shouldEndStream,
       signal
@@ -10993,9 +12772,13 @@ function writeH2 (client, session, request) {
   ++h2State.openStreams
 
   stream.once('response', headers => {
+<<<<<<< HEAD
     const { [HTTP2_HEADER_STATUS]: statusCode, ...realHeaders } = headers
 
     if (request.onHeaders(Number(statusCode), realHeaders, stream.resume.bind(stream), '') === false) {
+=======
+    if (request.onHeaders(Number(headers[HTTP2_HEADER_STATUS]), headers, stream.resume.bind(stream), '') === false) {
+>>>>>>> 08cd3e7 (Restore and build with ncc)
       stream.pause()
     }
   })
@@ -11005,17 +12788,25 @@ function writeH2 (client, session, request) {
   })
 
   stream.on('data', (chunk) => {
+<<<<<<< HEAD
     if (request.onData(chunk) === false) {
       stream.pause()
     }
+=======
+    if (request.onData(chunk) === false) stream.pause()
+>>>>>>> 08cd3e7 (Restore and build with ncc)
   })
 
   stream.once('close', () => {
     h2State.openStreams -= 1
     // TODO(HTTP/2): unref only if current streams count is 0
+<<<<<<< HEAD
     if (h2State.openStreams === 0) {
       session.unref()
     }
+=======
+    if (h2State.openStreams === 0) session.unref()
+>>>>>>> 08cd3e7 (Restore and build with ncc)
   })
 
   stream.once('error', function (err) {
@@ -11175,11 +12966,15 @@ function writeStream ({ h2stream, body, client, request, socket, contentLength, 
     }
   }
   const onAbort = function () {
+<<<<<<< HEAD
     if (finished) {
       return
     }
     const err = new RequestAbortedError()
     queueMicrotask(() => onFinished(err))
+=======
+    onFinished(new RequestAbortedError())
+>>>>>>> 08cd3e7 (Restore and build with ncc)
   }
   const onFinished = function (err) {
     if (finished) {
@@ -11499,7 +13294,10 @@ module.exports = Client
 /***/ 6436:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 /* istanbul ignore file: only for Node 12 */
@@ -11555,7 +13353,10 @@ module.exports = function () {
 /***/ 663:
 /***/ ((module) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 // https://wicg.github.io/cookie-store/#cookie-maximum-attribute-value-size
@@ -11575,7 +13376,10 @@ module.exports = {
 /***/ 1724:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 const { parseSetCookie } = __nccwpck_require__(4408)
@@ -11767,7 +13571,10 @@ module.exports = {
 /***/ 4408:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 const { maxNameValuePairSize, maxAttributeValueSize } = __nccwpck_require__(663)
@@ -12092,7 +13899,10 @@ module.exports = {
 /***/ 3121:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 const assert = __nccwpck_require__(9491)
@@ -12391,7 +14201,10 @@ module.exports = {
 /***/ 2067:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 const net = __nccwpck_require__(1808)
@@ -12588,7 +14401,10 @@ module.exports = buildConnector
 /***/ 8045:
 /***/ ((module) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 class UndiciError extends Error {
@@ -12784,6 +14600,7 @@ class ResponseExceededMaxSizeError extends UndiciError {
   }
 }
 
+<<<<<<< HEAD
 class RequestRetryError extends UndiciError {
   constructor (message, code, { headers, data }) {
     super(message)
@@ -12797,6 +14614,8 @@ class RequestRetryError extends UndiciError {
   }
 }
 
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 module.exports = {
   HTTPParserError,
   UndiciError,
@@ -12816,8 +14635,12 @@ module.exports = {
   NotSupportedError,
   ResponseContentLengthMismatchError,
   BalancedPoolMissingUpstreamError,
+<<<<<<< HEAD
   ResponseExceededMaxSizeError,
   RequestRetryError
+=======
+  ResponseExceededMaxSizeError
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 }
 
 
@@ -12826,7 +14649,10 @@ module.exports = {
 /***/ 2905:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 const {
@@ -12941,12 +14767,16 @@ class Request {
 
     this.method = method
 
+<<<<<<< HEAD
     this.abort = null
 
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
     if (body == null) {
       this.body = null
     } else if (util.isStream(body)) {
       this.body = body
+<<<<<<< HEAD
 
       const rState = this.body._readableState
       if (!rState || !rState.autoDestroy) {
@@ -12964,6 +14794,8 @@ class Request {
         }
       }
       this.body.on('error', this.errorHandler)
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
     } else if (util.isBuffer(body)) {
       this.body = body.byteLength ? body : null
     } else if (ArrayBuffer.isView(body)) {
@@ -13059,9 +14891,15 @@ class Request {
   onBodySent (chunk) {
     if (this[kHandler].onBodySent) {
       try {
+<<<<<<< HEAD
         return this[kHandler].onBodySent(chunk)
       } catch (err) {
         this.abort(err)
+=======
+        this[kHandler].onBodySent(chunk)
+      } catch (err) {
+        this.onError(err)
+>>>>>>> 08cd3e7 (Restore and build with ncc)
       }
     }
   }
@@ -13073,9 +14911,15 @@ class Request {
 
     if (this[kHandler].onRequestSent) {
       try {
+<<<<<<< HEAD
         return this[kHandler].onRequestSent()
       } catch (err) {
         this.abort(err)
+=======
+        this[kHandler].onRequestSent()
+      } catch (err) {
+        this.onError(err)
+>>>>>>> 08cd3e7 (Restore and build with ncc)
       }
     }
   }
@@ -13084,12 +14928,16 @@ class Request {
     assert(!this.aborted)
     assert(!this.completed)
 
+<<<<<<< HEAD
     if (this.error) {
       abort(this.error)
     } else {
       this.abort = abort
       return this[kHandler].onConnect(abort)
     }
+=======
+    return this[kHandler].onConnect(abort)
+>>>>>>> 08cd3e7 (Restore and build with ncc)
   }
 
   onHeaders (statusCode, headers, resume, statusText) {
@@ -13100,23 +14948,31 @@ class Request {
       channels.headers.publish({ request: this, response: { statusCode, headers, statusText } })
     }
 
+<<<<<<< HEAD
     try {
       return this[kHandler].onHeaders(statusCode, headers, resume, statusText)
     } catch (err) {
       this.abort(err)
     }
+=======
+    return this[kHandler].onHeaders(statusCode, headers, resume, statusText)
+>>>>>>> 08cd3e7 (Restore and build with ncc)
   }
 
   onData (chunk) {
     assert(!this.aborted)
     assert(!this.completed)
 
+<<<<<<< HEAD
     try {
       return this[kHandler].onData(chunk)
     } catch (err) {
       this.abort(err)
       return false
     }
+=======
+    return this[kHandler].onData(chunk)
+>>>>>>> 08cd3e7 (Restore and build with ncc)
   }
 
   onUpgrade (statusCode, headers, socket) {
@@ -13127,14 +14983,18 @@ class Request {
   }
 
   onComplete (trailers) {
+<<<<<<< HEAD
     this.onFinally()
 
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
     assert(!this.aborted)
 
     this.completed = true
     if (channels.trailers.hasSubscribers) {
       channels.trailers.publish({ request: this, trailers })
     }
+<<<<<<< HEAD
 
     try {
       return this[kHandler].onComplete(trailers)
@@ -13147,6 +15007,12 @@ class Request {
   onError (error) {
     this.onFinally()
 
+=======
+    return this[kHandler].onComplete(trailers)
+  }
+
+  onError (error) {
+>>>>>>> 08cd3e7 (Restore and build with ncc)
     if (channels.error.hasSubscribers) {
       channels.error.publish({ request: this, error })
     }
@@ -13155,6 +15021,7 @@ class Request {
       return
     }
     this.aborted = true
+<<<<<<< HEAD
 
     return this[kHandler].onError(error)
   }
@@ -13171,6 +15038,11 @@ class Request {
     }
   }
 
+=======
+    return this[kHandler].onError(error)
+  }
+
+>>>>>>> 08cd3e7 (Restore and build with ncc)
   // TODO: adjust to support H2
   addHeader (key, value) {
     processHeader(this, key, value)
@@ -13392,8 +15264,12 @@ module.exports = {
   kHTTP2BuildRequest: Symbol('http2 build request'),
   kHTTP1BuildRequest: Symbol('http1 build request'),
   kHTTP2CopyHeaders: Symbol('http2 copy headers'),
+<<<<<<< HEAD
   kHTTPConnVersion: Symbol('http connection version'),
   kRetryHandlerDefaultRetry: Symbol('retry agent default retry')
+=======
+  kHTTPConnVersion: Symbol('http connection version')
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 }
 
 
@@ -13402,7 +15278,10 @@ module.exports = {
 /***/ 3983:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 const assert = __nccwpck_require__(9491)
@@ -13530,13 +15409,21 @@ function getHostname (host) {
     const idx = host.indexOf(']')
 
     assert(idx !== -1)
+<<<<<<< HEAD
     return host.substring(1, idx)
+=======
+    return host.substr(1, idx - 1)
+>>>>>>> 08cd3e7 (Restore and build with ncc)
   }
 
   const idx = host.indexOf(':')
   if (idx === -1) return host
 
+<<<<<<< HEAD
   return host.substring(0, idx)
+=======
+  return host.substr(0, idx)
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 }
 
 // IP addresses are not valid server names per RFC6066
@@ -13595,7 +15482,11 @@ function isReadableAborted (stream) {
 }
 
 function destroy (stream, err) {
+<<<<<<< HEAD
   if (stream == null || !isStream(stream) || isDestroyed(stream)) {
+=======
+  if (!isStream(stream) || isDestroyed(stream)) {
+>>>>>>> 08cd3e7 (Restore and build with ncc)
     return
   }
 
@@ -13633,7 +15524,11 @@ function parseHeaders (headers, obj = {}) {
 
     if (!val) {
       if (Array.isArray(headers[i + 1])) {
+<<<<<<< HEAD
         obj[key] = headers[i + 1].map(x => x.toString('utf8'))
+=======
+        obj[key] = headers[i + 1]
+>>>>>>> 08cd3e7 (Restore and build with ncc)
       } else {
         obj[key] = headers[i + 1].toString('utf8')
       }
@@ -13836,7 +15731,20 @@ function throwIfAborted (signal) {
   }
 }
 
+<<<<<<< HEAD
 function addAbortListener (signal, listener) {
+=======
+let events
+function addAbortListener (signal, listener) {
+  if (typeof Symbol.dispose === 'symbol') {
+    if (!events) {
+      events = __nccwpck_require__(2361)
+    }
+    if (typeof events.addAbortListener === 'function' && 'aborted' in signal) {
+      return events.addAbortListener(signal, listener)
+    }
+  }
+>>>>>>> 08cd3e7 (Restore and build with ncc)
   if ('addEventListener' in signal) {
     signal.addEventListener('abort', listener, { once: true })
     return () => signal.removeEventListener('abort', listener)
@@ -13860,6 +15768,7 @@ function toUSVString (val) {
   return `${val}`
 }
 
+<<<<<<< HEAD
 // Parsed accordingly to RFC 9110
 // https://www.rfc-editor.org/rfc/rfc9110#field.content-range
 function parseRangeHeader (range) {
@@ -13875,6 +15784,8 @@ function parseRangeHeader (range) {
     : null
 }
 
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 const kEnumerableProperty = Object.create(null)
 kEnumerableProperty.enumerable = true
 
@@ -13908,11 +15819,17 @@ module.exports = {
   buildURL,
   throwIfAborted,
   addAbortListener,
+<<<<<<< HEAD
   parseRangeHeader,
   nodeMajor,
   nodeMinor,
   nodeHasAutoSelectFamily: nodeMajor > 18 || (nodeMajor === 18 && nodeMinor >= 13),
   safeHTTPMethods: ['GET', 'HEAD', 'OPTIONS', 'TRACE']
+=======
+  nodeMajor,
+  nodeMinor,
+  nodeHasAutoSelectFamily: nodeMajor > 18 || (nodeMajor === 18 && nodeMinor >= 13)
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 }
 
 
@@ -13921,7 +15838,10 @@ module.exports = {
 /***/ 4839:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 const Dispatcher = __nccwpck_require__(412)
@@ -14121,7 +16041,10 @@ module.exports = DispatcherBase
 /***/ 412:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 const EventEmitter = __nccwpck_require__(2361)
@@ -14148,10 +16071,16 @@ module.exports = Dispatcher
 /***/ 1472:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
 
 
 const Busboy = __nccwpck_require__(727)
+=======
+
+
+const Busboy = __nccwpck_require__(3438)
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 const util = __nccwpck_require__(3983)
 const {
   ReadableStreamFrom,
@@ -14761,7 +16690,10 @@ module.exports = {
 /***/ 1037:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 const { MessageChannel, receiveMessageOnPort } = __nccwpck_require__(1267)
@@ -15557,7 +17489,10 @@ module.exports = {
 /***/ 8511:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 const { Blob, File: NativeFile } = __nccwpck_require__(4300)
@@ -15909,7 +17844,10 @@ module.exports = { File, FileLike, isFileLike }
 /***/ 2015:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 const { isBlobLike, toUSVString, makeIterator } = __nccwpck_require__(2538)
@@ -16182,7 +18120,10 @@ module.exports = { FormData }
 /***/ 1246:
 /***/ ((module) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 // In case of breaking changes, increase the version
@@ -16230,7 +18171,10 @@ module.exports = {
 /***/ 554:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 // https://github.com/Ethan-Arrowood/undici-fetch
 
 
@@ -16250,6 +18194,7 @@ const kHeadersMap = Symbol('headers map')
 const kHeadersSortedMap = Symbol('headers map sorted')
 
 /**
+<<<<<<< HEAD
  * @param {number} code
  */
 function isHTTPWhiteSpaceCharCode (code) {
@@ -16257,6 +18202,8 @@ function isHTTPWhiteSpaceCharCode (code) {
 }
 
 /**
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
  * @see https://fetch.spec.whatwg.org/#concept-header-value-normalize
  * @param {string} potentialValue
  */
@@ -16264,12 +18211,21 @@ function headerValueNormalize (potentialValue) {
   //  To normalize a byte sequence potentialValue, remove
   //  any leading and trailing HTTP whitespace bytes from
   //  potentialValue.
+<<<<<<< HEAD
   let i = 0; let j = potentialValue.length
 
   while (j > i && isHTTPWhiteSpaceCharCode(potentialValue.charCodeAt(j - 1))) --j
   while (j > i && isHTTPWhiteSpaceCharCode(potentialValue.charCodeAt(i))) ++i
 
   return i === 0 && j === potentialValue.length ? potentialValue : potentialValue.substring(i, j)
+=======
+
+  // Trimming the end with `.replace()` and a RegExp is typically subject to
+  // ReDoS. This is safer and faster.
+  let i = potentialValue.length
+  while (/[\r\n\t ]/.test(potentialValue.charAt(--i)));
+  return potentialValue.slice(0, i + 1).replace(/^[\r\n\t ]+/, '')
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 }
 
 function fill (headers, object) {
@@ -16278,8 +18234,12 @@ function fill (headers, object) {
   // 1. If object is a sequence, then for each header in object:
   // Note: webidl conversion to array has already been done.
   if (Array.isArray(object)) {
+<<<<<<< HEAD
     for (let i = 0; i < object.length; ++i) {
       const header = object[i]
+=======
+    for (const header of object) {
+>>>>>>> 08cd3e7 (Restore and build with ncc)
       // 1. If header does not contain exactly two items, then throw a TypeError.
       if (header.length !== 2) {
         throw webidl.errors.exception({
@@ -16289,16 +18249,25 @@ function fill (headers, object) {
       }
 
       // 2. Append (header’s first item, header’s second item) to headers.
+<<<<<<< HEAD
       appendHeader(headers, header[0], header[1])
+=======
+      headers.append(header[0], header[1])
+>>>>>>> 08cd3e7 (Restore and build with ncc)
     }
   } else if (typeof object === 'object' && object !== null) {
     // Note: null should throw
 
     // 2. Otherwise, object is a record, then for each key → value in object,
     //    append (key, value) to headers
+<<<<<<< HEAD
     const keys = Object.keys(object)
     for (let i = 0; i < keys.length; ++i) {
       appendHeader(headers, keys[i], object[keys[i]])
+=======
+    for (const [key, value] of Object.entries(object)) {
+      headers.append(key, value)
+>>>>>>> 08cd3e7 (Restore and build with ncc)
     }
   } else {
     throw webidl.errors.conversionFailed({
@@ -16309,6 +18278,7 @@ function fill (headers, object) {
   }
 }
 
+<<<<<<< HEAD
 /**
  * @see https://fetch.spec.whatwg.org/#concept-headers-append
  */
@@ -16353,6 +18323,8 @@ function appendHeader (headers, name, value) {
   //    privileged no-CORS request headers from headers
 }
 
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 class HeadersList {
   /** @type {[string, string][]|null} */
   cookies = null
@@ -16361,7 +18333,11 @@ class HeadersList {
     if (init instanceof HeadersList) {
       this[kHeadersMap] = new Map(init[kHeadersMap])
       this[kHeadersSortedMap] = init[kHeadersSortedMap]
+<<<<<<< HEAD
       this.cookies = init.cookies === null ? null : [...init.cookies]
+=======
+      this.cookies = init.cookies
+>>>>>>> 08cd3e7 (Restore and build with ncc)
     } else {
       this[kHeadersMap] = new Map(init)
       this[kHeadersSortedMap] = null
@@ -16423,7 +18399,11 @@ class HeadersList {
     //    the first such header to value and remove the
     //    others.
     // 2. Otherwise, append header (name, value) to list.
+<<<<<<< HEAD
     this[kHeadersMap].set(lowercaseName, { name, value })
+=======
+    return this[kHeadersMap].set(lowercaseName, { name, value })
+>>>>>>> 08cd3e7 (Restore and build with ncc)
   }
 
   // https://fetch.spec.whatwg.org/#concept-header-list-delete
@@ -16436,11 +18416,16 @@ class HeadersList {
       this.cookies = null
     }
 
+<<<<<<< HEAD
     this[kHeadersMap].delete(name)
+=======
+    return this[kHeadersMap].delete(name)
+>>>>>>> 08cd3e7 (Restore and build with ncc)
   }
 
   // https://fetch.spec.whatwg.org/#concept-header-list-get
   get (name) {
+<<<<<<< HEAD
     const value = this[kHeadersMap].get(name.toLowerCase())
 
     // 1. If list does not contain name, then return null.
@@ -16448,6 +18433,17 @@ class HeadersList {
     //    is a byte-case-insensitive match for name,
     //    separated from each other by 0x2C 0x20, in order.
     return value === undefined ? null : value.value
+=======
+    // 1. If list does not contain name, then return null.
+    if (!this.contains(name)) {
+      return null
+    }
+
+    // 2. Return the values of all headers in list whose name
+    //    is a byte-case-insensitive match for name,
+    //    separated from each other by 0x2C 0x20, in order.
+    return this[kHeadersMap].get(name.toLowerCase())?.value ?? null
+>>>>>>> 08cd3e7 (Restore and build with ncc)
   }
 
   * [Symbol.iterator] () {
@@ -16496,7 +18492,47 @@ class Headers {
     name = webidl.converters.ByteString(name)
     value = webidl.converters.ByteString(value)
 
+<<<<<<< HEAD
     return appendHeader(this, name, value)
+=======
+    // 1. Normalize value.
+    value = headerValueNormalize(value)
+
+    // 2. If name is not a header name or value is not a
+    //    header value, then throw a TypeError.
+    if (!isValidHeaderName(name)) {
+      throw webidl.errors.invalidArgument({
+        prefix: 'Headers.append',
+        value: name,
+        type: 'header name'
+      })
+    } else if (!isValidHeaderValue(value)) {
+      throw webidl.errors.invalidArgument({
+        prefix: 'Headers.append',
+        value,
+        type: 'header value'
+      })
+    }
+
+    // 3. If headers’s guard is "immutable", then throw a TypeError.
+    // 4. Otherwise, if headers’s guard is "request" and name is a
+    //    forbidden header name, return.
+    // Note: undici does not implement forbidden header names
+    if (this[kGuard] === 'immutable') {
+      throw new TypeError('immutable')
+    } else if (this[kGuard] === 'request-no-cors') {
+      // 5. Otherwise, if headers’s guard is "request-no-cors":
+      // TODO
+    }
+
+    // 6. Otherwise, if headers’s guard is "response" and name is a
+    //    forbidden response-header name, return.
+
+    // 7. Append (name, value) to headers’s header list.
+    // 8. If headers’s guard is "request-no-cors", then remove
+    //    privileged no-CORS request headers from headers
+    return this[kHeadersList].append(name, value)
+>>>>>>> 08cd3e7 (Restore and build with ncc)
   }
 
   // https://fetch.spec.whatwg.org/#dom-headers-delete
@@ -16541,7 +18577,11 @@ class Headers {
     // 7. Delete name from this’s header list.
     // 8. If this’s guard is "request-no-cors", then remove
     //    privileged no-CORS request headers from this.
+<<<<<<< HEAD
     this[kHeadersList].delete(name)
+=======
+    return this[kHeadersList].delete(name)
+>>>>>>> 08cd3e7 (Restore and build with ncc)
   }
 
   // https://fetch.spec.whatwg.org/#dom-headers-get
@@ -16634,7 +18674,11 @@ class Headers {
     // 7. Set (name, value) in this’s header list.
     // 8. If this’s guard is "request-no-cors", then remove
     //    privileged no-CORS request headers from this
+<<<<<<< HEAD
     this[kHeadersList].set(name, value)
+=======
+    return this[kHeadersList].set(name, value)
+>>>>>>> 08cd3e7 (Restore and build with ncc)
   }
 
   // https://fetch.spec.whatwg.org/#dom-headers-getsetcookie
@@ -16670,8 +18714,12 @@ class Headers {
     const cookies = this[kHeadersList].cookies
 
     // 3. For each name of names:
+<<<<<<< HEAD
     for (let i = 0; i < names.length; ++i) {
       const [name, value] = names[i]
+=======
+    for (const [name, value] of names) {
+>>>>>>> 08cd3e7 (Restore and build with ncc)
       // 1. If name is `set-cookie`, then:
       if (name === 'set-cookie') {
         // 1. Let values be a list of all values of headers in list whose name
@@ -16679,8 +18727,13 @@ class Headers {
 
         // 2. For each value of values:
         // 1. Append (name, value) to headers.
+<<<<<<< HEAD
         for (let j = 0; j < cookies.length; ++j) {
           headers.push([name, cookies[j]])
+=======
+        for (const value of cookies) {
+          headers.push([name, value])
+>>>>>>> 08cd3e7 (Restore and build with ncc)
         }
       } else {
         // 2. Otherwise:
@@ -16704,12 +18757,15 @@ class Headers {
   keys () {
     webidl.brandCheck(this, Headers)
 
+<<<<<<< HEAD
     if (this[kGuard] === 'immutable') {
       const value = this[kHeadersSortedMap]
       return makeIterator(() => value, 'Headers',
         'key')
     }
 
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
     return makeIterator(
       () => [...this[kHeadersSortedMap].values()],
       'Headers',
@@ -16720,12 +18776,15 @@ class Headers {
   values () {
     webidl.brandCheck(this, Headers)
 
+<<<<<<< HEAD
     if (this[kGuard] === 'immutable') {
       const value = this[kHeadersSortedMap]
       return makeIterator(() => value, 'Headers',
         'value')
     }
 
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
     return makeIterator(
       () => [...this[kHeadersSortedMap].values()],
       'Headers',
@@ -16736,12 +18795,15 @@ class Headers {
   entries () {
     webidl.brandCheck(this, Headers)
 
+<<<<<<< HEAD
     if (this[kGuard] === 'immutable') {
       const value = this[kHeadersSortedMap]
       return makeIterator(() => value, 'Headers',
         'key+value')
     }
 
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
     return makeIterator(
       () => [...this[kHeadersSortedMap].values()],
       'Headers',
@@ -16824,7 +18886,10 @@ module.exports = {
 /***/ 4881:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 // https://github.com/Ethan-Arrowood/undici-fetch
 
 
@@ -18784,7 +20849,11 @@ async function httpNetworkFetch (
         path: url.pathname + url.search,
         origin: url.origin,
         method: request.method,
+<<<<<<< HEAD
         body: fetchParams.controller.dispatcher.isMockActive ? request.body && (request.body.source || request.body.stream) : body,
+=======
+        body: fetchParams.controller.dispatcher.isMockActive ? request.body && request.body.source : body,
+>>>>>>> 08cd3e7 (Restore and build with ncc)
         headers: request.headersList.entries,
         maxRedirections: 0,
         upgrade: request.mode === 'websocket' ? 'websocket' : undefined
@@ -18829,7 +20898,11 @@ async function httpNetworkFetch (
                 location = val
               }
 
+<<<<<<< HEAD
               headers[kHeadersList].append(key, val)
+=======
+              headers.append(key, val)
+>>>>>>> 08cd3e7 (Restore and build with ncc)
             }
           } else {
             const keys = Object.keys(headersList)
@@ -18843,7 +20916,11 @@ async function httpNetworkFetch (
                 location = val
               }
 
+<<<<<<< HEAD
               headers[kHeadersList].append(key, val)
+=======
+              headers.append(key, val)
+>>>>>>> 08cd3e7 (Restore and build with ncc)
             }
           }
 
@@ -18947,7 +21024,11 @@ async function httpNetworkFetch (
             const key = headersList[n + 0].toString('latin1')
             const val = headersList[n + 1].toString('latin1')
 
+<<<<<<< HEAD
             headers[kHeadersList].append(key, val)
+=======
+            headers.append(key, val)
+>>>>>>> 08cd3e7 (Restore and build with ncc)
           }
 
           resolve({
@@ -18977,7 +21058,10 @@ module.exports = {
 /***/ 8359:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 /* globals AbortController */
 
 
@@ -18990,8 +21074,12 @@ const {
   isValidHTTPToken,
   sameOrigin,
   normalizeMethod,
+<<<<<<< HEAD
   makePolicyContainer,
   normalizeMethodRecord
+=======
+  makePolicyContainer
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 } = __nccwpck_require__(2538)
 const {
   forbiddenMethodsSet,
@@ -19164,10 +21252,15 @@ class Request {
       urlList: [...request.urlList]
     })
 
+<<<<<<< HEAD
     const initHasKey = Object.keys(init).length !== 0
 
     // 13. If init is not empty, then:
     if (initHasKey) {
+=======
+    // 13. If init is not empty, then:
+    if (Object.keys(init).length > 0) {
+>>>>>>> 08cd3e7 (Restore and build with ncc)
       // 1. If request’s mode is "navigate", then set it to "same-origin".
       if (request.mode === 'navigate') {
         request.mode = 'same-origin'
@@ -19298,6 +21391,7 @@ class Request {
 
       // 2. If method is not a method or method is a forbidden method, then
       // throw a TypeError.
+<<<<<<< HEAD
       if (!isValidHTTPToken(method)) {
         throw new TypeError(`'${method}' is not a valid HTTP method.`)
       }
@@ -19308,6 +21402,18 @@ class Request {
 
       // 3. Normalize method.
       method = normalizeMethodRecord[method] ?? normalizeMethod(method)
+=======
+      if (!isValidHTTPToken(init.method)) {
+        throw TypeError(`'${init.method}' is not a valid HTTP method.`)
+      }
+
+      if (forbiddenMethodsSet.has(method.toUpperCase())) {
+        throw TypeError(`'${init.method}' HTTP method is unsupported.`)
+      }
+
+      // 3. Normalize method.
+      method = normalizeMethod(init.method)
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
       // 4. Set request’s method to method.
       request.method = method
@@ -19398,6 +21504,7 @@ class Request {
     }
 
     // 32. If init is not empty, then:
+<<<<<<< HEAD
     if (initHasKey) {
       /** @type {HeadersList} */
       const headersList = this[kHeaders][kHeadersList]
@@ -19417,6 +21524,27 @@ class Request {
         }
         // Note: Copy the `set-cookie` meta-data.
         headersList.cookies = headers.cookies
+=======
+    if (Object.keys(init).length !== 0) {
+      // 1. Let headers be a copy of this’s headers and its associated header
+      // list.
+      let headers = new Headers(this[kHeaders])
+
+      // 2. If init["headers"] exists, then set headers to init["headers"].
+      if (init.headers !== undefined) {
+        headers = init.headers
+      }
+
+      // 3. Empty this’s headers’s header list.
+      this[kHeaders][kHeadersList].clear()
+
+      // 4. If headers is a Headers object, then for each header in its header
+      // list, append header’s name/header’s value to this’s headers.
+      if (headers.constructor.name === 'Headers') {
+        for (const [key, val] of headers) {
+          this[kHeaders].append(key, val)
+        }
+>>>>>>> 08cd3e7 (Restore and build with ncc)
       } else {
         // 5. Otherwise, fill this’s headers with headers.
         fillHeaders(this[kHeaders], headers)
@@ -19932,7 +22060,10 @@ module.exports = { Request, makeRequest }
 /***/ 7823:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 const { Headers, HeadersList, fill } = __nccwpck_require__(554)
@@ -20515,7 +22646,10 @@ module.exports = {
 /***/ 5861:
 /***/ ((module) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 module.exports = {
@@ -20533,7 +22667,10 @@ module.exports = {
 /***/ 2538:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 const { redirectStatusSet, referrerPolicySet: referrerPolicyTokens, badPortsSet } = __nccwpck_require__(1037)
@@ -20639,6 +22776,7 @@ function isValidReasonPhrase (statusText) {
   return true
 }
 
+<<<<<<< HEAD
 /**
  * @see https://tools.ietf.org/html/rfc7230#section-3.2.6
  * @param {number} c
@@ -20679,17 +22817,62 @@ function isValidHTTPToken (characters) {
   }
   for (let i = 0; i < characters.length; ++i) {
     if (!isTokenCharCode(characters.charCodeAt(i))) {
+=======
+function isTokenChar (c) {
+  return !(
+    c >= 0x7f ||
+    c <= 0x20 ||
+    c === '(' ||
+    c === ')' ||
+    c === '<' ||
+    c === '>' ||
+    c === '@' ||
+    c === ',' ||
+    c === ';' ||
+    c === ':' ||
+    c === '\\' ||
+    c === '"' ||
+    c === '/' ||
+    c === '[' ||
+    c === ']' ||
+    c === '?' ||
+    c === '=' ||
+    c === '{' ||
+    c === '}'
+  )
+}
+
+// See RFC 7230, Section 3.2.6.
+// https://github.com/chromium/chromium/blob/d7da0240cae77824d1eda25745c4022757499131/third_party/blink/renderer/platform/network/http_parsers.cc#L321
+function isValidHTTPToken (characters) {
+  if (!characters || typeof characters !== 'string') {
+    return false
+  }
+  for (let i = 0; i < characters.length; ++i) {
+    const c = characters.charCodeAt(i)
+    if (c > 0x7f || !isTokenChar(c)) {
+>>>>>>> 08cd3e7 (Restore and build with ncc)
       return false
     }
   }
   return true
 }
 
+<<<<<<< HEAD
 /**
  * @see https://fetch.spec.whatwg.org/#header-name
  * @param {string} potentialValue
  */
 function isValidHeaderName (potentialValue) {
+=======
+// https://fetch.spec.whatwg.org/#header-name
+// https://github.com/chromium/chromium/blob/b3d37e6f94f87d59e44662d6078f6a12de845d17/net/http/http_util.cc#L342
+function isValidHeaderName (potentialValue) {
+  if (potentialValue.length === 0) {
+    return false
+  }
+
+>>>>>>> 08cd3e7 (Restore and build with ncc)
   return isValidHTTPToken(potentialValue)
 }
 
@@ -21234,6 +23417,7 @@ function isCancelled (fetchParams) {
     fetchParams.controller.state === 'terminated'
 }
 
+<<<<<<< HEAD
 const normalizeMethodRecord = {
   delete: 'DELETE',
   DELETE: 'DELETE',
@@ -21258,6 +23442,13 @@ Object.setPrototypeOf(normalizeMethodRecord, null)
  */
 function normalizeMethod (method) {
   return normalizeMethodRecord[method.toLowerCase()] ?? method
+=======
+// https://fetch.spec.whatwg.org/#concept-method-normalize
+function normalizeMethod (method) {
+  return /^(DELETE|GET|HEAD|OPTIONS|POST|PUT)$/i.test(method)
+    ? method.toUpperCase()
+    : method
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 }
 
 // https://infra.spec.whatwg.org/#serialize-a-javascript-value-to-a-json-string
@@ -21602,8 +23793,12 @@ module.exports = {
   urlIsLocal,
   urlHasHttpsScheme,
   urlIsHttpHttpsScheme,
+<<<<<<< HEAD
   readAllBytes,
   normalizeMethodRecord
+=======
+  readAllBytes
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 }
 
 
@@ -21612,7 +23807,10 @@ module.exports = {
 /***/ 1744:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 const { types } = __nccwpck_require__(3837)
@@ -22042,10 +24240,19 @@ webidl.converters.ByteString = function (V) {
   // 2. If the value of any element of x is greater than
   //    255, then throw a TypeError.
   for (let index = 0; index < x.length; index++) {
+<<<<<<< HEAD
     if (x.charCodeAt(index) > 255) {
       throw new TypeError(
         'Cannot convert argument to a ByteString because the character at ' +
         `index ${index} has a value of ${x.charCodeAt(index)} which is greater than 255.`
+=======
+    const charCode = x.charCodeAt(index)
+
+    if (charCode > 255) {
+      throw new TypeError(
+        'Cannot convert argument to a ByteString because the character at ' +
+        `index ${index} has a value of ${charCode} which is greater than 255.`
+>>>>>>> 08cd3e7 (Restore and build with ncc)
       )
     }
   }
@@ -22266,7 +24473,10 @@ module.exports = {
 /***/ 4854:
 /***/ ((module) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 /**
@@ -22564,7 +24774,10 @@ module.exports = {
 /***/ 1446:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 const {
@@ -22916,7 +25129,10 @@ module.exports = {
 /***/ 5504:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 const { webidl } = __nccwpck_require__(1744)
@@ -23002,7 +25218,10 @@ module.exports = {
 /***/ 9054:
 /***/ ((module) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 module.exports = {
@@ -23020,7 +25239,10 @@ module.exports = {
 /***/ 7530:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 const {
@@ -23420,7 +25642,10 @@ module.exports = {
 /***/ 1892:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 // We include a version number for the Dispatcher API. In case of breaking changes,
@@ -23460,7 +25685,10 @@ module.exports = {
 /***/ 6930:
 /***/ ((module) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 module.exports = class DecoratorHandler {
@@ -23503,7 +25731,10 @@ module.exports = class DecoratorHandler {
 /***/ 2860:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 const util = __nccwpck_require__(3983)
@@ -23724,6 +25955,7 @@ module.exports = RedirectHandler
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 2286:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
@@ -24071,6 +26303,11 @@ module.exports = RetryHandler
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
+=======
+/***/ 8861:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 const RedirectHandler = __nccwpck_require__(2860)
@@ -24099,7 +26336,10 @@ module.exports = createRedirectInterceptor
 /***/ 953:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.SPECIAL_HEADERS = exports.HEADER_STATE = exports.MINOR = exports.MAJOR = exports.CONNECTION_TOKEN_CHARS = exports.HEADER_CHARS = exports.TOKEN = exports.STRICT_TOKEN = exports.HEX = exports.URL_CHAR = exports.STRICT_URL_CHAR = exports.USERINFO_CHARS = exports.MARK = exports.ALPHANUM = exports.NUM = exports.HEX_MAP = exports.NUM_MAP = exports.ALPHA = exports.FINISH = exports.H_METHOD_MAP = exports.METHOD_MAP = exports.METHODS_RTSP = exports.METHODS_ICE = exports.METHODS_HTTP = exports.METHODS = exports.LENIENT_FLAGS = exports.FLAGS = exports.TYPE = exports.ERROR = void 0;
@@ -24400,7 +26640,10 @@ module.exports = 'AGFzbQEAAAABMAhgAX8Bf2ADf39/AX9gBH9/f38Bf2AAAGADf39/AGABfwBgAn
 /***/ 1891:
 /***/ ((__unused_webpack_module, exports) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.enumToMap = void 0;
@@ -24422,7 +26665,10 @@ exports.enumToMap = enumToMap;
 /***/ 6771:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 const { kClients } = __nccwpck_require__(2785)
@@ -24601,7 +26847,10 @@ module.exports = MockAgent
 /***/ 8687:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 const { promisify } = __nccwpck_require__(3837)
@@ -24668,7 +26917,10 @@ module.exports = MockClient
 /***/ 888:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 const { UndiciError } = __nccwpck_require__(8045)
@@ -24693,7 +26945,10 @@ module.exports = {
 /***/ 410:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 const { getResponseData, buildKey, addMockDispatch } = __nccwpck_require__(9323)
@@ -24907,7 +27162,10 @@ module.exports.MockScope = MockScope
 /***/ 6193:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 const { promisify } = __nccwpck_require__(3837)
@@ -24974,7 +27232,10 @@ module.exports = MockPool
 /***/ 4347:
 /***/ ((module) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 module.exports = {
@@ -25005,7 +27266,10 @@ module.exports = {
 /***/ 9323:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 const { MockNotMatchedError } = __nccwpck_require__(888)
@@ -25364,7 +27628,10 @@ module.exports = {
 /***/ 6823:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 const { Transform } = __nccwpck_require__(2781)
@@ -25412,7 +27679,10 @@ module.exports = class PendingInterceptorsFormatter {
 /***/ 8891:
 /***/ ((module) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 const singulars = {
@@ -25449,7 +27719,10 @@ module.exports = class Pluralizer {
 /***/ 8266:
 /***/ ((module) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 /* eslint-disable */
 
 
@@ -25574,7 +27847,10 @@ module.exports = class FixedQueue {
 /***/ 3198:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 const DispatcherBase = __nccwpck_require__(4839)
@@ -25817,7 +28093,10 @@ module.exports = PoolStats
 /***/ 4634:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 const {
@@ -25877,7 +28156,11 @@ class Pool extends PoolBase {
         maxCachedSessions,
         allowH2,
         socketPath,
+<<<<<<< HEAD
         timeout: connectTimeout,
+=======
+        timeout: connectTimeout == null ? 10e3 : connectTimeout,
+>>>>>>> 08cd3e7 (Restore and build with ncc)
         ...(util.nodeHasAutoSelectFamily && autoSelectFamily ? { autoSelectFamily, autoSelectFamilyAttemptTimeout } : undefined),
         ...connect
       })
@@ -25919,7 +28202,10 @@ module.exports = Pool
 /***/ 7858:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 const { kProxy, kClose, kDestroy, kInterceptors } = __nccwpck_require__(2785)
@@ -26114,7 +28400,10 @@ module.exports = ProxyAgent
 /***/ 9459:
 /***/ ((module) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 let fastNow = Date.now()
@@ -26219,7 +28508,10 @@ module.exports = {
 /***/ 5354:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 const diagnosticsChannel = __nccwpck_require__(7643)
@@ -26518,7 +28810,10 @@ module.exports = {
 /***/ 9188:
 /***/ ((module) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 // This is a Globally Unique Identifier unique used
@@ -26577,7 +28872,10 @@ module.exports = {
 /***/ 2611:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 const { webidl } = __nccwpck_require__(1744)
@@ -26888,7 +29186,10 @@ module.exports = {
 /***/ 5444:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 const { maxUnsigned16Bit } = __nccwpck_require__(9188)
@@ -26969,7 +29270,10 @@ module.exports = {
 /***/ 1688:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 const { Writable } = __nccwpck_require__(2781)
@@ -27321,7 +29625,10 @@ module.exports = {
 /***/ 7578:
 /***/ ((module) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 module.exports = {
@@ -27341,7 +29648,10 @@ module.exports = {
 /***/ 5515:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 const { kReadyState, kController, kResponse, kBinaryType, kWebSocketURL } = __nccwpck_require__(7578)
@@ -27549,7 +29859,10 @@ module.exports = {
 /***/ 4284:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 const { webidl } = __nccwpck_require__(1744)
@@ -28198,7 +30511,10 @@ module.exports = {
 /***/ 5030:
 /***/ ((__unused_webpack_module, exports) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
@@ -28208,7 +30524,11 @@ function getUserAgent() {
     return navigator.userAgent;
   }
 
+<<<<<<< HEAD
   if (typeof process === "object" && process.version !== undefined) {
+=======
+  if (typeof process === "object" && "version" in process) {
+>>>>>>> 08cd3e7 (Restore and build with ncc)
     return `Node.js/${process.version.substr(1)} (${process.platform}; ${process.arch})`;
   }
 
@@ -28224,7 +30544,10 @@ exports.getUserAgent = getUserAgent;
 /***/ 5840:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 Object.defineProperty(exports, "__esModule", ({
@@ -28310,7 +30633,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 /***/ 4569:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 Object.defineProperty(exports, "__esModule", ({
@@ -28340,7 +30666,10 @@ exports["default"] = _default;
 /***/ 5332:
 /***/ ((__unused_webpack_module, exports) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 Object.defineProperty(exports, "__esModule", ({
@@ -28355,7 +30684,10 @@ exports["default"] = _default;
 /***/ 2746:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 Object.defineProperty(exports, "__esModule", ({
@@ -28407,7 +30739,10 @@ exports["default"] = _default;
 /***/ 814:
 /***/ ((__unused_webpack_module, exports) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 Object.defineProperty(exports, "__esModule", ({
@@ -28422,7 +30757,10 @@ exports["default"] = _default;
 /***/ 807:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 Object.defineProperty(exports, "__esModule", ({
@@ -28453,7 +30791,10 @@ function rng() {
 /***/ 5274:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 Object.defineProperty(exports, "__esModule", ({
@@ -28483,7 +30824,10 @@ exports["default"] = _default;
 /***/ 8950:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 Object.defineProperty(exports, "__esModule", ({
@@ -28529,7 +30873,10 @@ exports["default"] = _default;
 /***/ 8628:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 Object.defineProperty(exports, "__esModule", ({
@@ -28643,7 +30990,10 @@ exports["default"] = _default;
 /***/ 6409:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 Object.defineProperty(exports, "__esModule", ({
@@ -28666,7 +31016,10 @@ exports["default"] = _default;
 /***/ 5998:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 Object.defineProperty(exports, "__esModule", ({
@@ -28751,7 +31104,10 @@ function _default(name, version, hashfunc) {
 /***/ 5122:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 Object.defineProperty(exports, "__esModule", ({
@@ -28795,7 +31151,10 @@ exports["default"] = _default;
 /***/ 9120:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 Object.defineProperty(exports, "__esModule", ({
@@ -28818,7 +31177,10 @@ exports["default"] = _default;
 /***/ 6900:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 Object.defineProperty(exports, "__esModule", ({
@@ -28842,7 +31204,10 @@ exports["default"] = _default;
 /***/ 1595:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 
 Object.defineProperty(exports, "__esModule", ({
@@ -28907,6 +31272,7 @@ function wrappy (fn, cb) {
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 399:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
@@ -28988,92 +31354,139 @@ action();
 
 "use strict";
 module.exports = require("assert");
+=======
+/***/ 9491:
+/***/ ((module) => {
+
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("assert");
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 /***/ }),
 
 /***/ 852:
 /***/ ((module) => {
 
+<<<<<<< HEAD
 "use strict";
 module.exports = require("async_hooks");
+=======
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("async_hooks");
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 /***/ }),
 
 /***/ 4300:
 /***/ ((module) => {
 
+<<<<<<< HEAD
 "use strict";
 module.exports = require("buffer");
+=======
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("buffer");
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 /***/ }),
 
 /***/ 6206:
 /***/ ((module) => {
 
+<<<<<<< HEAD
 "use strict";
 module.exports = require("console");
+=======
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("console");
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 /***/ }),
 
 /***/ 6113:
 /***/ ((module) => {
 
+<<<<<<< HEAD
 "use strict";
 module.exports = require("crypto");
+=======
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("crypto");
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 /***/ }),
 
 /***/ 7643:
 /***/ ((module) => {
 
+<<<<<<< HEAD
 "use strict";
 module.exports = require("diagnostics_channel");
+=======
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("diagnostics_channel");
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 /***/ }),
 
 /***/ 2361:
 /***/ ((module) => {
 
+<<<<<<< HEAD
 "use strict";
 module.exports = require("events");
+=======
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("events");
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 /***/ }),
 
 /***/ 7147:
 /***/ ((module) => {
 
+<<<<<<< HEAD
 "use strict";
 module.exports = require("fs");
+=======
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("fs");
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 /***/ }),
 
 /***/ 3685:
 /***/ ((module) => {
 
+<<<<<<< HEAD
 "use strict";
 module.exports = require("http");
+=======
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("http");
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 /***/ }),
 
 /***/ 5158:
 /***/ ((module) => {
 
+<<<<<<< HEAD
 "use strict";
 module.exports = require("http2");
+=======
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("http2");
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 /***/ }),
 
 /***/ 5687:
 /***/ ((module) => {
 
+<<<<<<< HEAD
 "use strict";
 module.exports = require("https");
+=======
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("https");
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 /***/ }),
 
 /***/ 1808:
 /***/ ((module) => {
 
+<<<<<<< HEAD
 "use strict";
 module.exports = require("net");
 
@@ -29084,132 +31497,196 @@ module.exports = require("net");
 
 "use strict";
 module.exports = require("node:assert");
+=======
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("net");
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 /***/ }),
 
 /***/ 5673:
 /***/ ((module) => {
 
+<<<<<<< HEAD
 "use strict";
 module.exports = require("node:events");
+=======
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:events");
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 /***/ }),
 
 /***/ 4492:
 /***/ ((module) => {
 
+<<<<<<< HEAD
 "use strict";
 module.exports = require("node:stream");
+=======
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:stream");
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 /***/ }),
 
 /***/ 7261:
 /***/ ((module) => {
 
+<<<<<<< HEAD
 "use strict";
 module.exports = require("node:util");
+=======
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:util");
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 /***/ }),
 
 /***/ 2037:
 /***/ ((module) => {
 
+<<<<<<< HEAD
 "use strict";
 module.exports = require("os");
+=======
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("os");
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 /***/ }),
 
 /***/ 1017:
 /***/ ((module) => {
 
+<<<<<<< HEAD
 "use strict";
 module.exports = require("path");
+=======
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("path");
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 /***/ }),
 
 /***/ 4074:
 /***/ ((module) => {
 
+<<<<<<< HEAD
 "use strict";
 module.exports = require("perf_hooks");
+=======
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("perf_hooks");
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 /***/ }),
 
 /***/ 3477:
 /***/ ((module) => {
 
+<<<<<<< HEAD
 "use strict";
 module.exports = require("querystring");
+=======
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("querystring");
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 /***/ }),
 
 /***/ 2781:
 /***/ ((module) => {
 
+<<<<<<< HEAD
 "use strict";
 module.exports = require("stream");
+=======
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("stream");
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 /***/ }),
 
 /***/ 5356:
 /***/ ((module) => {
 
+<<<<<<< HEAD
 "use strict";
 module.exports = require("stream/web");
+=======
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("stream/web");
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 /***/ }),
 
 /***/ 1576:
 /***/ ((module) => {
 
+<<<<<<< HEAD
 "use strict";
 module.exports = require("string_decoder");
+=======
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("string_decoder");
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 /***/ }),
 
 /***/ 4404:
 /***/ ((module) => {
 
+<<<<<<< HEAD
 "use strict";
 module.exports = require("tls");
+=======
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("tls");
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 /***/ }),
 
 /***/ 7310:
 /***/ ((module) => {
 
+<<<<<<< HEAD
 "use strict";
 module.exports = require("url");
+=======
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("url");
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 /***/ }),
 
 /***/ 3837:
 /***/ ((module) => {
 
+<<<<<<< HEAD
 "use strict";
 module.exports = require("util");
+=======
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("util");
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 /***/ }),
 
 /***/ 9830:
 /***/ ((module) => {
 
+<<<<<<< HEAD
 "use strict";
 module.exports = require("util/types");
+=======
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("util/types");
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 /***/ }),
 
 /***/ 1267:
 /***/ ((module) => {
 
+<<<<<<< HEAD
 "use strict";
 module.exports = require("worker_threads");
+=======
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("worker_threads");
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 
 /***/ }),
 
 /***/ 9796:
 /***/ ((module) => {
 
+<<<<<<< HEAD
 "use strict";
 module.exports = require("zlib");
 
@@ -30881,4 +33358,126 @@ module.exports = parseParams
 /******/ 	
 /******/ })()
 ;
+=======
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("zlib");
+
+/***/ })
+
+/******/ });
+/************************************************************************/
+/******/ // The module cache
+/******/ var __webpack_module_cache__ = {};
+/******/ 
+/******/ // The require function
+/******/ function __nccwpck_require__(moduleId) {
+/******/ 	// Check if module is in cache
+/******/ 	var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 	if (cachedModule !== undefined) {
+/******/ 		return cachedModule.exports;
+/******/ 	}
+/******/ 	// Create a new module (and put it into the cache)
+/******/ 	var module = __webpack_module_cache__[moduleId] = {
+/******/ 		// no module.id needed
+/******/ 		// no module.loaded needed
+/******/ 		exports: {}
+/******/ 	};
+/******/ 
+/******/ 	// Execute the module function
+/******/ 	var threw = true;
+/******/ 	try {
+/******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __nccwpck_require__);
+/******/ 		threw = false;
+/******/ 	} finally {
+/******/ 		if(threw) delete __webpack_module_cache__[moduleId];
+/******/ 	}
+/******/ 
+/******/ 	// Return the exports of the module
+/******/ 	return module.exports;
+/******/ }
+/******/ 
+/************************************************************************/
+/******/ /* webpack/runtime/compat */
+/******/ 
+/******/ if (typeof __nccwpck_require__ !== 'undefined') __nccwpck_require__.ab = new URL('.', import.meta.url).pathname.slice(import.meta.url.match(/^file:\/\/\/\w:/) ? 1 : 0, -1) + "/";
+/******/ 
+/************************************************************************/
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+(() => {
+/* harmony import */ var _actions_core__WEBPACK_IMPORTED_MODULE_0__ = __nccwpck_require__(2186);
+/* harmony import */ var _actions_github__WEBPACK_IMPORTED_MODULE_1__ = __nccwpck_require__(5438);
+
+
+
+// Action input
+const markdown = (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput)('add_markdown')
+const token = (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput)('github_token')
+const limit_to_pr_opened = (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput)('limit_to_pr_opened')
+
+if (!markdown || !token || !limit_to_pr_opened) {
+  (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.error)('Error: please verify input!')
+}
+
+// Main function
+function action() {
+  // If limit_to_pr_opened is true, then verify status (opened, reopened)
+  const trigger = JSON.stringify(_actions_github__WEBPACK_IMPORTED_MODULE_1__.context.payload.action) || ''
+  const statuses = ['opened', 'reopened']
+  if (limit_to_pr_opened === 'true' && statuses.includes(trigger)) {
+    (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.info)('PR not opened or reopened with limit_to_pr_opened=true.  Exiting.')
+    return
+  }
+
+  // Authenticate Octokit client
+  const octokit = (0,_actions_github__WEBPACK_IMPORTED_MODULE_1__.getOctokit)(token)
+
+  // Get pull request using the GitHub context
+  let pullRequest = async () => {
+    return ({data: pullRequest} = await octokit.rest.pulls.get({
+      owner: _actions_github__WEBPACK_IMPORTED_MODULE_1__.context.repo.owner,
+      repo: _actions_github__WEBPACK_IMPORTED_MODULE_1__.context.repo.repo,
+      pull_number: _actions_github__WEBPACK_IMPORTED_MODULE_1__.context.payload.number
+    }))
+  }
+
+  // Note: Any of these checks can work
+  //   body.includes(markdown)
+  //   body.endsWith(markdown)
+  //   body.match(new RegExp(markdown))
+  //   !~body.indexOf(markdown)
+  //   !~body.search(markdown)
+
+  // Exit/return if our markdown message is already present
+  const body = pullRequest.body || ''
+  if (body.endsWith(markdown)) {
+    (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.info)('Markdown message is already present.  Exiting.')
+    return
+  }
+
+  // If we're here update the body
+  if (!body.endsWith(markdown)) {
+    (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.info)('Description is being updated.')
+    ;async () => {
+      await octokit.rest.pulls.update({
+        owner: _actions_github__WEBPACK_IMPORTED_MODULE_1__.context.repo.owner,
+        repo: _actions_github__WEBPACK_IMPORTED_MODULE_1__.context.repo.repo,
+        pull_number: _actions_github__WEBPACK_IMPORTED_MODULE_1__.context.payload.number,
+        // Split out any duplicate messages, has been an issue
+        body: body.split(markdown)[0].concat(`\n\n${markdown}`)
+      })
+    }
+    return
+  }
+
+  // If here, something went wrong ...which seems to happen a lot
+  (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.error)('Unexpected result.  Please verify the action has performed correctly.')
+}
+
+// Run main function
+action()
+
+})();
+
+
+>>>>>>> 08cd3e7 (Restore and build with ncc)
 //# sourceMappingURL=index.js.map
