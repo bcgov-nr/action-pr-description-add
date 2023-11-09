@@ -11,7 +11,7 @@ if (!markdown || !token || !limit_to_pr_opened) {
 }
 
 // Main function
-async function action(): Promise<void> {
+function action(){
   // If limit_to_pr_opened is true, then verify status (opened, reopened)
   const trigger = JSON.stringify(context.payload.action) || ''
   const statuses = ['opened', 'reopened']
@@ -24,11 +24,13 @@ async function action(): Promise<void> {
   const octokit = getOctokit(token)
 
   // Get pull request using the GitHub context
-  const {data: pullRequest} = await octokit.rest.pulls.get({
-    owner: context.repo.owner,
-    repo: context.repo.repo,
-    pull_number: context.payload.number
-  })
+  const pullRequest = async() => {
+    return {data: pullRequest} = await octokit.rest.pulls.get({
+      owner: context.repo.owner,
+      repo: context.repo.repo,
+      pull_number: context.payload.number
+    })
+  }
 
   // Note: Any of these checks can work
   //   body.includes(markdown)
@@ -47,13 +49,15 @@ async function action(): Promise<void> {
   // If we're here update the body
   if (!body.endsWith(markdown)) {
     info('Description is being updated.')
-    await octokit.rest.pulls.update({
-      owner: context.repo.owner,
-      repo: context.repo.repo,
-      pull_number: context.payload.number,
-      // Split out any duplicate messages, has been an issue
-      body: body.split(markdown)[0].concat(`\n\n${markdown}`)
-    })
+    async() => {
+      await octokit.rest.pulls.update({
+        owner: context.repo.owner,
+        repo: context.repo.repo,
+        pull_number: context.payload.number,
+        // Split out any duplicate messages, has been an issue
+        body: body.split(markdown)[0].concat(`\n\n${markdown}`)
+      })
+    }
     return
   }
 
