@@ -12,7 +12,7 @@ if (!markdown || !token || !limit_to_pr_opened) {
 
 // Get pull request using the GitHub context
 async function getPR(octokit) {
-  const { data: pullRequest } = octokit.rest.pulls.get({
+  const {data: pullRequest} = octokit.rest.pulls.get({
     owner: context.repo.owner,
     repo: context.repo.repo,
     pull_number: context.payload.number
