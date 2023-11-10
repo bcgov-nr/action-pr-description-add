@@ -24,13 +24,13 @@ function action() {
   const octokit = getOctokit(token)
 
   // Get pull request using the GitHub context
-  let pullRequest = async () => {
-    let {data: pullRequest} = await octokit.rest.pulls.get({
+  const pr = async () => {
+    const {data: pullRequest} = await octokit.rest.pulls.get({
       owner: context.repo.owner,
       repo: context.repo.repo,
       pull_number: context.payload.number
     })
-    info("pullRequest")
+    info('pullRequest')
     info(pullRequest)
     return pullRequest
   }
@@ -43,7 +43,7 @@ function action() {
   //   !~body.search(markdown)
 
   // Exit/return if our markdown message is already present
-  const body = pullRequest.body || ''
+  const body = pr.body || ''
   if (body.endsWith(markdown)) {
     info('Markdown message is already present.  Exiting.')
     return
