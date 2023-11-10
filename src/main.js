@@ -46,7 +46,7 @@ async function action() {
   //   !~body.search(markdown)
 
   // Exit/return if our markdown message is already present
-  const body = pr.body || ''
+  const body = pullRequest.body || ''
   if (body.endsWith(markdown)) {
     info('Markdown message is already present.  Exiting.')
     return
