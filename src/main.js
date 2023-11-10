@@ -51,13 +51,13 @@ function action() {
   // If we're here update the body
   if (!body.endsWith(markdown)) {
     info('Description is being updated.')
-      octokit.rest.pulls.update({
-        owner: context.repo.owner,
-        repo: context.repo.repo,
-        pull_number: context.payload.number,
-        // Split out any duplicate messages, has been an issue
-        body: body.split(markdown)[0].concat(`\n\n${markdown}`)
-      })
+    octokit.rest.pulls.update({
+      owner: context.repo.owner,
+      repo: context.repo.repo,
+      pull_number: context.payload.number,
+      // Split out any duplicate messages, has been an issue
+      body: body.split(markdown)[0].concat(`\n\n${markdown}`)
+    })
     return
   }
 

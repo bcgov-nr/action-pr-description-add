@@ -33459,15 +33459,13 @@ function action() {
   // If we're here update the body
   if (!body.endsWith(markdown)) {
     (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.info)('Description is being updated.')
-    ;async () => {
-      await octokit.rest.pulls.update({
-        owner: _actions_github__WEBPACK_IMPORTED_MODULE_1__.context.repo.owner,
-        repo: _actions_github__WEBPACK_IMPORTED_MODULE_1__.context.repo.repo,
-        pull_number: _actions_github__WEBPACK_IMPORTED_MODULE_1__.context.payload.number,
-        // Split out any duplicate messages, has been an issue
-        body: body.split(markdown)[0].concat(`\n\n${markdown}`)
-      })
-    }
+    octokit.rest.pulls.update({
+      owner: _actions_github__WEBPACK_IMPORTED_MODULE_1__.context.repo.owner,
+      repo: _actions_github__WEBPACK_IMPORTED_MODULE_1__.context.repo.repo,
+      pull_number: _actions_github__WEBPACK_IMPORTED_MODULE_1__.context.payload.number,
+      // Split out any duplicate messages, has been an issue
+      body: body.split(markdown)[0].concat(`\n\n${markdown}`)
+    })
     return
   }
 
