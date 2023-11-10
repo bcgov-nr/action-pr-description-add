@@ -10,8 +10,20 @@ if (!markdown || !token || !limit_to_pr_opened) {
   error('Error: please verify input!')
 }
 
+// Get pull request using the GitHub context
+async function getPR(octokit) {
+  const { data: pullRequest } = octokit.rest.pulls.get({
+    owner: context.repo.owner,
+    repo: context.repo.repo,
+    pull_number: context.payload.number
+  })
+  info('pullRequest')
+  info(pullRequest)
+  return pullRequest
+}
+
 // Main function
-function action() {
+async function action() {
   // If limit_to_pr_opened is true, then verify status (opened, reopened)
   const trigger = JSON.stringify(context.payload.action) || ''
   const statuses = ['opened', 'reopened']
@@ -24,16 +36,7 @@ function action() {
   const octokit = getOctokit(token)
 
   // Get pull request using the GitHub context
-  const pr = async () => {
-    const {data: pullRequest} = await octokit.rest.pulls.get({
-      owner: context.repo.owner,
-      repo: context.repo.repo,
-      pull_number: context.payload.number
-    })
-    info('pullRequest')
-    info(pullRequest)
-    return pullRequest
-  }
+  const pullRequest = await getPR(octokit)
 
   // Note: Any of these checks can work
   //   body.includes(markdown)
