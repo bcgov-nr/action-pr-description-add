@@ -33432,12 +33432,15 @@ function action() {
   const octokit = (0,_actions_github__WEBPACK_IMPORTED_MODULE_1__.getOctokit)(token)
 
   // Get pull request using the GitHub context
-  let pullRequest = async () => {
-    return ({data: pullRequest} = await octokit.rest.pulls.get({
+  const pr = async () => {
+    const {data: pullRequest} = await octokit.rest.pulls.get({
       owner: _actions_github__WEBPACK_IMPORTED_MODULE_1__.context.repo.owner,
       repo: _actions_github__WEBPACK_IMPORTED_MODULE_1__.context.repo.repo,
       pull_number: _actions_github__WEBPACK_IMPORTED_MODULE_1__.context.payload.number
-    }))
+    })
+    ;(0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.info)('pullRequest')
+    ;(0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.info)(pullRequest)
+    return pullRequest
   }
 
   // Note: Any of these checks can work
@@ -33448,7 +33451,7 @@ function action() {
   //   !~body.search(markdown)
 
   // Exit/return if our markdown message is already present
-  const body = pullRequest.body || ''
+  const body = pr.body || ''
   if (body.endsWith(markdown)) {
     (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.info)('Markdown message is already present.  Exiting.')
     return
