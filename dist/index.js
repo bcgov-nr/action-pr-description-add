@@ -33453,6 +33453,8 @@ function action() {
     (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.info)('Markdown message is already present.  Exiting.')
     return
   }
+  (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.info)('body:')
+  ;(0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.info)(body)
 
   // If we're here update the body
   if (!body.endsWith(markdown)) {

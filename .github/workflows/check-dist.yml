@@ -1,0 +1,30 @@
+name: Verify Build
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  check-dist:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4.0.0
+        with:
+          node-version: 20.x
+
+      - name: Rebuild the dist/ directory
+        run: npm run all
+
+      - name: Compare expected and actual output (dist/, src/)
+        run: |
+          if [ "$(git diff --ignore-space-at-eol dist/ src/ | wc -l)" -gt "0" ]; then
+            echo "Detected uncommitted changes after build.  See status below:"
+            git diff
+            exit 1
+          fi
