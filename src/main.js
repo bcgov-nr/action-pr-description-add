@@ -45,6 +45,8 @@ function action() {
     info('Markdown message is already present.  Exiting.')
     return
   }
+  info('body:')
+  info(body)
 
   // If we're here update the body
   if (!body.endsWith(markdown)) {

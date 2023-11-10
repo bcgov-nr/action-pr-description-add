@@ -31,16 +31,3 @@ jobs:
             ## Excitement!
             [Links!](https://google.ca)
             `Code!`
-
-
-      - uses: ./
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          limit_to_pr_opened: true
-          add_markdown: |
-            ---
-
-            # Things!
-            ## Excitement!
-            [Links!](https://google.ca)
-            `Code!`
