@@ -25,11 +25,14 @@ function action() {
 
   // Get pull request using the GitHub context
   let pullRequest = async () => {
-    return ({data: pullRequest} = await octokit.rest.pulls.get({
+    let {data: pullRequest} = await octokit.rest.pulls.get({
       owner: context.repo.owner,
       repo: context.repo.repo,
       pull_number: context.payload.number
-    }))
+    })
+    info("pullRequest")
+    info(pullRequest)
+    return pullRequest
   }
 
   // Note: Any of these checks can work
