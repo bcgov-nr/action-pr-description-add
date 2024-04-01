@@ -5,12 +5,13 @@
   "description": "TypeScript template action",
   "main": "src/main.ts",
   "scripts": {
+    "all": "npm run build && npm run format && npm run lint && npm run package",
     "build": "tsc",
+    "dist": "npm ci && npm run build && npm run package && git diff --ignore-space-at-eol dist/",
     "format": "prettier --write '**/*.ts'",
     "format-check": "prettier --check '**/*.ts'",
     "lint": "eslint src/**/*.ts",
-    "package": "ncc build --source-map --license LICENSE",
-    "all": "npm run build && npm run format && npm run lint && npm run package"
+    "package": "ncc build --source-map --license LICENSE"
   },
   "repository": {
     "type": "git",
