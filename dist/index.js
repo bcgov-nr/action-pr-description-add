@@ -29224,6 +29224,15 @@ function action() {
         }
         // Authenticate Octokit client
         const octokit = (0, github_1.getOctokit)(token);
+        const pr_c = github_1.context.payload.pull_request;
+        const pr_o = yield octokit.rest.pulls.get({
+            owner: github_1.context.repo.owner,
+            repo: github_1.context.repo.repo,
+            pull_number: github_1.context.payload.number
+        });
+        (0, core_1.info)(`PR from context: ${pr_c}`);
+        (0, core_1.info)(`PR from octokit: ${pr_o}`);
+        process.exit(1);
         // Get pull request using the GitHub context
         const { data: pullRequest } = yield octokit.rest.pulls.get({
             owner: github_1.context.repo.owner,
