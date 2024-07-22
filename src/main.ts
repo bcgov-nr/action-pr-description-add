@@ -35,6 +35,8 @@ async function action(): Promise<void> {
 
   info(`PR from context: ${s_pr_c}`)
   info(`PR from octokit: ${s_pr_o}`)
+  info(`PR from context: ${pr_c}`)
+  info(`PR from octokit: ${pr_o}`)
   process.exit(1)
 
   // Get pull request using the GitHub context
