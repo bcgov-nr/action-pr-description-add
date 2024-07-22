@@ -30,8 +30,11 @@ async function action(): Promise<void> {
     pull_number: context.payload.number
   })
 
-  info(`PR from context: ${pr_c}`)
-  info(`PR from octokit: ${pr_o}`)
+  const s_pr_c = JSON.stringify(pr_c)
+  const s_pr_o = JSON.stringify(pr_o)
+
+  info(`PR from context: ${s_pr_c}`)
+  info(`PR from octokit: ${s_pr_o}`)
   process.exit(1)
 
   // Get pull request using the GitHub context
