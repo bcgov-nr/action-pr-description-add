@@ -30,9 +30,9 @@ async function action(): Promise<void> {
     pull_number: context.payload.number
   })
 
-  log('PR from context: ', pr_c)
-  log('PR from octokit: ', pr_c)
-  exit 1
+  info(`PR from context: ${pr_c}`)
+  info(`PR from octokit: ${pr_o}`)
+  process.exit(1)
 
   // Get pull request using the GitHub context
   const {data: pullRequest} = await octokit.rest.pulls.get({
