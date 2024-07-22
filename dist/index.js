@@ -29230,6 +29230,10 @@ function action() {
             repo: github_1.context.repo.repo,
             pull_number: github_1.context.payload.number
         });
+        const s_pr_c = JSON.stringify(pr_c);
+        const s_pr_o = JSON.stringify(pr_o);
+        (0, core_1.info)(`PR from context: ${s_pr_c}`);
+        (0, core_1.info)(`PR from octokit: ${s_pr_o}`);
         (0, core_1.info)(`PR from context: ${pr_c}`);
         (0, core_1.info)(`PR from octokit: ${pr_o}`);
         process.exit(1);
