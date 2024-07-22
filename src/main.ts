@@ -23,20 +23,28 @@ async function action(): Promise<void> {
   // Authenticate Octokit client
   const octokit = getOctokit(token)
 
-  const pr_c = context.payload.pull_request
-  const pr_o = await octokit.rest.pulls.get({
-    owner: context.repo.owner,
-    repo: context.repo.repo,
-    pull_number: context.payload.number
-  })
+  // const pr_c = context.payload.pull_request
+  // const pr_o = await octokit.rest.pulls.get({
+  //   owner: context.repo.owner,
+  //   repo: context.repo.repo,
+  //   pull_number: context.payload.number
+  // })
+  // const {data: pullRequest} = await octokit.rest.pulls.get({
+  //   owner: context.repo.owner,
+  //   repo: context.repo.repo,
+  //   pull_number: context.payload.number
+  // })
+  // const pr_p = pullRequest.body || 'Failure'
 
-  const s_pr_c = JSON.stringify(pr_c)
-  const s_pr_o = JSON.stringify(pr_o)
+  // const s_pr_c = JSON.stringify(pr_c)
+  // const s_pr_o = JSON.stringify(pr_o)
+  // const s_pr_p = JSON.stringify(pr_p)
 
-  info(`PR from context: ${s_pr_c}`)
-  info(`PR from octokit: ${s_pr_o}`)
-  info(`PR from context: ${pr_c}`)
-  info(`PR from octokit: ${pr_o}`)
+  // info(`PR from context: ${s_pr_c}`)
+  // info(`PR from octokit: ${s_pr_o}`)
+  // info(`PR from octokit: ${s_pr_p}`)
+  const bodyFromContext = context.payload.pull_request?.body || ''
+  info(`PR from context: ${bodyFromContext}`)
   process.exit(1)
 
   // Get pull request using the GitHub context

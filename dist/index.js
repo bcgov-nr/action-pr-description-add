@@ -29215,6 +29215,7 @@ if (!markdown || !token || !limit_to_pr_opened) {
 // Main function
 function action() {
     return __awaiter(this, void 0, void 0, function* () {
+        var _a;
         // If limit_to_pr_opened is true, then verify status (opened, reopened)
         const trigger = JSON.stringify(github_1.context.payload.action) || '';
         const statuses = ['opened', 'reopened'];
@@ -29224,18 +29225,26 @@ function action() {
         }
         // Authenticate Octokit client
         const octokit = (0, github_1.getOctokit)(token);
-        const pr_c = github_1.context.payload.pull_request;
-        const pr_o = yield octokit.rest.pulls.get({
-            owner: github_1.context.repo.owner,
-            repo: github_1.context.repo.repo,
-            pull_number: github_1.context.payload.number
-        });
-        const s_pr_c = JSON.stringify(pr_c);
-        const s_pr_o = JSON.stringify(pr_o);
-        (0, core_1.info)(`PR from context: ${s_pr_c}`);
-        (0, core_1.info)(`PR from octokit: ${s_pr_o}`);
-        (0, core_1.info)(`PR from context: ${pr_c}`);
-        (0, core_1.info)(`PR from octokit: ${pr_o}`);
+        // const pr_c = context.payload.pull_request
+        // const pr_o = await octokit.rest.pulls.get({
+        //   owner: context.repo.owner,
+        //   repo: context.repo.repo,
+        //   pull_number: context.payload.number
+        // })
+        // const {data: pullRequest} = await octokit.rest.pulls.get({
+        //   owner: context.repo.owner,
+        //   repo: context.repo.repo,
+        //   pull_number: context.payload.number
+        // })
+        // const pr_p = pullRequest.body || 'Failure'
+        // const s_pr_c = JSON.stringify(pr_c)
+        // const s_pr_o = JSON.stringify(pr_o)
+        // const s_pr_p = JSON.stringify(pr_p)
+        // info(`PR from context: ${s_pr_c}`)
+        // info(`PR from octokit: ${s_pr_o}`)
+        // info(`PR from octokit: ${s_pr_p}`)
+        const bodyFromContext = ((_a = github_1.context.payload.pull_request) === null || _a === void 0 ? void 0 : _a.body) || '';
+        (0, core_1.info)(`PR from context: ${bodyFromContext}`);
         process.exit(1);
         // Get pull request using the GitHub context
         const { data: pullRequest } = yield octokit.rest.pulls.get({
