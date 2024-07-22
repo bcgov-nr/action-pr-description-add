@@ -20,39 +20,8 @@ async function action(): Promise<void> {
     return
   }
 
-  // Authenticate Octokit client
-  const octokit = getOctokit(token)
-
-  // const pr_c = context.payload.pull_request
-  // const pr_o = await octokit.rest.pulls.get({
-  //   owner: context.repo.owner,
-  //   repo: context.repo.repo,
-  //   pull_number: context.payload.number
-  // })
-  // const {data: pullRequest} = await octokit.rest.pulls.get({
-  //   owner: context.repo.owner,
-  //   repo: context.repo.repo,
-  //   pull_number: context.payload.number
-  // })
-  // const pr_p = pullRequest.body || 'Failure'
-
-  // const s_pr_c = JSON.stringify(pr_c)
-  // const s_pr_o = JSON.stringify(pr_o)
-  // const s_pr_p = JSON.stringify(pr_p)
-
-  // info(`PR from context: ${s_pr_c}`)
-  // info(`PR from octokit: ${s_pr_o}`)
-  // info(`PR from octokit: ${s_pr_p}`)
-  const bodyFromContext = context.payload.pull_request?.body || ''
-  info(`PR from context: ${bodyFromContext}`)
-  process.exit(1)
-
-  // Get pull request using the GitHub context
-  const {data: pullRequest} = await octokit.rest.pulls.get({
-    owner: context.repo.owner,
-    repo: context.repo.repo,
-    pull_number: context.payload.number
-  })
+  // Get PR body from GitHub context (previously using octokit)
+  const body = context.payload.pull_request?.body || ''
 
   // Note: Any of these checks can work
   //   body.includes(markdown)
@@ -61,14 +30,14 @@ async function action(): Promise<void> {
   //   !~body.indexOf(markdown)
   //   !~body.search(markdown)
 
-  // Exit/return if our markdown message is already present
-  const body = pullRequest.body || ''
+  // If message is already present, then return/exit
   if (body.endsWith(markdown)) {
     info('Markdown message is already present.  Exiting.')
     return
   }
 
-  // If we're here update the body
+  // If not present, then append
+  const octokit = getOctokit(token)
   if (!body.endsWith(markdown)) {
     info('Description is being updated.')
     await octokit.rest.pulls.update({
@@ -81,7 +50,7 @@ async function action(): Promise<void> {
     return
   }
 
-  // If here, something went wrong ...which seems to happen a lot
+  // If here, kick up an error
   error('Unexpected result.  Please verify the action has performed correctly.')
 }
 

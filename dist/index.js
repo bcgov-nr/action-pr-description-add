@@ -29223,48 +29223,21 @@ function action() {
             (0, core_1.info)('PR not opened or reopened with limit_to_pr_opened=true.  Exiting.');
             return;
         }
-        // Authenticate Octokit client
-        const octokit = (0, github_1.getOctokit)(token);
-        // const pr_c = context.payload.pull_request
-        // const pr_o = await octokit.rest.pulls.get({
-        //   owner: context.repo.owner,
-        //   repo: context.repo.repo,
-        //   pull_number: context.payload.number
-        // })
-        // const {data: pullRequest} = await octokit.rest.pulls.get({
-        //   owner: context.repo.owner,
-        //   repo: context.repo.repo,
-        //   pull_number: context.payload.number
-        // })
-        // const pr_p = pullRequest.body || 'Failure'
-        // const s_pr_c = JSON.stringify(pr_c)
-        // const s_pr_o = JSON.stringify(pr_o)
-        // const s_pr_p = JSON.stringify(pr_p)
-        // info(`PR from context: ${s_pr_c}`)
-        // info(`PR from octokit: ${s_pr_o}`)
-        // info(`PR from octokit: ${s_pr_p}`)
-        const bodyFromContext = ((_a = github_1.context.payload.pull_request) === null || _a === void 0 ? void 0 : _a.body) || '';
-        (0, core_1.info)(`PR from context: ${bodyFromContext}`);
-        process.exit(1);
-        // Get pull request using the GitHub context
-        const { data: pullRequest } = yield octokit.rest.pulls.get({
-            owner: github_1.context.repo.owner,
-            repo: github_1.context.repo.repo,
-            pull_number: github_1.context.payload.number
-        });
+        // Get PR body from GitHub context (previously using octokit)
+        const body = ((_a = github_1.context.payload.pull_request) === null || _a === void 0 ? void 0 : _a.body) || '';
         // Note: Any of these checks can work
         //   body.includes(markdown)
         //   body.endsWith(markdown)
         //   body.match(new RegExp(markdown))
         //   !~body.indexOf(markdown)
         //   !~body.search(markdown)
-        // Exit/return if our markdown message is already present
-        const body = pullRequest.body || '';
+        // If message is already present, then return/exit
         if (body.endsWith(markdown)) {
             (0, core_1.info)('Markdown message is already present.  Exiting.');
             return;
         }
-        // If we're here update the body
+        // If not present, then append
+        const octokit = (0, github_1.getOctokit)(token);
         if (!body.endsWith(markdown)) {
             (0, core_1.info)('Description is being updated.');
             yield octokit.rest.pulls.update({
@@ -29276,7 +29249,7 @@ function action() {
             });
             return;
         }
-        // If here, something went wrong ...which seems to happen a lot
+        // If here, kick up an error
         (0, core_1.error)('Unexpected result.  Please verify the action has performed correctly.');
     });
 }
