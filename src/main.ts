@@ -23,6 +23,17 @@ async function action(): Promise<void> {
   // Authenticate Octokit client
   const octokit = getOctokit(token)
 
+  const pr_c = context.payload.pull_request
+  const pr_o = await octokit.rest.pulls.get({
+    owner: context.repo.owner,
+    repo: context.repo.repo,
+    pull_number: context.payload.number
+  })
+
+  log('PR from context: ', pr_c)
+  log('PR from octokit: ', pr_c)
+  exit 1
+
   // Get pull request using the GitHub context
   const {data: pullRequest} = await octokit.rest.pulls.get({
     owner: context.repo.owner,
