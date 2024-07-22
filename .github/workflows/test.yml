@@ -1,21 +1,36 @@
-name: Build-Test
+name: PR
 on:
   pull_request:
   push:
-    branches:
-      - main
+    branches: [main]
   workflow_dispatch:
 
 jobs:
-  build:
+  check-dist:
+    name: Check dist/
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: |
+      - uses: actions/setup-node@v4.0.3
+        with:
+          node-version: 20.x
+
+      - name: Rebuild the dist/ directory
+        run: |
           npm ci
-          npm run all
+          npm run build
+          npm run package
+
+      - name: Compare the expected and actual dist/ directories
+        run: |
+          if [ "$(git diff --ignore-space-at-eol dist/ | wc -l)" -gt "0" ]; then
+            echo "Detected uncommitted changes after build.  See status below:"
+            git diff
+            exit 1
+          fi
 
   test:
+    name: Test Action
     runs-on: ubuntu-latest
     if: github.event_name == 'pull_request'
     permissions:
