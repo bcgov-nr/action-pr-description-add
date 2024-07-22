@@ -20,15 +20,8 @@ async function action(): Promise<void> {
     return
   }
 
-  // Authenticate Octokit client
-  const octokit = getOctokit(token)
-
-  // Get pull request using the GitHub context
-  const {data: pullRequest} = await octokit.rest.pulls.get({
-    owner: context.repo.owner,
-    repo: context.repo.repo,
-    pull_number: context.payload.number
-  })
+  // Get PR body from GitHub context (previously using octokit)
+  const body = context.payload.pull_request?.body || ''
 
   // Note: Any of these checks can work
   //   body.includes(markdown)
@@ -37,14 +30,14 @@ async function action(): Promise<void> {
   //   !~body.indexOf(markdown)
   //   !~body.search(markdown)
 
-  // Exit/return if our markdown message is already present
-  const body = pullRequest.body || ''
+  // If message is already present, then return/exit
   if (body.endsWith(markdown)) {
     info('Markdown message is already present.  Exiting.')
     return
   }
 
-  // If we're here update the body
+  // If not present, then append
+  const octokit = getOctokit(token)
   if (!body.endsWith(markdown)) {
     info('Description is being updated.')
     await octokit.rest.pulls.update({
@@ -57,7 +50,7 @@ async function action(): Promise<void> {
     return
   }
 
-  // If here, something went wrong ...which seems to happen a lot
+  // If here, kick up an error
   error('Unexpected result.  Please verify the action has performed correctly.')
 }
 
