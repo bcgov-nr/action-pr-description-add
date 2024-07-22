@@ -8,10 +8,7 @@ name: Check dist/
 on:
   pull_request:
   push:
-    branches:
-      - main
-    paths-ignore:
-      - "**.md"
+    branches: [main]
   workflow_dispatch:
 
 jobs:
