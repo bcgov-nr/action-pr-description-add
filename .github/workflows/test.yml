@@ -37,6 +37,8 @@ jobs:
             `Code!`
 
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
       - name: Test Commits in Action
         run: |
           echo "things! excitement!" > definitely_not_dist-${GITHUB_RUN_NUMBER}.txt
