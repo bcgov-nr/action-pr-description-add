@@ -1,10 +1,12 @@
 name: PR
 on:
   pull_request:
+  merge_queue:
 
 jobs:
   test:
     name: Test Action
+    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
@@ -21,7 +23,6 @@ jobs:
             [Links!](https://google.ca)
             `Code!`
 
-
       - uses: ./
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -33,3 +34,35 @@ jobs:
             ## Excitement!
             [Links!](https://google.ca)
             `Code!`
+
+  check-dist:
+    name: Check dist/
+    if: github.event_name == 'merge_group'
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # For push, later
+          ref: ${{ github.head_ref }}
+
+      - uses: actions/setup-node@v4.0.3
+        with:
+          node-version: 20.x
+
+      - name: Rebuild the dist/ directory
+        run: |
+          npm ci
+          npm run build
+          npm run package
+
+      - name: Commit any changes to dist/
+        run: |
+          if [ "$(git diff --ignore-space-at-eol dist/ | wc -l)" -gt "0" ]; then
+            git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+            git config --global user.name "${GITHUB_ACTOR}"
+            git add .
+            git commit -m "Rebuild dist/ directory"
+            git push origin HEAD:${{ github.head_ref }}
+          fi
