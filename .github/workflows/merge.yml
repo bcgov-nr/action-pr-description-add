@@ -26,4 +26,12 @@ jobs:
             # exit 1
             echo "CHANGES=true" >> $GITHUB_ENV
           fi
-            
+
+      - name: Commit changes to dist/
+        if: env.CHANGES == 'true'
+        run: |
+          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          git config --global user.name "${GITHUB_ACTOR}"
+          git add .
+          git commit -m "Rebuild dist/ directory"
+          git push
