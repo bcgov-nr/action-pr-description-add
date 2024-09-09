@@ -1,4 +1,4 @@
-name: Merge
+name: PR (queue)
 on:
   merge_group:
 
