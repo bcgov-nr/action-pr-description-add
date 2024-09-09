@@ -37,8 +37,8 @@ jobs:
             `Code!`
 
       - uses: actions/checkout@v4
-        # with:
-        #   ref: ${{ github.head_ref }}
+        with:
+          ref: ${{ github.head_ref }}
       - name: Test Commits in Action
         run: |
           set -eux
