@@ -49,3 +49,7 @@ jobs:
           git add .
           git commit -m "Rebuild dist/ directory"
           git push origin HEAD:${{ github.ref }}
+
+      - name: Dump context
+        if: always()
+        run: echo "${{ toJson(github) }}"
