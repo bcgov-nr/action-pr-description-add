@@ -35,7 +35,7 @@ jobs:
             [Links!](https://google.ca)
             `Code!`
 
-  check-dist:
+  dist:
     name: Check dist/
     if: github.event_name == 'merge_group'
     permissions:
@@ -66,3 +66,13 @@ jobs:
             git commit -m "Rebuild dist/ directory"
             git push origin HEAD:${{ github.head_ref }}
           fi
+
+  results:
+    name: PR Results
+    needs: [test, dist]
+    if: always()
+    runs-on: ubuntu-22.04
+    steps:
+      - if: contains(needs.*.result, 'failure')
+        run: echo "At least one job has failed." && exit 1
+      - run: echo "Success!"
