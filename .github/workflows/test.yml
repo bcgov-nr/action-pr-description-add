@@ -11,40 +11,41 @@ jobs:
       contents: write
       pull-requests: write
     steps:
+      # - uses: actions/checkout@v4
+      # - uses: ./
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     add_markdown: |
+      #       ---
+
+      #       # Things!
+      #       ## Excitement!
+      #       [Links!](https://google.ca)
+      #       `Code!`
+
+
+      # - uses: ./
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     limit_to_pr_opened: true
+      #     add_markdown: |
+      #       ---
+
+      #       # Things!
+      #       ## Excitement!
+      #       [Links!](https://google.ca)
+      #       `Code!`
+
       - uses: actions/checkout@v4
-      - uses: ./
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          add_markdown: |
-            ---
-
-            # Things!
-            ## Excitement!
-            [Links!](https://google.ca)
-            `Code!`
-
-
-      - uses: ./
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          limit_to_pr_opened: true
-          add_markdown: |
-            ---
-
-            # Things!
-            ## Excitement!
-            [Links!](https://google.ca)
-            `Code!`
-
-      - uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.pull_request.head.sha }}
+          ref: ${{ github.ref }}
       - name: Test Commits in Action
         run: |
+          set -eux
           echo "things! excitement!" > definitely_not_dist-${GITHUB_RUN_NUMBER}.txt
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
           git config --global user.name "${GITHUB_ACTOR}"
-          git checkout -b ${GITHUB_REF}
+          git checkout -b ${{ github.ref }}
           git add .
           git commit -m "Rebuild dist/ directory"
-          git push origin HEAD:${GITHUB_REF}
+          git push origin HEAD:${{ github.ref }}
