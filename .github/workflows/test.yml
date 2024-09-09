@@ -66,6 +66,9 @@ jobs:
             git commit -m "Rebuild dist/ directory"
             git push origin HEAD:${{ github.head_ref }}
           fi
+        
+      - name: Purposeful fail
+        run: exit 1
 
   results:
     name: PR Results
