@@ -34,3 +34,12 @@ jobs:
             ## Excitement!
             [Links!](https://google.ca)
             `Code!`
+
+      - name: Test Commits in Action
+        run: |
+          echo "things! excitement!" > definitely_not_dist.txt
+          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          git config --global user.name "${GITHUB_ACTOR}"
+          git add .
+          git commit -m "Rebuild dist/ directory"
+          git push
