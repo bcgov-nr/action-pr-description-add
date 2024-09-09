@@ -1,37 +1,40 @@
-# name: Merge
-# on:
-#   merge_group:
+name: Merge
+on:
+  merge_group:
 
-# jobs:
-#   check-dist:
-#     name: Check dist/
-#     runs-on: ubuntu-latest
-#     steps:
-#       - uses: actions/checkout@v4
-#       - uses: actions/setup-node@v4.0.3
-#         with:
-#           node-version: 20.x
+jobs:
+  check-dist:
+    name: Check dist/
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4.0.3
+        with:
+          node-version: 20.x
 
-#       - name: Rebuild the dist/ directory
-#         run: |
-#           npm ci
-#           npm run build
-#           npm run package
+      - name: Rebuild the dist/ directory
+        run: |
+          npm ci
+          npm run build
+          npm run package
 
-#       - name: Compare the expected and actual dist/ directories
-#         run: |
-#           if [ "$(git diff --ignore-space-at-eol dist/ | wc -l)" -gt "0" ]; then
-#             # echo "Detected uncommitted changes after build.  See status below:"
-#             # git diff
-#             # exit 1
-#             echo "CHANGES=true" >> $GITHUB_ENV
-#           fi
+      - name: Compare the expected and actual dist/ directories
+        run: |
+          if [ "$(git diff --ignore-space-at-eol dist/ | wc -l)" -gt "0" ]; then
+            echo "CHANGES=true" >> $GITHUB_ENV
+          fi
 
-#       - name: Commit changes to dist/
-#         if: env.CHANGES == 'true'
-#         run: |
-#           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-#           git config --global user.name "${GITHUB_ACTOR}"
-#           git add .
-#           git commit -m "Rebuild dist/ directory"
-#           git push
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+      - name: Commit changes to dist/
+        if: env.CHANGES == 'true'
+        run: |
+          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          git config --global user.name "${GITHUB_ACTOR}"
+          # git checkout ${{ github.head_ref }}
+          git add .
+          git commit -m "Rebuild dist/ directory"
+          git push origin HEAD:${{ github.head_ref }}

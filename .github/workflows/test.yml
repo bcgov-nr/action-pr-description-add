@@ -6,7 +6,6 @@ jobs:
   test:
     name: Test Action
     runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request'
     permissions:
       pull-requests: write
     steps:
@@ -34,23 +33,3 @@ jobs:
             ## Excitement!
             [Links!](https://google.ca)
             `Code!`
-
-      - uses: actions/checkout@v4
-        with:
-          ref: ${{ github.head_ref }}
-      - name: Test Commits in Action
-        run: |
-          set -eux
-          echo "things! excitement!" > definitely_not_dist-${GITHUB_RUN_NUMBER}.txt
-          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-          git config --global user.name "${GITHUB_ACTOR}"
-          # git checkout ${{ github.head_ref }}
-          git add .
-          git commit -m "Rebuild dist/ directory"
-          git push origin HEAD:${{ github.head_ref }}
-
-      - name: Dump context
-        if: always()
-        env:
-          CONTEXT: ${{ toJson(github) }}
-        run: echo "${CONTEXT}"
