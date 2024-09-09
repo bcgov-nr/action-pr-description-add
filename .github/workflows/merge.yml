@@ -1,0 +1,29 @@
+name: Merge
+on:
+  merge_group:
+
+jobs:
+  check-dist:
+    name: Check dist/
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4.0.3
+        with:
+          node-version: 20.x
+
+      - name: Rebuild the dist/ directory
+        run: |
+          npm ci
+          npm run build
+          npm run package
+
+      - name: Compare the expected and actual dist/ directories
+        run: |
+          if [ "$(git diff --ignore-space-at-eol dist/ | wc -l)" -gt "0" ]; then
+            # echo "Detected uncommitted changes after build.  See status below:"
+            # git diff
+            # exit 1
+            echo "CHANGES=true" >> $GITHUB_ENV
+          fi
+            
