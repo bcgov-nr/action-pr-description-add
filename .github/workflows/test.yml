@@ -35,6 +35,7 @@ jobs:
             [Links!](https://google.ca)
             `Code!`
 
+      - uses: actions/checkout@v4
       - name: Test Commits in Action
         run: |
           echo "things! excitement!" > definitely_not_dist.txt
@@ -42,4 +43,4 @@ jobs:
           git config --global user.name "${GITHUB_ACTOR}"
           git add .
           git commit -m "Rebuild dist/ directory"
-          git push
+          git push origin HEAD:${GITHUB_REF}
