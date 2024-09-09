@@ -79,3 +79,11 @@ jobs:
       - if: contains(needs.*.result, 'failure')
         run: echo "At least one job has failed." && exit 1
       - run: echo "Success!"
+
+  dump:
+    name: Dump context
+    runs-on: ubuntu-latest
+    env:
+      CONTEXT: ${{ toJson(github) }}
+    steps:
+      - run: echo "${CONTEXT}"
