@@ -37,8 +37,8 @@ jobs:
       #       `Code!`
 
       - uses: actions/checkout@v4
-        with:
-          ref: ${{ github.ref }}
+        # with:
+        #   ref: ${{ github.ref }}
       - name: Test Commits in Action
         run: |
           set -eux
@@ -48,7 +48,8 @@ jobs:
           git checkout -b ${{ github.ref }}
           git add .
           git commit -m "Rebuild dist/ directory"
-          git push origin HEAD:${{ github.ref }}
+          git push
+          # git push origin HEAD:${{ github.ref }}
 
       - name: Dump context
         if: always()
