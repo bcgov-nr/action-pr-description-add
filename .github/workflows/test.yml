@@ -67,6 +67,9 @@ jobs:
       #       git push origin HEAD:${{ github.head_ref }}
       #     fi
 
+      - name: Add junk file
+        run: echo "things! excitement!" > junk-${{ github.run_number }}.txt
+
       - uses: EndBug/add-and-commit@v9
         with:
           add: 'dist/'
