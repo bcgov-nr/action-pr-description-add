@@ -44,11 +44,3 @@ jobs:
             ## Excitement!
             [Links!](https://google.ca)
             `Code!`
-
-      # Commit any changes to dist/ (only !draft)
-      - uses: EndBug/add-and-commit@v9
-        if: ${{ ! github.event.pull_request.draft }}
-        with:
-          add: 'dist/ --force'
-          message: "Rebuild dist/ directory"
-          push: true
