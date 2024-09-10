@@ -49,3 +49,4 @@ jobs:
         with:
           add: 'dist/ --force'
           message: "Rebuild dist/ directory"
+          push: true
