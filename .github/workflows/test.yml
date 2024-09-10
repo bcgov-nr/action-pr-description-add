@@ -42,11 +42,6 @@ jobs:
       contents: write
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-        with:
-          # For push, later
-          ref: ${{ github.head_ref }}
-
       - uses: actions/setup-node@v4.0.3
         with:
           node-version: 20.x
@@ -57,28 +52,12 @@ jobs:
           npm run build
           npm run package
 
-      # - name: Commit any changes to dist/
-      #   run: |
-      #     if [ "$(git diff --ignore-space-at-eol dist/ | wc -l)" -gt "0" ]; then
-      #       git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-      #       git config --global user.name "${GITHUB_ACTOR}"
-      #       git add .
-      #       git commit -m "Rebuild dist/ directory"
-      #       git push origin HEAD:${{ github.head_ref }}
-      #     fi
-
-      - name: Add junk file
-        run: echo "things! excitement!" > junk-${{ github.run_number }}.txt
-
       - uses: EndBug/add-and-commit@v9
         with:
           add: 'dist/'
-          message: Show GitHub Actions logo
+          message: "Rebuild dist/ directory"
           committer_name: GitHub Actions
           committer_email: actions@github.com
-        
-      - name: Purposeful fail
-        run: exit 1
 
   results:
     name: PR Results
@@ -89,11 +68,3 @@ jobs:
       - if: contains(needs.*.result, 'failure')
         run: echo "At least one job has failed." && exit 1
       - run: echo "Success!"
-
-  dump:
-    name: Dump context
-    runs-on: ubuntu-latest
-    env:
-      CONTEXT: ${{ toJson(github) }}
-    steps:
-      - run: echo "${CONTEXT}"
