@@ -41,6 +41,12 @@ jobs:
   #           [Links!](https://google.ca)
   #           `Code!`
 
+  release:
+    name: Test Releasing
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
