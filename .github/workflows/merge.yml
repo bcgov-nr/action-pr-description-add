@@ -28,6 +28,13 @@ jobs:
         with:
           fetch-depth: 0
 
+      - uses: actions/setup-node@v4.0.3
+        with:
+          node-version: 20.x
+
+      - name: Rebuild the dist/ directory
+        run: npm run dist 
+
       - name: Conventional Changelog Update
         uses: TriPSs/conventional-changelog-action@v5
         id: changelog
