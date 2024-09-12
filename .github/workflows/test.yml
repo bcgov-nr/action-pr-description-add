@@ -40,39 +40,3 @@ jobs:
             ## Excitement!
             [Links!](https://google.ca)
             `Code!`
-
-      - uses: actions/checkout@v4
-        with:
-          ref: ${{ github.head_ref }}
-
-      - name: Conventional Changelog Update
-        uses: TriPSs/conventional-changelog-action@v5
-        id: changelog
-        continue-on-error: true
-        with:
-          github-token: ${{ github.token }}
-          output-file: 'CHANGELOG.md'
-          skip-version-file: 'true'
-          skip-commit: 'true'
-          skip-on-empty: 'false'
-          git-push: 'true'
-
-      # Commit any changes to dist/ (only !draft)
-      - uses: EndBug/add-and-commit@v9
-        if: ${{ ! github.event.pull_request.draft }}
-        with:
-          add: 'dist/ --force'
-          message: "Rebuild dist/ directory"
-          push: false
-
-      - name: Create Release
-        uses: softprops/action-gh-release@v2
-        if: ${{ steps.changelog.outputs.version != '' }}
-        continue-on-error: true
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-        with:
-          token: ${{ github.token }}
-          tag_name:  ${{ steps.changelog.outputs.tag }}
-          name: ${{ steps.changelog.outputs.tag }}
-          body: ${{ steps.changelog.outputs.clean_changelog }}
