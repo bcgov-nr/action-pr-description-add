@@ -52,7 +52,7 @@ jobs:
         with:
           add: 'dist/ lib/ --force'
           message: "Rebuild dist/ directory"
-          push: false
+          push: true
 
       - name: Create Release
         uses: softprops/action-gh-release@v2
