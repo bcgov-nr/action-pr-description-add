@@ -27,7 +27,6 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          ref: ${{ github.head_ref }}
 
       - name: Conventional Changelog Update
         uses: TriPSs/conventional-changelog-action@v5
@@ -41,15 +40,12 @@ jobs:
           skip-on-empty: 'false'
           git-push: 'true'
 
-      - uses: actions/setup-node@v4.0.3
+      # Commit any changes to dist/ and lib/
+      - uses: EndBug/add-and-commit@v9
         with:
-          node-version: 20.x
-
-      - name: Rebuild the dist/ directory
-        run: npm run dist
-      
-      - name: Git add dist/
-        run: git add dist/ lib/ -f
+          add: 'dist/ lib/ --force'
+          message: "Rebuild dist/ directory"
+          push: false
 
       - name: Create Release
         uses: softprops/action-gh-release@v2
@@ -60,18 +56,5 @@ jobs:
         with:
           token: ${{ github.token }}
           tag_name:  ${{ steps.changelog.outputs.tag }}
-          name: ${{ steps.changelog.outputs.tag }}
-          body: ${{ steps.changelog.outputs.clean_changelog }}
-
-
-      - name: Create Release
-        uses: softprops/action-gh-release@v2
-        if: ${{ steps.changelog.outputs.version != '' }}
-        continue-on-error: true
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-        with:
-          token: ${{ github.token }}
-          tag_name:  ${{ steps.changelog.outputs.tag.split('.')[0] }}
           name: ${{ steps.changelog.outputs.tag }}
           body: ${{ steps.changelog.outputs.clean_changelog }}
