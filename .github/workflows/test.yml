@@ -57,8 +57,13 @@ jobs:
           skip-on-empty: 'false'
           git-push: 'true'
 
-      - name: Git add dist/
-        run: git add dist/ lib/ -f
+      # Commit any changes to dist/ (only !draft)
+      - uses: EndBug/add-and-commit@v9
+        if: ${{ ! github.event.pull_request.draft }}
+        with:
+          add: 'dist/ --force'
+          message: "Rebuild dist/ directory"
+          push: false
 
       - name: Create Release
         uses: softprops/action-gh-release@v2
