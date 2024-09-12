@@ -1,0 +1,77 @@
+name: Merge
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/**'
+      - 'package-lock.json'
+      - 'package.json'
+      - 'tsconfig.json'
+      - 'action.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+
+jobs:
+  semantic-release:
+    runs-on: ubuntu-22.04
+    outputs:
+      tag: ${{ steps.changelog.outputs.tag }}
+      version: ${{ steps.changelog.outputs.version }}
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.head_ref }}
+
+      - name: Conventional Changelog Update
+        uses: TriPSs/conventional-changelog-action@v5
+        id: changelog
+        continue-on-error: true
+        with:
+          github-token: ${{ github.token }}
+          output-file: 'CHANGELOG.md'
+          skip-version-file: 'true'
+          skip-commit: 'true'
+          skip-on-empty: 'false'
+          git-push: 'true'
+
+      - uses: actions/setup-node@v4.0.3
+        with:
+          node-version: 20.x
+
+      - name: Rebuild the dist/ directory
+        run: npm run dist
+      
+      - name: Git add dist/
+        run: git add dist/ -f
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        if: ${{ steps.changelog.outputs.version != '' }}
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          token: ${{ github.token }}
+          tag_name:  ${{ steps.changelog.outputs.tag }}
+          name: ${{ steps.changelog.outputs.tag }}
+          body: ${{ steps.changelog.outputs.clean_changelog }}
+
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        if: ${{ steps.changelog.outputs.version != '' }}
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          token: ${{ github.token }}
+          tag_name:  ${{ steps.changelog.outputs.tag.split('.')[0] }}
+          name: ${{ steps.changelog.outputs.tag }}
+          body: ${{ steps.changelog.outputs.clean_changelog }}
