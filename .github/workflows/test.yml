@@ -41,6 +41,10 @@ jobs:
             [Links!](https://google.ca)
             `Code!`
 
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+
       - name: Conventional Changelog Update
         uses: TriPSs/conventional-changelog-action@v5
         id: changelog
