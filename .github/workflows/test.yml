@@ -3,91 +3,40 @@ on:
   pull_request:
 
 jobs:
-  # test:
-  #   name: Test Action
-  #   runs-on: ubuntu-latest
-  #   permissions:
-  #     pull-requests: write
-  #   steps:
-  #     # Rebuild ./dist
-  #     - uses: actions/checkout@v4
-  #     - uses: actions/setup-node@v4.0.3
-  #       with:
-  #         node-version: 20.x
-  #     - name: Rebuild the dist/ directory
-  #       run: npm run dist 
-     
-  #    # Test action
-  #     - uses: ./
-  #       with:
-  #         github_token: ${{ secrets.GITHUB_TOKEN }}
-  #         add_markdown: |
-  #           ---
-
-  #           # Things!
-  #           ## Excitement!
-  #           [Links!](https://google.ca)
-  #           `Code!`
-
-  #     # Test with different inputs
-  #     - uses: ./
-  #       with:
-  #         limit_to_pr_opened: true
-  #         add_markdown: |
-  #           ---
-
-  #           # Things!
-  #           ## Excitement!
-  #           [Links!](https://google.ca)
-  #           `Code!`
-
-  release:
-    name: Test Releasing
+  test:
+    name: Test Action
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
     steps:
+      # Rebuild ./dist
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
       - uses: actions/setup-node@v4.0.3
         with:
           node-version: 20.x
-
-      - name: New branch
-        run: git checkout -b release
-
       - name: Rebuild the dist/ directory
-        run: npm run dist
-
-      # Commit any changes to dist/ and lib/
-      - uses: EndBug/add-and-commit@v9
+        run: npm run dist 
+     
+     # Test action
+      - uses: ./
         with:
-          add: 'dist/ lib/ --force'
-          message: "Rebuild dist/ directory"
-          push: true
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          add_markdown: |
+            ---
 
-      - name: Conventional Changelog Update
-        uses: TriPSs/conventional-changelog-action@v5
-        id: changelog
-        continue-on-error: true
-        with:
-          github-token: ${{ github.token }}
-          output-file: 'CHANGELOG.md'
-          skip-version-file: 'true'
-          skip-commit: 'true'
-          skip-on-empty: 'false'
-          git-push: 'true'
+            # Things!
+            ## Excitement!
+            [Links!](https://google.ca)
+            `Code!`
 
-      - name: Create Release
-        uses: softprops/action-gh-release@v2
-        if: ${{ steps.changelog.outputs.version != '' }}
-        continue-on-error: true
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
+      # Test with different inputs
+      - uses: ./
         with:
-          token: ${{ github.token }}
-          tag_name:  ${{ steps.changelog.outputs.tag }}
-          name: ${{ steps.changelog.outputs.tag }}
-          body: ${{ steps.changelog.outputs.clean_changelog }}
+          limit_to_pr_opened: true
+          add_markdown: |
+            ---
+
+            # Things!
+            ## Excitement!
+            [Links!](https://google.ca)
+            `Code!`
