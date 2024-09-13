@@ -80,6 +80,8 @@ jobs:
             git commit -m "Rebuild dist/ directory"
             git push -u origin HEAD:${{ env.TEMP_BRANCH }}
             gh release create ${{ needs.changelog.outputs.tag }} --title ${{ needs.changelog.outputs.tag }} --notes-file CHANGELOG.md
+            git checkout main
+            git worktree prune
             git branch -D ${{ env.TEMP_BRANCH }}
           fi
 
