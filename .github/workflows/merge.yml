@@ -66,6 +66,8 @@ jobs:
           path: CHANGELOG.md
           
       - name: Rebuild and push the dist/ directory
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           npm run dist
           git diff ./dist
