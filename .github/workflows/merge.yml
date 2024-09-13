@@ -49,7 +49,7 @@ jobs:
   release:
     name: Release (if necessary)
     needs: changelog
-    if: ${{ needs.changelog.outputs.version != '' }}
+    # if: ${{ needs.changelog.outputs.version != '' }}
     env:
       TEMP_BRANCH: ${{ github.head_ref }}-release-${{ github.run_number }}
     runs-on: ubuntu-latest
