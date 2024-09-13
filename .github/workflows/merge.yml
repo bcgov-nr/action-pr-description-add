@@ -63,8 +63,7 @@ jobs:
 
       - uses: actions/download-artifact@v4.1.8
         with:
-          name: my-artifact
-          path: path/to/artifact
+          path: CHANGELOG.md
           
       - name: Rebuild and push the dist/ directory
         run: |
