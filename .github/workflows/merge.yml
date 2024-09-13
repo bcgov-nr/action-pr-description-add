@@ -50,7 +50,7 @@ jobs:
     needs: changelog
     if: ${{ needs.changelog.outputs.version != '' }}
     env:
-      RELEASE_BRANCH: ${{ github.head_ref }}-release-${{ github.run_number }}
+      TEMP_BRANCH: ${{ github.head_ref }}-release-${{ github.run_number }}
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -70,14 +70,15 @@ jobs:
           npm run dist
           git diff ./dist
           if $(git diff --ignore-space-at-eol --quiet ./dist); then
-            git checkout -b ${{ env.RELEASE_BRANCH }}
+            git checkout -b ${{ env.TEMP_BRANCH }}
             git add ./dist  
             git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
             git config --global user.name "${GITHUB_ACTOR}"
             git add .
             git commit -m "Rebuild dist/ directory"
-            git push -u origin HEAD:${{ env.RELEASE_BRANCH }}
+            git push -u origin HEAD:${{ env.TEMP_BRANCH }}
             gh release create ${{ needs.changelog.outputs.tag }} --title ${{ needs.changelog.outputs.tag }} --notes-file CHANGELOG.md
+            git branch -D ${{ env.TEMP_BRANCH }}
           fi
 
       # - name: Create Release
