@@ -71,7 +71,7 @@ jobs:
           git diff ./dist
           if $(git diff --ignore-space-at-eol --quiet ./dist); then
             git checkout -b ${{ env.TEMP_BRANCH }}
-            git add ./dist  
+            git add ./dist --force
             git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
             git config --global user.name "${GITHUB_ACTOR}"
             git add .
