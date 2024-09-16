@@ -52,30 +52,16 @@ jobs:
         continue-on-error: true
         with:
           github-token: ${{ github.token }}
-          output-file: 'CHANGELOG.md'
           skip-version-file: 'true'
           skip-commit: 'true'
-          skip-on-empty: 'false'
-          git-push: 'true'
-          git-branch: ${{ env.TEMP_BRANCH }}
-          create-summary: 'true'
-          
-      - name: Create Release
-        uses: softprops/action-gh-release@v2
-        continue-on-error: true
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-        with:
-          token: ${{ github.token }}
-          tag_name:  ${{ steps.changelog.outputs.tag }}
-          name: ${{ steps.changelog.outputs.tag }}
-          body: ${{ steps.changelog.outputs.clean_changelog }}
+          skip-on-empty: 'true'
+          pre-release: true
 
       - name: Clean up
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          # gh release create ${{ needs.changelog.outputs.tag }} --title ${{ needs.changelog.outputs.tag }} --notes-file CHANGELOG.md
+          gh release create ${{ steps.changelog.outputs.tag }} --title ${{ steps.changelog.outputs.tag }} --generate-notes
           git checkout main
           git worktree prune
           git branch -D ${{ env.TEMP_BRANCH }}
