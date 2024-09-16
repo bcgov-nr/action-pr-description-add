@@ -19,16 +19,32 @@ concurrency:
 jobs:
   changelog:
     name: Changelog
-    runs-on: ubuntu-latest
+    env:
+      TEMP_BRANCH: ${{ github.head_ref }}-release-${{ github.run_number }}
     outputs:
       tag: ${{ steps.changelog.outputs.tag }}
       version: ${{ steps.changelog.outputs.version }}
     permissions:
       contents: write
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
+      - name: Rebuild and push the dist/ directory
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          npm run dist
+          git diff ./dist
+          git checkout -b ${{ env.TEMP_BRANCH }}
+          git add ./dist --force
+          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          git config --global user.name "${GITHUB_ACTOR}"
+          git add .
+          git commit -m "Rebuild dist/ directory"
+          git push -u origin HEAD:${{ env.TEMP_BRANCH }}
 
       - name: Conventional Changelog Update
         uses: TriPSs/conventional-changelog-action@v5
