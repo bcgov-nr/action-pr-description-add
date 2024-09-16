@@ -40,17 +40,17 @@ jobs:
           skip-version-file: 'true'
           skip-commit: 'true'
           skip-on-empty: 'false'
-          git-push: 'false'
+          git-push: 'true'
 
       - uses: actions/upload-artifact@v4.3.6
         with:
-          path: CHANGELOG.md
+          path: ./CHANGELOG.md
 
   # release:
   #   name: Release (if necessary)
   #   needs: changelog
   #   # if: ${{ needs.changelog.outputs.version != '' }}
-  #   env:
+  #   env:  
   #     TEMP_BRANCH: ${{ github.head_ref }}-release-${{ github.run_number }}
   #   runs-on: ubuntu-latest
   #   permissions:
