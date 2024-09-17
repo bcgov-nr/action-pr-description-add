@@ -55,11 +55,11 @@ jobs:
           skip-on-empty: 'true'
           pre-release: true
 
-    - name: Verify Changelog
-      if: steps.changelog.outputs.tag == ''
-      run: exit 1
+      - name: Verify Changelog
+        if: steps.changelog.outputs.tag == ''
+        run: exit 1
 
-      - name: Clean up
+      - name: Release
         env:
           GH_TOKEN: ${{ github.token }}
         run: gh release create ${{ steps.changelog.outputs.tag }} --title ${{ steps.changelog.outputs.tag }} --generate-notes
