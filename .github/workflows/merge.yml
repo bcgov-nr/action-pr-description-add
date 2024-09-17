@@ -87,4 +87,4 @@ jobs:
           git checkout main
           git pull
           git worktree prune
-          git branch -D ${{ env.TEMP_BRANCH }}
+          git push --delete ${{ env.TEMP_BRANCH }}
