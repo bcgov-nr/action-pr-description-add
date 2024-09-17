@@ -54,6 +54,8 @@ jobs:
           pre-release: true
 
       - name: Release
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           if [ -z "${{ steps.changelog.outputs.tag }}" ]; then
             echo "No tag found, exiting"
