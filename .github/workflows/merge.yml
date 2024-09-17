@@ -84,5 +84,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          git checkout main
+          git pull
           git worktree prune
           git branch -D ${{ env.TEMP_BRANCH }}
