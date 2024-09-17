@@ -51,6 +51,7 @@ jobs:
         id: changelog
         continue-on-error: true
         with:
+          git-branch: ${{ env.TEMP_BRANCH }}
           github-token: ${{ github.token }}
           skip-version-file: 'true'
           skip-commit: 'true'
