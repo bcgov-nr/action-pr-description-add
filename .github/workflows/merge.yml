@@ -30,8 +30,6 @@ jobs:
           fetch-depth: 0
 
       - name: Rebuild and push the dist/ directory
-        env:
-          GH_TOKEN: ${{ github.token }}
         run: |
           npm run dist
           git diff ./dist
@@ -63,6 +61,7 @@ jobs:
             echo "No tag found, exiting"
             exit 1
           else
+            echo "Creating release ${{ steps.changelog.outputs.tag }}"
             gh release create ${{ steps.changelog.outputs.tag }} --title ${{ steps.changelog.outputs.tag }} --generate-notes
           fi
 
@@ -83,8 +82,4 @@ jobs:
       - name: Cleanup
         env:
           GH_TOKEN: ${{ github.token }}
-        run: |
-          git checkout main
-          git pull
-          git worktree prune
-          git push --delete origin ${{ env.TEMP_BRANCH }}
+        run: git push --delete origin ${{ env.TEMP_BRANCH }}
