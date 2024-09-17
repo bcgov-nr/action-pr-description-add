@@ -55,6 +55,10 @@ jobs:
           skip-on-empty: 'true'
           pre-release: true
 
+    - name: Verify Changelog
+      if: steps.changelog.outputs.tag == ''
+      run: exit 1
+
       - name: Clean up
         env:
           GH_TOKEN: ${{ github.token }}
