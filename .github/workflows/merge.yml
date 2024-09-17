@@ -9,8 +9,8 @@ on:
       - 'package.json'
       - 'tsconfig.json'
       - 'action.yml'
+      - '.github/workflows/merge.yml'
   workflow_dispatch:
-  pull_request:
 
 concurrency:
   group: ${{ github.workflow }}
@@ -29,6 +29,18 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Conventional Changelog Update
+        uses: TriPSs/conventional-changelog-action@v5
+        id: changelog
+        continue-on-error: true
+        with:
+          git-branch: ${{ env.TEMP_BRANCH }}
+          github-token: ${{ github.token }}
+          skip-version-file: 'true'
+          skip-commit: 'true'
+          skip-on-empty: 'true'
+          pre-release: 'true'
+
       - name: Rebuild and push the dist/ directory
         run: |
           npm run dist
@@ -40,17 +52,6 @@ jobs:
           git add .
           git commit -m "Rebuild dist/ directory"
           git push -u origin HEAD:${{ env.TEMP_BRANCH }}
-
-      - name: Conventional Changelog Update
-        uses: TriPSs/conventional-changelog-action@v5
-        id: changelog
-        continue-on-error: true
-        with:
-          git-branch: ${{ env.TEMP_BRANCH }}
-          github-token: ${{ github.token }}
-          skip-version-file: 'true'
-          skip-commit: 'true'
-          skip-on-empty: 'true'
 
       - name: Release
         env:
