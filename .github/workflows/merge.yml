@@ -21,6 +21,8 @@ jobs:
     name: Release
     env:
       TEMP_BRANCH: release-${{ github.run_number }}
+    outputs:
+      tag: ${{ steps.changelog.outputs.tag }}
     permissions:
       contents: write
     runs-on: ubuntu-latest
@@ -43,6 +45,7 @@ jobs:
           pre-release: 'true'
 
       - name: Rebuild and push the dist/ directory
+        if: ${{ steps.changelog.outputs.tag }}
         run: |
           npm run dist
           git diff ./dist
@@ -57,19 +60,15 @@ jobs:
       - name: Release
         env:
           GH_TOKEN: ${{ github.token }}
+        if: ${{ steps.changelog.outputs.tag }}
         run: |
-          if [ -z "${{ steps.changelog.outputs.tag }}" ]; then
-            echo "No tag found, exiting"
-            exit 1
-          else
-            echo "Creating release ${{ steps.changelog.outputs.tag }}"
-            git push --origin tag ${{ steps.changelog.outputs.tag }}
-            gh release create ${{ steps.changelog.outputs.tag }} --title ${{ steps.changelog.outputs.tag }} --generate-notes
-          fi
+          echo "Creating release ${{ steps.changelog.outputs.tag }}"
+          git push --origin tag ${{ steps.changelog.outputs.tag }}
+          gh release create ${{ steps.changelog.outputs.tag }} --title ${{ steps.changelog.outputs.tag }} --generate-notes
 
   cleanup:
     name: Cleanup
-    if: always()
+    if: always() && ${{ needs.release.outputs.tag }}
     needs: release
     env:
       TEMP_BRANCH: release-${{ github.run_number }}
