@@ -10,58 +10,73 @@ on:
       - 'tsconfig.json'
       - 'action.yml'
   workflow_dispatch:
+  pull_request:
 
 concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: true
 
 jobs:
-  semantic-release:
-    runs-on: ubuntu-22.04
-    outputs:
-      tag: ${{ steps.changelog.outputs.tag }}
-      version: ${{ steps.changelog.outputs.version }}
+  release:
+    name: Release
+    env:
+      TEMP_BRANCH: release-${{ github.run_number }}
     permissions:
       contents: write
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - uses: actions/setup-node@v4.0.3
-        with:
-          node-version: 20.x
-
-      - name: Rebuild the dist/ directory
-        run: npm run dist 
+      - name: Rebuild and push the dist/ directory
+        run: |
+          npm run dist
+          git diff ./dist
+          git checkout -b ${{ env.TEMP_BRANCH }}
+          git add ./dist --force
+          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          git config --global user.name "${GITHUB_ACTOR}"
+          git add .
+          git commit -m "Rebuild dist/ directory"
+          git push -u origin HEAD:${{ env.TEMP_BRANCH }}
 
       - name: Conventional Changelog Update
         uses: TriPSs/conventional-changelog-action@v5
         id: changelog
         continue-on-error: true
         with:
+          git-branch: ${{ env.TEMP_BRANCH }}
           github-token: ${{ github.token }}
-          output-file: 'CHANGELOG.md'
           skip-version-file: 'true'
           skip-commit: 'true'
-          skip-on-empty: 'false'
-          git-push: 'true'
+          skip-on-empty: 'true'
 
-      # Commit any changes to dist/ and lib/
-      - uses: EndBug/add-and-commit@v9
-        with:
-          add: 'dist/ lib/ --force'
-          message: "Rebuild dist/ directory"
-          push: false
-
-      - name: Create Release
-        uses: softprops/action-gh-release@v2
-        if: ${{ steps.changelog.outputs.version != '' }}
-        continue-on-error: true
+      - name: Release
         env:
-          GITHUB_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ -z "${{ steps.changelog.outputs.tag }}" ]; then
+            echo "No tag found, exiting"
+            exit 1
+          else
+            echo "Creating release ${{ steps.changelog.outputs.tag }}"
+            gh release create ${{ steps.changelog.outputs.tag }} --title ${{ steps.changelog.outputs.tag }} --generate-notes
+          fi
+
+  cleanup:
+    name: Cleanup
+    if: always()
+    needs: release
+    env:
+      TEMP_BRANCH: release-${{ github.run_number }}
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
         with:
-          token: ${{ github.token }}
-          tag_name:  ${{ steps.changelog.outputs.tag }}
-          name: ${{ steps.changelog.outputs.tag }}
-          body: ${{ steps.changelog.outputs.clean_changelog }}
+          fetch-depth: 0
+
+      - name: Cleanup
+        run: git push --delete origin ${{ env.TEMP_BRANCH }}
