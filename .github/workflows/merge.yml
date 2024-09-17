@@ -20,7 +20,7 @@ jobs:
   release:
     name: Release
     env:
-      TEMP_BRANCH: ${{ github.head_ref }}-release-${{ github.run_number }}
+      TEMP_BRANCH: release-${{ github.run_number }}
     permissions:
       contents: write
     runs-on: ubuntu-latest
@@ -54,8 +54,6 @@ jobs:
           pre-release: true
 
       - name: Release
-        env:
-          GH_TOKEN: ${{ github.token }}
         run: |
           if [ -z "${{ steps.changelog.outputs.tag }}" ]; then
             echo "No tag found, exiting"
@@ -70,7 +68,7 @@ jobs:
     if: always()
     needs: release
     env:
-      TEMP_BRANCH: ${{ github.head_ref }}-release-${{ github.run_number }}
+      TEMP_BRANCH: release-${{ github.run_number }}
     permissions:
       contents: write
     runs-on: ubuntu-latest
@@ -80,6 +78,4 @@ jobs:
           fetch-depth: 0
 
       - name: Cleanup
-        env:
-          GH_TOKEN: ${{ github.token }}
         run: git push --delete origin ${{ env.TEMP_BRANCH }}
