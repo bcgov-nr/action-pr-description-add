@@ -39,6 +39,7 @@ jobs:
           skip-version-file: 'true'
           skip-commit: 'true'
           skip-on-empty: 'true'
+          git-push: 'false'
           pre-release: 'true'
 
       - name: Rebuild and push the dist/ directory
