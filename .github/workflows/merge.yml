@@ -51,7 +51,6 @@ jobs:
           skip-version-file: 'true'
           skip-commit: 'true'
           skip-on-empty: 'true'
-          pre-release: true
 
       - name: Release
         env:
