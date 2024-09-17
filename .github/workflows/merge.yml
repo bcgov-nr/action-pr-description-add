@@ -9,7 +9,6 @@ on:
       - 'package.json'
       - 'tsconfig.json'
       - 'action.yml'
-      - '.github/workflows/merge.yml'
   workflow_dispatch:
 
 concurrency:
@@ -42,7 +41,6 @@ jobs:
           skip-commit: 'true'
           skip-on-empty: 'true'
           git-push: 'false'
-          pre-release: 'true'
 
       - name: Rebuild and push the dist/ directory
         if: ${{ steps.changelog.outputs.tag }}
@@ -63,7 +61,7 @@ jobs:
         if: ${{ steps.changelog.outputs.tag }}
         run: |
           echo "Creating release ${{ steps.changelog.outputs.tag }}"
-          git push --origin tag ${{ steps.changelog.outputs.tag }}
+          git push origin tag ${{ steps.changelog.outputs.tag }}
           gh release create ${{ steps.changelog.outputs.tag }} --title ${{ steps.changelog.outputs.tag }} --generate-notes
 
   cleanup:

@@ -2,7 +2,7 @@ name: "Add to PR Descriptions"
 description: "Add to pull request descriptions using markdown"
 author: "Derek Roberts"
 branding:
-  icon: "message-square"
+  icon: "plus"
   color: "blue"
 
 inputs:
