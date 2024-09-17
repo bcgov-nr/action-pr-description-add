@@ -21,9 +21,6 @@ jobs:
     name: Changelog
     env:
       TEMP_BRANCH: ${{ github.head_ref }}-release-${{ github.run_number }}
-    outputs:
-      tag: ${{ steps.changelog.outputs.tag }}
-      version: ${{ steps.changelog.outputs.version }}
     permissions:
       contents: write
     runs-on: ubuntu-latest
@@ -61,8 +58,20 @@ jobs:
       - name: Clean up
         env:
           GH_TOKEN: ${{ github.token }}
+        run: gh release create ${{ steps.changelog.outputs.tag }} --title ${{ steps.changelog.outputs.tag }} --generate-notes
+
+  cleanup:
+    name: Cleanup
+    if: always()
+    env:
+      TEMP_BRANCH: ${{ github.head_ref }}-release-${{ github.run_number }}
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cleanup
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create ${{ steps.changelog.outputs.tag }} --title ${{ steps.changelog.outputs.tag }} --generate-notes
-          git checkout main
           git worktree prune
           git branch -D ${{ env.TEMP_BRANCH }}
