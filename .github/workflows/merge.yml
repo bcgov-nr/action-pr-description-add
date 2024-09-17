@@ -17,8 +17,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  changelog:
-    name: Changelog
+  release:
+    name: Release
     env:
       TEMP_BRANCH: ${{ github.head_ref }}-release-${{ github.run_number }}
     permissions:
@@ -63,6 +63,7 @@ jobs:
   cleanup:
     name: Cleanup
     if: always()
+    needs: release
     env:
       TEMP_BRANCH: ${{ github.head_ref }}-release-${{ github.run_number }}
     permissions:
