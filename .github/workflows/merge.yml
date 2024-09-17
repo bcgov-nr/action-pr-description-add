@@ -63,6 +63,7 @@ jobs:
             exit 1
           else
             echo "Creating release ${{ steps.changelog.outputs.tag }}"
+            git push --origin tag ${{ steps.changelog.outputs.tag }}
             gh release create ${{ steps.changelog.outputs.tag }} --title ${{ steps.changelog.outputs.tag }} --generate-notes
           fi
 
