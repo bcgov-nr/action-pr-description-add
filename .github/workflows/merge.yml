@@ -55,14 +55,16 @@ jobs:
           skip-on-empty: 'true'
           pre-release: true
 
-      - name: Verify Changelog
-        if: steps.changelog.outputs.tag == ''
-        run: exit 1
-
       - name: Release
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release create ${{ steps.changelog.outputs.tag }} --title ${{ steps.changelog.outputs.tag }} --generate-notes
+        run: |
+          if [ -z "${{ steps.changelog.outputs.tag }}" ]; then
+            echo "No tag found, exiting"
+            exit 1
+          else
+            gh release create ${{ steps.changelog.outputs.tag }} --title ${{ steps.changelog.outputs.tag }} --generate-notes
+          fi
 
   cleanup:
     name: Cleanup
@@ -74,6 +76,10 @@ jobs:
       contents: write
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
       - name: Cleanup
         env:
           GH_TOKEN: ${{ github.token }}
