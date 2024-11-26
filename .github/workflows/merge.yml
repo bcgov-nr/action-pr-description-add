@@ -27,25 +27,13 @@ jobs:
       contents: write
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
-
-      - name: Get Next Version
+      - uses: actions/checkout@v4
+      - name: Get Next Semver
         id: semver
         uses: ietf-tools/semver-action@v1
         with:
           token: ${{ github.token }}
           branch: main
-
-      # - name: Create Release
-      #   uses: ncipollo/release-action@v1.12.0
-      #   with:
-      #     allowUpdates: true
-      #     draft: false
-      #     makeLatest: true
-      #     name: ${{ steps.semver.outputs.next }}
-      #     body: Changelog Contents
-      #     token: ${{ github.token }}
 
       - name: Build and release
         # if: ${{ steps.changelog.outputs.tag }}
@@ -64,8 +52,10 @@ jobs:
           git commit -m "Rebuild dist/ directory"
           git push -u origin HEAD:${{ env.TEMP_BRANCH }}
           echo "Creating release ${{ env.TAG }}"
+          git tag ${{ env.TAG }}
           git push origin tag ${{ env.TAG }}
           gh release create ${{ env.TAG }} --title ${{ env.TAG }} --generate-notes
+          git push --delete origin ${{ env.TEMP_BRANCH }}
 
   # cleanup:
   #   name: Cleanup
