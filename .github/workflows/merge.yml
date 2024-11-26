@@ -33,43 +33,52 @@ jobs:
         uses: ietf-tools/semver-action@v1
         with:
           token: ${{ github.token }}
-          branch: main
 
-      - name: Build and release
-        # if: ${{ steps.changelog.outputs.tag }}
+      - name: Set up Branch and User
+        if: ${{ steps.changelog.outputs.tag }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ steps.semver.outputs.next }}
+        run: |
+          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          git config --global user.name "${GITHUB_ACTOR}"
+          git checkout -b ${{ env.TEMP_BRANCH }}
+          git push -u origin HEAD:${{ env.TEMP_BRANCH }}
+
+      - name: Rebuild and push ./dist
+        if: ${{ steps.changelog.outputs.tag }}
         env:
           GH_TOKEN: ${{ github.token }}
           TAG: ${{ steps.semver.outputs.next }}
         run: |
           set -x
           npm run dist
-          git diff ./dist
-          git checkout -b ${{ env.TEMP_BRANCH }}
           git add ./dist --force
-          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-          git config --global user.name "${GITHUB_ACTOR}"
           git add .
           git commit -m "Rebuild dist/ directory"
-          git push -u origin HEAD:${{ env.TEMP_BRANCH }}
-          echo "Creating release ${{ env.TAG }}"
+          git diff ./dist
+
+      - name: Push Tag and Release
+        if: ${{ steps.changelog.outputs.tag }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ steps.semver.outputs.next }}
+        run: |
+          set -x
           git tag ${{ env.TAG }}
           git push origin tag ${{ env.TAG }}
           gh release create ${{ env.TAG }} --title ${{ env.TAG }} --generate-notes
           git push --delete origin ${{ env.TEMP_BRANCH }}
 
-  # cleanup:
-  #   name: Cleanup
-  #   if: ${{ needs.release.outputs.tag }}
-  #   needs: release
-  #   env:
-  #     TEMP_BRANCH: temp-${{ github.run_number }}
-  #   permissions:
-  #     contents: write
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v4
-  #       with:
-  #         fetch-depth: 0
-
-  #     - name: Cleanup
-  #       run: git push --delete origin ${{ env.TEMP_BRANCH }}
+  cleanup:
+    name: Cleanup
+    if: failure() || cancelled()
+    needs: release
+    env:
+      TEMP_BRANCH: temp-${{ github.run_number }}
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cleanup
+        run: git push --delete origin ${{ env.TEMP_BRANCH }}
