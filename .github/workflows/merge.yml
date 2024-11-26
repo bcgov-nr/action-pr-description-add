@@ -47,51 +47,25 @@ jobs:
           body: Changelog Contents
           token: ${{ github.token }}
 
-      # - uses: actions/checkout@v4
-      #   with:
-      #     fetch-depth: 0
-
-      # - id: tripteki
-      #   uses: tripteki/version@1.0.0
-      #   with:
-      #     token: ${{ secrets.GITHUB_TOKEN }}
-      # - shell: sh
-      #   run: |
-      #     echo ${{ steps.tripteki.outputs.exists }}
-      #     echo ${{ steps.tripteki.outputs.version }}
-      #     echo ${{ steps.tripteki.outputs.passes }}
-
-      # - name: Conventional Changelog Update
-      #   uses: TriPSs/conventional-changelog-action@v5
-      #   id: changelog
-      #   continue-on-error: false
-      #   with:
-      #     # git-branch: ${{ env.TEMP_BRANCH }}
-      #     github-token: ${{ github.token }}
-      #     skip-version-file: 'true'
-      #     skip-commit: 'true'
-      #     skip-on-empty: 'true'
-      #     git-push: 'false'
-
-      # - name: Build and release
-      #   # if: ${{ steps.changelog.outputs.tag }}
-      #   env:
-      #     GH_TOKEN: ${{ github.token }}
-      #     TAG: ${{ steps.changelog.outputs.tag }}
-      #   run: |
-      #     set -x
-      #     npm run dist
-      #     git diff ./dist
-      #     git checkout -b ${{ env.TEMP_BRANCH }}
-      #     git add ./dist --force
-      #     git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-      #     git config --global user.name "${GITHUB_ACTOR}"
-      #     git add .
-      #     git commit -m "Rebuild dist/ directory"
-      #     git push -u origin HEAD:${{ env.TEMP_BRANCH }}
-      #     echo "Creating release ${{ env.TAG }}"
-      #     git push origin tag ${{ env.TAG }}
-      #     gh release create ${{ env.TAG }} --title ${{ env.TAG }} --generate-notes
+      - name: Build and release
+        # if: ${{ steps.changelog.outputs.tag }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ steps.semver.outputs.next }}
+        run: |
+          set -x
+          npm run dist
+          git diff ./dist
+          git checkout -b ${{ env.TEMP_BRANCH }}
+          git add ./dist --force
+          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          git config --global user.name "${GITHUB_ACTOR}"
+          git add .
+          git commit -m "Rebuild dist/ directory"
+          git push -u origin HEAD:${{ env.TEMP_BRANCH }}
+          echo "Creating release ${{ env.TAG }}"
+          git push origin tag ${{ env.TAG }}
+          gh release create ${{ env.TAG }} --title ${{ env.TAG }} --generate-notes
 
   # cleanup:
   #   name: Cleanup
