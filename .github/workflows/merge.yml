@@ -1,15 +1,16 @@
 name: Merge
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'src/**'
-      - 'package-lock.json'
-      - 'package.json'
-      - 'tsconfig.json'
-      - 'action.yml'
-  workflow_dispatch:
+  # push:
+  #   branches: [main]
+  #   paths:
+  #     - 'src/**'
+  #     - 'package-lock.json'
+  #     - 'package.json'
+  #     - 'tsconfig.json'
+  #     - 'action.yml'
+  # workflow_dispatch:
+  pull_request:
 
 concurrency:
   group: ${{ github.workflow }}
@@ -20,33 +21,46 @@ jobs:
     name: Release
     env:
       TEMP_BRANCH: temp-${{ github.run_number }}
-    outputs:
-      tag: ${{ steps.changelog.outputs.tag }}
+    # outputs:
+    #   tag: ${{ steps.changelog.outputs.tag }}
     permissions:
       contents: write
     runs-on: ubuntu-latest
     steps:
+
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Conventional Changelog Update
-        uses: TriPSs/conventional-changelog-action@v5
-        id: changelog
-        continue-on-error: true
+      - id: tripteki
+        uses: tripteki/version@1.0.0
         with:
-          git-branch: ${{ env.TEMP_BRANCH }}
-          github-token: ${{ github.token }}
-          skip-version-file: 'true'
-          skip-commit: 'true'
-          skip-on-empty: 'true'
-          git-push: 'false'
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - shell: sh
+        run: |
+          echo ${{ steps.tripteki.outputs.exists }}
+          echo ${{ steps.tripteki.outputs.version }}
+          echo ${{ steps.tripteki.outputs.passes }}
 
-      - name: Rebuild, push and release
-        if: ${{ steps.changelog.outputs.tag }}
+      # - name: Conventional Changelog Update
+      #   uses: TriPSs/conventional-changelog-action@v5
+      #   id: changelog
+      #   continue-on-error: false
+      #   with:
+      #     # git-branch: ${{ env.TEMP_BRANCH }}
+      #     github-token: ${{ github.token }}
+      #     skip-version-file: 'true'
+      #     skip-commit: 'true'
+      #     skip-on-empty: 'true'
+      #     git-push: 'false'
+
+      - name: Build and release
+        # if: ${{ steps.changelog.outputs.tag }}
         env:
           GH_TOKEN: ${{ github.token }}
+          TAG: ${{ steps.changelog.outputs.tag }}
         run: |
+          set -x
           npm run dist
           git diff ./dist
           git checkout -b ${{ env.TEMP_BRANCH }}
@@ -56,23 +70,23 @@ jobs:
           git add .
           git commit -m "Rebuild dist/ directory"
           git push -u origin HEAD:${{ env.TEMP_BRANCH }}
-          echo "Creating release ${{ steps.changelog.outputs.tag }}"
-          git push origin tag ${{ steps.changelog.outputs.tag }}
-          gh release create ${{ steps.changelog.outputs.tag }} --title ${{ steps.changelog.outputs.tag }} --generate-notes
+          echo "Creating release ${{ env.TAG }}"
+          git push origin tag ${{ env.TAG }}
+          gh release create ${{ env.TAG }} --title ${{ env.TAG }} --generate-notes
 
-  cleanup:
-    name: Cleanup
-    if: always() && ${{ needs.release.outputs.tag }}
-    needs: release
-    env:
-      TEMP_BRANCH: temp-${{ github.run_number }}
-    permissions:
-      contents: write
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+  # cleanup:
+  #   name: Cleanup
+  #   if: ${{ needs.release.outputs.tag }}
+  #   needs: release
+  #   env:
+  #     TEMP_BRANCH: temp-${{ github.run_number }}
+  #   permissions:
+  #     contents: write
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #       with:
+  #         fetch-depth: 0
 
-      - name: Cleanup
-        run: git push --delete origin ${{ env.TEMP_BRANCH }}
+  #     - name: Cleanup
+  #       run: git push --delete origin ${{ env.TEMP_BRANCH }}
