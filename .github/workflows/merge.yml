@@ -19,7 +19,7 @@ jobs:
   release:
     name: Release
     env:
-      TEMP_BRANCH: release-${{ github.run_number }}
+      TEMP_BRANCH: temp-${{ github.run_number }}
     outputs:
       tag: ${{ steps.changelog.outputs.tag }}
     permissions:
@@ -42,8 +42,10 @@ jobs:
           skip-on-empty: 'true'
           git-push: 'false'
 
-      - name: Rebuild and push the dist/ directory
+      - name: Rebuild, push and release
         if: ${{ steps.changelog.outputs.tag }}
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           npm run dist
           git diff ./dist
@@ -54,12 +56,6 @@ jobs:
           git add .
           git commit -m "Rebuild dist/ directory"
           git push -u origin HEAD:${{ env.TEMP_BRANCH }}
-
-      - name: Release
-        env:
-          GH_TOKEN: ${{ github.token }}
-        if: ${{ steps.changelog.outputs.tag }}
-        run: |
           echo "Creating release ${{ steps.changelog.outputs.tag }}"
           git push origin tag ${{ steps.changelog.outputs.tag }}
           gh release create ${{ steps.changelog.outputs.tag }} --title ${{ steps.changelog.outputs.tag }} --generate-notes
@@ -69,7 +65,7 @@ jobs:
     if: always() && ${{ needs.release.outputs.tag }}
     needs: release
     env:
-      TEMP_BRANCH: release-${{ github.run_number }}
+      TEMP_BRANCH: temp-${{ github.run_number }}
     permissions:
       contents: write
     runs-on: ubuntu-latest
