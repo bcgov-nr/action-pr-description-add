@@ -68,7 +68,7 @@ jobs:
           if [ $(gh release view ${{ env.tag_major }} --json name -q .name) ]; then
             gh release edit ${{ env.tag_major }} --title ${{ env.tag_major }} --tag ${{ env.tag_semver }}
           else
-            gh release create ${{ env.tag_major }} --title ${{ env.tag_major }}
+            gh release create ${{ env.tag_major }} --title ${{ env.tag_major }} --generate-notes
           fi
 
       - name: Semver Tag
