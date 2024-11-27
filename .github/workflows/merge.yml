@@ -84,7 +84,10 @@ jobs:
           gh release create ${{ env.tag_semver }} --title ${{ env.tag_semver }} --generate-notes
 
       - name: Cleanup
-        if: always() && ${{ steps.semver.outputs.next }}
+        if: always()
         run: |
-          git push --delete origin ${{ env.branch }} || \
+          if [ "$(git ls-remote origin ${{ env.branch }})" ]; then
+            git push --delete origin ${{ env.branch }}
+          else
             echo "Cleanup not required"
+          fi
