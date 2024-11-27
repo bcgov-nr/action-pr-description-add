@@ -48,18 +48,29 @@ jobs:
           git add ./dist --force
           git commit -m "Rebuild dist/ directory"
 
-      - name: Tag and Release
+      - name: Semver Release
+        if: ${{ steps.semver.outputs.next }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          tag_semver: ${{ steps.semver.outputs.next }}
+        run: |
+          git push -u origin HEAD:${{ env.branch }}
+          git tag ${{ env.tag_semver }}
+          git push origin tag ${{ env.tag_semver }}
+          # gh release create ${{ env.tag_semver }} --title ${{ env.tag_semver }} --generate-notes
+
+      - name: Major Release
         if: ${{ steps.semver.outputs.next }}
         env:
           GH_TOKEN: ${{ github.token }}
           tag_semver: ${{ steps.semver.outputs.next }}
           tag_major: ${{ steps.semver.outputs.nextMajor }}
         run: |
-          git push -u origin HEAD:${{ env.branch }}
-          git tag ${{ env.tag_semver }}
-          git push origin tag ${{ env.tag_semver }}
-          gh release create ${{ env.tag_semver }} --title ${{ env.tag_semver }} --generate-notes
-          gh release create ${{ env.tag_major }} --title ${{ env.tag_major }} --generate-notes
+          if [ $(gh release view ${{ emv.tag_major }} --json name -q .name) ]; then
+            gh release edit ${{ env.tag_major }} --tag ${{ env.tag_semver }}
+          else
+            gh release create ${{ env.tag_major }} --title ${{ env.tag_major }}
+          fi
 
       - name: Cleanup
         if: always() && ${{ steps.semver.outputs.next }}
