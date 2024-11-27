@@ -20,7 +20,7 @@ jobs:
   release:
     name: Release
     env:
-      TEMP_BRANCH: temp-${{ github.run_number }}
+      branch: temp-${{ github.run_number }}
     outputs:
       next: ${{ steps.semver.outputs.next }}
     permissions:
@@ -39,8 +39,7 @@ jobs:
         run: |
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
           git config --global user.name "${GITHUB_ACTOR}"
-          git checkout -b ${{ env.TEMP_BRANCH }}
-          # git push -u origin HEAD:${{ env.TEMP_BRANCH }}
+          git checkout -b ${{ env.branch }}
 
       - name: Rebuild ./dist
         if: ${{ steps.semver.outputs.next }}
@@ -55,20 +54,12 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           TAG: ${{ steps.semver.outputs.next }}
         run: |
+          git push -u origin HEAD:${{ env.branch }}
           git tag ${{ env.TAG }}
           git push origin tag ${{ env.TAG }}
           gh release create ${{ env.TAG }} --title ${{ env.TAG }} --generate-notes
-          git push --delete origin ${{ env.TEMP_BRANCH }}
 
-  cleanup:
-    name: Cleanup
-    if: failure() || cancelled()
-    needs: release
-    env:
-      TEMP_BRANCH: temp-${{ github.run_number }}
-    permissions:
-      contents: write
-    runs-on: ubuntu-latest
-    steps:
       - name: Cleanup
-        run: git push --delete origin ${{ env.TEMP_BRANCH }}
+        if: always() && ${{ steps.semver.outputs.next }}
+        run: |
+          git push --delete origin ${{ env.branch }}
