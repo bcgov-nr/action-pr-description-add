@@ -21,8 +21,6 @@ jobs:
     name: Release
     env:
       TEMP_BRANCH: temp-${{ github.run_number }}
-    # outputs:
-    #   tag: ${{ steps.changelog.outputs.tag }}
     permissions:
       contents: write
     runs-on: ubuntu-latest
@@ -35,9 +33,8 @@ jobs:
           token: ${{ github.token }}
 
       - name: Set up Branch and User
-        if: ${{ steps.changelog.outputs.tag }}
+        if: ${{ steps.semver.outputs.next }}
         env:
-          GH_TOKEN: ${{ github.token }}
           TAG: ${{ steps.semver.outputs.next }}
         run: |
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
@@ -46,9 +43,8 @@ jobs:
           git push -u origin HEAD:${{ env.TEMP_BRANCH }}
 
       - name: Rebuild and push ./dist
-        if: ${{ steps.changelog.outputs.tag }}
+        if: ${{ steps.semver.outputs.next }}
         env:
-          GH_TOKEN: ${{ github.token }}
           TAG: ${{ steps.semver.outputs.next }}
         run: |
           set -x
@@ -58,8 +54,8 @@ jobs:
           git commit -m "Rebuild dist/ directory"
           git diff ./dist
 
-      - name: Push Tag and Release
-        if: ${{ steps.changelog.outputs.tag }}
+      - name: Tag and Release
+        if: ${{ steps.semver.outputs.next }}
         env:
           GH_TOKEN: ${{ github.token }}
           TAG: ${{ steps.semver.outputs.next }}
