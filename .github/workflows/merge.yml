@@ -51,7 +51,7 @@ jobs:
       - name: Tag and Release
         if: ${{ steps.semver.outputs.next }}
         env:
-          gh_token: ${{ github.token }}
+          GH_TOKEN: ${{ github.token }}
           tag_semver: ${{ steps.semver.outputs.next }}
           tag_major: ${{ steps.semver.outputs.nextMajor }}
         run: |
