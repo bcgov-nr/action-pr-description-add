@@ -51,15 +51,15 @@ jobs:
       - name: Tag and Release
         if: ${{ steps.semver.outputs.next }}
         env:
-          GH_TOKEN: ${{ github.token }}
-          TAG: ${{ steps.semver.outputs.next }}
-          TAG_MAJOR: ${{ steps.semver.outputs.nextMajor }}
+          gh_token: ${{ github.token }}
+          tag_semver: ${{ steps.semver.outputs.next }}
+          tag_major: ${{ steps.semver.outputs.nextMajor }}
         run: |
           git push -u origin HEAD:${{ env.branch }}
-          git tag ${{ env.TAG }}
-          git push origin tag ${{ env.TAG }}
-          gh release create ${{ env.TAG }} --title ${{ env.TAG }} --generate-notes
-          gh release create ${{ env.TAG_MAJOR }} --title ${{ env.TAG_MAJOR }} --generate-notes
+          git tag ${{ env.tag_semver }}
+          git push origin tag ${{ env.tag_semver }}
+          gh release create ${{ env.tag_semver }} --title ${{ env.tag_semver }} --generate-notes
+          gh release create ${{ env.tag_major }} --title ${{ env.tag_major }} --generate-notes
 
       - name: Cleanup
         if: always() && ${{ steps.semver.outputs.next }}
