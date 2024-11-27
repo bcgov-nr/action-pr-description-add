@@ -1,7 +1,6 @@
 <!-- Badges -->
-[![Build-Test](https://github.com/bcgov-nr/action-pr-description-add/actions/workflows/test.yml/badge.svg)](https://github.com/bcgov-nr/action-pr-description-add/actions/workflows/test.yml)
-[![Check dist/](https://github.com/bcgov-nr/action-pr-description-add/actions/workflows/check-dist.yml/badge.svg)](https://github.com/bcgov-nr/action-pr-description-add/actions/workflows/check-dist.yml)
-[![CodeQL](https://github.com/bcgov-nr/action-pr-description-add/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/bcgov-nr/action-pr-description-add/actions/workflows/codeql-analysis.yml)
+[![Merge](https://github.com/bcgov-nr/action-pr-description-add/actions/workflows/merge.yml/badge.svg)](https://github.com/bcgov-nr/action-pr-description-add/actions/workflows/merge.yml)
+[![CodeQL](https://github.com/bcgov-nr/action-pr-description-add/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/bcgov-nr/action-pr-description-add/actions/workflows/github-code-scanning/codeql)
 [![Contributors](https://img.shields.io/github/contributors/bcgov-nr/action-pr-description-add)](/../../graphs/contributors)
 [![Forks](https://img.shields.io/github/forks/bcgov-nr/action-pr-description-add)](/../../network/members)
 [![Stargazers](https://img.shields.io/github/stars/bcgov-nr/action-pr-description-add)](/../../stargazers)
