@@ -59,7 +59,7 @@ jobs:
           git tag ${{ env.TAG }}
           git push origin tag ${{ env.TAG }}
           gh release create ${{ env.TAG }} --title ${{ env.TAG }} --generate-notes
-          gh release create ${{ env.TAG_MAJOR }} --title ${{ env.TAG }} --generate-notes --clobber
+          gh release create ${{ env.TAG_MAJOR }} --title ${{ env.TAG }} --generate-notes
 
       - name: Cleanup
         if: always() && ${{ steps.semver.outputs.next }}
