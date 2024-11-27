@@ -19,64 +19,70 @@ jobs:
   release:
     name: Release
     env:
-      TEMP_BRANCH: release-${{ github.run_number }}
+      branch: temp-${{ github.run_number }}
     outputs:
-      tag: ${{ steps.changelog.outputs.tag }}
+      next: ${{ steps.semver.outputs.next }}
     permissions:
       contents: write
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Conventional Changelog Update
-        uses: TriPSs/conventional-changelog-action@v5
-        id: changelog
+      - name: Get Semver
+        id: semver
         continue-on-error: true
+        uses: ietf-tools/semver-action@v1
         with:
-          git-branch: ${{ env.TEMP_BRANCH }}
-          github-token: ${{ github.token }}
-          skip-version-file: 'true'
-          skip-commit: 'true'
-          skip-on-empty: 'true'
-          git-push: 'false'
+          token: ${{ github.token }}
 
-      - name: Rebuild and push the dist/ directory
-        if: ${{ steps.changelog.outputs.tag }}
+      - name: Git Setup
+        if: ${{ steps.semver.outputs.next }}
         run: |
-          npm run dist
-          git diff ./dist
-          git checkout -b ${{ env.TEMP_BRANCH }}
-          git add ./dist --force
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
           git config --global user.name "${GITHUB_ACTOR}"
-          git add .
-          git commit -m "Rebuild dist/ directory"
-          git push -u origin HEAD:${{ env.TEMP_BRANCH }}
+          git checkout -b ${{ env.branch }}
 
-      - name: Release
+      - name: Rebuild ./dist
+        if: ${{ steps.semver.outputs.next }}
+        run: |
+          npm run dist
+          git add ./dist --force
+          git commit -m "Rebuild dist/ directory"
+          git push -u origin HEAD:${{ env.branch }}
+
+      - name: Tag and Release (Major)
+        if: ${{ steps.semver.outputs.next }}
         env:
           GH_TOKEN: ${{ github.token }}
-        if: ${{ steps.changelog.outputs.tag }}
+          tag: ${{ steps.semver.outputs.nextMajor }}
         run: |
-          echo "Creating release ${{ steps.changelog.outputs.tag }}"
-          git push origin tag ${{ steps.changelog.outputs.tag }}
-          gh release create ${{ steps.changelog.outputs.tag }} --title ${{ steps.changelog.outputs.tag }} --generate-notes
+          git tag -f ${{ env.tag }}
+          git push -f origin tag ${{ env.tag }}
 
-  cleanup:
-    name: Cleanup
-    if: always() && ${{ needs.release.outputs.tag }}
-    needs: release
-    env:
-      TEMP_BRANCH: release-${{ github.run_number }}
-    permissions:
-      contents: write
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+          if [ $(gh release view ${{ env.tag }} --json name -q .name) ]; then
+            gh release edit ${{ env.tag }} --title ${{ env.tag }} --tag ${{ env.tag }}
+          else
+            gh release create ${{ env.tag }} --title ${{ env.tag }} --generate-notes
+          fi
+
+      - name: Tag and Release (Semver)
+        if: ${{ steps.semver.outputs.next }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          tag: ${{ steps.semver.outputs.next }}
+        run: |
+          git tag ${{ env.tag }}
+          git push origin tag ${{ env.tag }}
+
+          if [ $(gh release view ${{ env.tag }} --json name -q .name) ]; then
+            gh release delete ${{ env.tag }} --yes
+          fi
+          gh release create ${{ env.tag }} --title ${{ env.tag }} --generate-notes
 
       - name: Cleanup
-        run: git push --delete origin ${{ env.TEMP_BRANCH }}
+        if: always()
+        run: |
+          if [ "$(git ls-remote origin ${{ env.branch }})" ]; then
+            git push --delete origin ${{ env.branch }}
+          else
+            echo "Cleanup not required"
+          fi
