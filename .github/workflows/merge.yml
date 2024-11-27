@@ -49,7 +49,29 @@ jobs:
           git add ./dist --force
           git commit -m "Rebuild dist/ directory"
 
-      - name: Tag
+      - name: Major Tag
+        if: ${{ steps.semver.outputs.next }}
+        env:
+          tag_major: ${{ steps.semver.outputs.nextMajor }}
+        run: |
+          git push -u origin HEAD:${{ env.branch }}
+          git tag -f ${{ env.tag_major }}
+          git push -f origin tag ${{ env.tag_major }}
+
+      - name: Major Release
+        if: ${{ steps.semver.outputs.next }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          tag_major: ${{ steps.semver.outputs.nextMajor }}
+          tag_semver: ${{ steps.semver.outputs.next }}
+        run: |
+          if [ $(gh release view ${{ env.tag_major }} --json name -q .name) ]; then
+            gh release edit ${{ env.tag_major }} --title ${{ env.tag_major }} --tag ${{ env.tag_semver }}
+          else
+            gh release create ${{ env.tag_major }} --title ${{ env.tag_major }}
+          fi
+
+      - name: Semver Tag
         if: ${{ steps.semver.outputs.next }}
         env:
           tag_semver: ${{ steps.semver.outputs.next }}
@@ -58,25 +80,12 @@ jobs:
           git tag ${{ env.tag_semver }}
           git push origin tag ${{ env.tag_semver }}
 
-      - name: Major Release
-        if: ${{ steps.semver.outputs.next }}
-        env:
-          GH_TOKEN: ${{ github.token }}
-          tag_semver: ${{ steps.semver.outputs.next }}
-          tag_major: ${{ steps.semver.outputs.nextMajor }}
-        run: |
-          if [ $(gh release view ${{ env.tag_major }} --json name -q .name) ]; then
-            gh release edit ${{ env.tag_major }} --title ${{ env.tag_major }} --tag ${{ env.tag_semver }}
-          else
-            gh release create ${{ env.tag_semver }} --title ${{ env.tag_major }}
-          fi
-
       - name: Semver Release
         if: ${{ steps.semver.outputs.next }}
         env:
           GH_TOKEN: ${{ github.token }}
-          tag_semver: ${{ steps.semver.outputs.next }}
           tag_major: ${{ steps.semver.outputs.nextMajor }}
+          tag_semver: ${{ steps.semver.outputs.next }}
         run: |
           if [ $(gh release view ${{ env.tag_semver }} --json name -q .name) ]; then
             gh release delete ${{ env.tag_semver }} --yes
