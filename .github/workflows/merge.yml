@@ -55,8 +55,8 @@ jobs:
           tag_semver: ${{ steps.semver.outputs.next }}
         run: |
           git push -u origin HEAD:${{ env.branch }}
-          git tag -f ${{ env.tag_semver }}
-          git push -f origin tag ${{ env.tag_semver }}
+          git tag ${{ env.tag_semver }}
+          git push origin tag ${{ env.tag_semver }}
 
       - name: Major Release
         if: ${{ steps.semver.outputs.next }}
@@ -68,7 +68,7 @@ jobs:
           if [ $(gh release view ${{ env.tag_major }} --json name -q .name) ]; then
             gh release edit ${{ env.tag_major }} --title ${{ env.tag_major }} --tag ${{ env.tag_semver }}
           else
-            gh release create ${{ env.tag_major }} --title ${{ env.tag_major }}
+            gh release create ${{ env.tag_semver }} --title ${{ env.tag_major }}
           fi
 
       - name: Semver Release
