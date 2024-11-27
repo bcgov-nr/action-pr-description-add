@@ -86,4 +86,5 @@ jobs:
       - name: Cleanup
         if: always() && ${{ steps.semver.outputs.next }}
         run: |
-          git push --delete origin ${{ env.branch }}
+          git push --delete origin ${{ env.branch }} || \
+            echo "Cleanup not required"
