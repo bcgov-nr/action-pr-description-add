@@ -1,5 +1,5 @@
-# dist is committed in the legacy mirror (synced from monorepo)
-# dist
+# Auto-generated dist
+dist
 
 # Dependency directory
 node_modules
