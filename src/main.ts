@@ -1,6 +1,8 @@
 import {error, getInput, info} from '@actions/core'
 import {context, getOctokit} from '@actions/github'
 
+info('::warning::This Action has moved to bcgov/actions/pr-description-add. Please update your workflow to use bcgov/actions/pr-description-add instead. See: https://github.com/bcgov/actions/tree/main/pr-description-add')
+
 // Action input
 const markdown = getInput('add_markdown')
 const token = getInput('github_token')
