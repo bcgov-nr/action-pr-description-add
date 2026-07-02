@@ -22,7 +22,7 @@ runs:
         echo "::warning::This Action has moved to bcgov/actions/pr-description-add. Please update your workflow to use bcgov/actions/pr-description-add instead."
 
     - name: Delegate to consolidated action
-      uses: bcgov/actions/pr-description-add@v0.3.0
+      uses: bcgov/actions/pr-description-add@v0.2.0
       with:
         add_markdown: ${{ inputs.add_markdown }}
         github_token: ${{ inputs.github_token }}
