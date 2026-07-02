@@ -14,5 +14,6 @@ inputs:
     default: ${{ github.token }}
 
 runs:
-  using: "node20"
+  using: "node24"
+  pre: "pre.js"
   main: "dist/index.js"
