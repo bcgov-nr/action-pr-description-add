@@ -1,4 +1,4 @@
-# Add to PR Descriptions (Moved)
+# Add to Pull Request Descriptions (Moved)
 
 > [!IMPORTANT]
 > **This Action has moved!**
