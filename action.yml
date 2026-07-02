@@ -1,5 +1,5 @@
 name: "Add to PR Descriptions"
-description: "This Action has moved to bcgov/actions/pr-description-add"
+description: "Add to pull request descriptions using markdown"
 author: "Derek Roberts"
 branding:
   icon: "plus"
@@ -14,15 +14,5 @@ inputs:
     default: ${{ github.token }}
 
 runs:
-  using: "composite"
-  steps:
-    - name: Migration Warning
-      shell: bash
-      run: |
-        echo "::warning::This Action has moved to bcgov/actions/pr-description-add. Please update your workflow to use bcgov/actions/pr-description-add instead."
-
-    - name: Delegate to consolidated action
-      uses: bcgov/actions/pr-description-add@v0.2.0
-      with:
-        add_markdown: ${{ inputs.add_markdown }}
-        github_token: ${{ inputs.github_token }}
+  using: "node20"
+  main: "dist/index.js"
