@@ -1,11 +1,17 @@
 # Add to Pull Request Descriptions (Moved)
 
 > [!IMPORTANT]
-> **This Action is being moved!**
+> **This action has moved to [`bcgov/actions/pr-description-add`](https://github.com/bcgov/actions/tree/main/pr-description-add).** This repository is retiring and will be archived. Update workflows to the new path, pinned to a [release](https://github.com/bcgov/actions/releases) (not `@main`):
 >
-> Development and maintenance of this action are now centralized in the main [bcgov/actions](https://github.com/bcgov/actions) repository under the [pr-description-add](https://github.com/bcgov/actions/tree/main/pr-description-add) folder.
->
-> In the near future, workflows should instead reference the new path:
 > ```yaml
 > - uses: bcgov/actions/pr-description-add@vX.Y.Z
+>   with:
+>     add_markdown: |
+>       Thanks for the PR!
 > ```
+>
+> | Old input | New input |
+> | --- | --- |
+> | `github_token` | `token` |
+>
+> `add_markdown` keeps its name.
