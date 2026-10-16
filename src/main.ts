@@ -1,7 +1,7 @@
-import {error, getInput, info} from '@actions/core'
+import {error, getInput, info, warning} from '@actions/core'
 import {context, getOctokit} from '@actions/github'
 
-info('::warning::This Action has moved to bcgov/actions/pr-description-add. Please update your workflow to use bcgov/actions/pr-description-add instead. See: https://github.com/bcgov/actions/tree/main/pr-description-add')
+warning('This Action has moved to bcgov/actions/pr-description-add. Update workflows to bcgov/actions/pr-description-add (pin a release, not @main). Input rename: github_token → token. See https://github.com/bcgov/actions/tree/main/pr-description-add', {title: 'Action moved'})
 
 // Action input
 const markdown = getInput('add_markdown')
